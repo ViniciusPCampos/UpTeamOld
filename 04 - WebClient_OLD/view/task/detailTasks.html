@@ -1,0 +1,42 @@
+<h1>{{PageTitle}}</h1>
+<div class="jumbotron col-md-9">
+
+    <h2><b>Work Item ID: </b>{{task.Id}}</h2>
+    <div ng-repeat="item in task">{{item.id}}</div>
+
+    <label>Name: </label>
+    <input type="text" class="form-control" placeholder="Name" ng-model="task.name" value="teste">
+
+
+    <label>Description: </label>
+    <textarea cols="40"
+    rows="5"  class="form-control" name="description" ng-model="task.description"></textarea>
+
+
+    <label>Estimate: </label>
+    <input type="text" class="form-control" ng-model="task.estimate">
+
+
+
+<select class="form-control" ng-model="task.difficulty" ng-options="item.Id as item.difficulty for item in difficulties">
+  <option value=""> Select the Quest's Difficulty</option>
+</select>
+
+<select class="form-control col-md-3" ng-model="task.owner" style="width:249px;" ng-options="user.Id as user.Name + ' ' + user.lastName for user in users">
+  <option value="">Select the Quest's Owner</option>
+</select>
+
+
+<select class="form-control" ng-model="task.state" ng-options="s.Id as s.state for s in states">
+  <option value=""> Select the Quest's State</option>
+</select>
+
+
+<p>Created by: {{task.createdBy|date}}</p>
+
+<p>Project: {{task.project}}</p>
+
+<p>Data de Criação:{{task.createdOn | date}}</p>
+<button class="btn btn-primary btn-block" ng-click="updateTask(task);">Update Task</button>
+<button class="btn btn-danger btn-block" ng-click="deleteTask(task.Id)">Apagar Task</button>
+</div>
