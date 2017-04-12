@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace UpTeam.Domain.Entities
 {
-    class Equipe
+    class Prioridade
     {
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
     }
 }

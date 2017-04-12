@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace UpTeam.Domain.Entities
 {
-    class Projeto
+    class Sprint
     {
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
+        public int Iteracao { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataTermino { get; set; }
-        public Equipe Equipe { get; set; }
+        public Projeto Projeto { get; set; }
     }
 }
