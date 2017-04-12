@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{DA970944-1F54-4581-8AC9-88DB414D0DF7}"
 EndProject
@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpTeam.Infra.Data", "UpTeam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpTeam.Application", "UpTeam.Application\UpTeam.Application.csproj", "{37BADDAF-7B54-4C28-A366-C284BEC4144D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpTeam.Infra.CrossCutting", "UpTeam.Infra.CrossCutting\UpTeam.Infra.CrossCutting.csproj", "{712542B2-9E5F-4CA0-89A2-B546B8DE6F36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{37BADDAF-7B54-4C28-A366-C284BEC4144D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BADDAF-7B54-4C28-A366-C284BEC4144D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BADDAF-7B54-4C28-A366-C284BEC4144D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712542B2-9E5F-4CA0-89A2-B546B8DE6F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712542B2-9E5F-4CA0-89A2-B546B8DE6F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712542B2-9E5F-4CA0-89A2-B546B8DE6F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712542B2-9E5F-4CA0-89A2-B546B8DE6F36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,5 +70,6 @@ Global
 		{C722A806-11B1-432B-9AD5-8275F692F006} = {F9CB729C-D426-439A-B283-4A4BDA407C11}
 		{87A97185-1DAA-485A-8AA0-FB259F80FB5B} = {F5CAE2EF-92D7-42A3-847C-BBD0C0847DCD}
 		{37BADDAF-7B54-4C28-A366-C284BEC4144D} = {054E76D7-F6A7-4708-8D15-351A2BDCFB01}
+		{712542B2-9E5F-4CA0-89A2-B546B8DE6F36} = {A1B7F075-C483-4ABF-90AD-B570D3ACC548}
 	EndGlobalSection
 EndGlobal

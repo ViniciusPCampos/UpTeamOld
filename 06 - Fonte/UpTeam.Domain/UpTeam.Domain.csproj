@@ -30,7 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Conquista.cs" />
+    <Compile Include="Entities\Dificuldade.cs" />
+    <Compile Include="Entities\Equipe.cs" />
+    <Compile Include="Entities\Marco.cs" />
+    <Compile Include="Entities\Nivel.cs" />
+    <Compile Include="Entities\Prioridade.cs" />
+    <Compile Include="Entities\Projeto.cs" />
+    <Compile Include="Entities\Sprint.cs" />
+    <Compile Include="Entities\Tarefa.cs" />
+    <Compile Include="Entities\Titulo.cs" />
+    <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
