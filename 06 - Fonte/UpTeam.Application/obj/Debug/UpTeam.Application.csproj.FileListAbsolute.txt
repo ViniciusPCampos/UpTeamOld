@@ -1,0 +1,5 @@
+C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Application\bin\Debug\UpTeam.Application.dll
+C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Application\bin\Debug\UpTeam.Application.pdb
+C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Application\obj\Debug\UpTeam.Application.csprojResolveAssemblyReference.cache
+C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Application\obj\Debug\UpTeam.Application.dll
+C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Application\obj\Debug\UpTeam.Application.pdb

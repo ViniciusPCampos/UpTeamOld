@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdupteamModel.Store" Alias="Self" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 5.7.18" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="bdupteamEntitiesStoreContainer">
+    <EntitySet Name="ta_usuario_conquistas" EntityType="bdupteamModel.Store.ta_usuario_conquista" store:Type="Tables" Schema="bd_upteam" Table="ta_usuario_conquista" />
+    <EntitySet Name="ta_usuario_equipes" EntityType="bdupteamModel.Store.ta_usuario_equipe" store:Type="Tables" Schema="bd_upteam" Table="ta_usuario_equipe" />
+    <EntitySet Name="ta_usuario_titulos" EntityType="bdupteamModel.Store.ta_usuario_titulo" store:Type="Tables" Schema="bd_upteam" Table="ta_usuario_titulo" />
+    <EntitySet Name="tb_equipes" EntityType="bdupteamModel.Store.tb_equipe" store:Type="Tables" Schema="bd_upteam" Table="tb_equipe" />
+    <EntitySet Name="tb_marcos" EntityType="bdupteamModel.Store.tb_marco" store:Type="Tables" Schema="bd_upteam" Table="tb_marco" />
+    <EntitySet Name="tb_mensagems" EntityType="bdupteamModel.Store.tb_mensagem" store:Type="Tables" Schema="bd_upteam" Table="tb_mensagem" />
+    <EntitySet Name="tb_projetos" EntityType="bdupteamModel.Store.tb_projeto" store:Type="Tables" Schema="bd_upteam" Table="tb_projeto" />
+    <EntitySet Name="tb_sprints" EntityType="bdupteamModel.Store.tb_sprint" store:Type="Tables" Schema="bd_upteam" Table="tb_sprint" />
+    <EntitySet Name="tb_tarefas" EntityType="bdupteamModel.Store.tb_tarefa" store:Type="Tables" Schema="bd_upteam" Table="tb_tarefa" />
+    <EntitySet Name="tb_usuarios" EntityType="bdupteamModel.Store.tb_usuario" store:Type="Tables" Schema="bd_upteam" Table="tb_usuario" />
+    <EntitySet Name="tt_conquistas" EntityType="bdupteamModel.Store.tt_conquista" store:Type="Tables" Schema="bd_upteam" Table="tt_conquista" />
+    <EntitySet Name="tt_dificuldades" EntityType="bdupteamModel.Store.tt_dificuldade" store:Type="Tables" Schema="bd_upteam" Table="tt_dificuldade" />
+    <EntitySet Name="tt_nivels" EntityType="bdupteamModel.Store.tt_nivel" store:Type="Tables" Schema="bd_upteam" Table="tt_nivel" />
+    <EntitySet Name="tt_prioridades" EntityType="bdupteamModel.Store.tt_prioridade" store:Type="Tables" Schema="bd_upteam" Table="tt_prioridade" />
+    <EntitySet Name="tt_titulos" EntityType="bdupteamModel.Store.tt_titulo" store:Type="Tables" Schema="bd_upteam" Table="tt_titulo" />
+    <AssociationSet Name="fk_ta_usuario_conquista_tb_usuario1" Association="bdupteamModel.Store.fk_ta_usuario_conquista_tb_usuario1">
+      <End Role="tb_usuario" EntitySet="tb_usuarios" />
+      <End Role="ta_usuario_conquista" EntitySet="ta_usuario_conquistas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ta_usuario_conquista_tt_conquista1" Association="bdupteamModel.Store.fk_ta_usuario_conquista_tt_conquista1">
+      <End Role="tt_conquista" EntitySet="tt_conquistas" />
+      <End Role="ta_usuario_conquista" EntitySet="ta_usuario_conquistas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ta_usuario_equipe_tb_equipe1" Association="bdupteamModel.Store.fk_ta_usuario_equipe_tb_equipe1">
+      <End Role="tb_equipe" EntitySet="tb_equipes" />
+      <End Role="ta_usuario_equipe" EntitySet="ta_usuario_equipes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ta_usuario_equipe_tb_usuario" Association="bdupteamModel.Store.fk_ta_usuario_equipe_tb_usuario">
+      <End Role="tb_usuario" EntitySet="tb_usuarios" />
+      <End Role="ta_usuario_equipe" EntitySet="ta_usuario_equipes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ta_usuario_titulo_tb_usuario1" Association="bdupteamModel.Store.fk_ta_usuario_titulo_tb_usuario1">
+      <End Role="tb_usuario" EntitySet="tb_usuarios" />
+      <End Role="ta_usuario_titulo" EntitySet="ta_usuario_titulos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ta_usuario_titulo_tt_titulo1" Association="bdupteamModel.Store.fk_ta_usuario_titulo_tt_titulo1">
+      <End Role="tt_titulo" EntitySet="tt_titulos" />
+      <End Role="ta_usuario_titulo" EntitySet="ta_usuario_titulos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_marco_tb_projeto1" Association="bdupteamModel.Store.fk_tb_marco_tb_projeto1">
+      <End Role="tb_projeto" EntitySet="tb_projetos" />
+      <End Role="tb_marco" EntitySet="tb_marcos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_mensagem_tb_equipe1" Association="bdupteamModel.Store.fk_tb_mensagem_tb_equipe1">
+      <End Role="tb_equipe" EntitySet="tb_equipes" />
+      <End Role="tb_mensagem" EntitySet="tb_mensagems" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_projeto_tb_equipe1" Association="bdupteamModel.Store.fk_tb_projeto_tb_equipe1">
+      <End Role="tb_equipe" EntitySet="tb_equipes" />
+      <End Role="tb_projeto" EntitySet="tb_projetos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_sprint_tb_projeto1" Association="bdupteamModel.Store.fk_tb_sprint_tb_projeto1">
+      <End Role="tb_projeto" EntitySet="tb_projetos" />
+      <End Role="tb_sprint" EntitySet="tb_sprints" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_tarefa_tb_sprint1" Association="bdupteamModel.Store.fk_tb_tarefa_tb_sprint1">
+      <End Role="tb_sprint" EntitySet="tb_sprints" />
+      <End Role="tb_tarefa" EntitySet="tb_tarefas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_tarefa_tb_usuario1" Association="bdupteamModel.Store.fk_tb_tarefa_tb_usuario1">
+      <End Role="tb_usuario" EntitySet="tb_usuarios" />
+      <End Role="tb_tarefa" EntitySet="tb_tarefas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_tarefa_tt_dificuldade1" Association="bdupteamModel.Store.fk_tb_tarefa_tt_dificuldade1">
+      <End Role="tt_dificuldade" EntitySet="tt_dificuldades" />
+      <End Role="tb_tarefa" EntitySet="tb_tarefas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_tarefa_tt_prioridade1" Association="bdupteamModel.Store.fk_tb_tarefa_tt_prioridade1">
+      <End Role="tt_prioridade" EntitySet="tt_prioridades" />
+      <End Role="tb_tarefa" EntitySet="tb_tarefas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_usuario_tt_nivel1" Association="bdupteamModel.Store.fk_tb_usuario_tt_nivel1">
+      <End Role="tt_nivel" EntitySet="tt_nivels" />
+      <End Role="tb_usuario" EntitySet="tb_usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ta_usuario_conquista">
+    <Key>
+      <PropertyRef Name="idt_usuario_conquista" />
+    </Key>
+    <Property Name="idt_usuario_conquista" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="dta_conquista" Type="date" Nullable="false" />
+    <Property Name="fk_usuario" Type="int" Nullable="false" />
+    <Property Name="fk_conquista" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ta_usuario_equipe">
+    <Key>
+      <PropertyRef Name="idt_usuario_equipe" />
+    </Key>
+    <Property Name="idt_usuario_equipe" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fk_usuario" Type="int" Nullable="false" />
+    <Property Name="fk_equipe" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ta_usuario_titulo">
+    <Key>
+      <PropertyRef Name="idt_usuario_titulo" />
+    </Key>
+    <Property Name="idt_usuario_titulo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ta_usuario_titulocol" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+    <Property Name="fk_usuario" Type="int" Nullable="false" />
+    <Property Name="fk_titulo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_equipe">
+    <Key>
+      <PropertyRef Name="idt_equipe" />
+    </Key>
+    <Property Name="idt_equipe" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_equipe" Type="varchar" Nullable="false" MaxLength="50" Collation="utf8_general_ci" />
+    <Property Name="dsc_equipe" Type="varchar" Nullable="false" MaxLength="200" Collation="utf8_general_ci" />
+  </EntityType>
+  <EntityType Name="tb_marco">
+    <Key>
+      <PropertyRef Name="idt_marco" />
+    </Key>
+    <Property Name="idt_marco" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_marco" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+    <Property Name="dsc_marco" Type="varchar" Nullable="false" MaxLength="200" Collation="utf8_general_ci" />
+    <Property Name="dln_marco" Type="date" Nullable="false" />
+    <Property Name="fk_projeto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_mensagem">
+    <Key>
+      <PropertyRef Name="idt_mensagem" />
+      <PropertyRef Name="fk_equipe" />
+    </Key>
+    <Property Name="idt_mensagem" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="txt_mensagem" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+    <Property Name="fk_equipe" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_projeto">
+    <Key>
+      <PropertyRef Name="idt_projeto" />
+    </Key>
+    <Property Name="idt_projeto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_projeto" Type="varchar" Nullable="false" MaxLength="80" Collation="utf8_general_ci" />
+    <Property Name="dsc_projeto" Type="varchar" Nullable="false" MaxLength="200" Collation="utf8_general_ci" />
+    <Property Name="dta_inicio" Type="date" Nullable="false" />
+    <Property Name="dta_termino" Type="date" Nullable="false" />
+    <Property Name="fk_equipe" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_sprint">
+    <Key>
+      <PropertyRef Name="idt_sprint" />
+    </Key>
+    <Property Name="idt_sprint" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="vlr_iteracao_sprint" Type="int" Nullable="false" />
+    <Property Name="dta_inicio" Type="date" Nullable="false" />
+    <Property Name="dta_termino" Type="date" Nullable="false" />
+    <Property Name="fk_projeto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_tarefa">
+    <Key>
+      <PropertyRef Name="idt_tarefa" />
+    </Key>
+    <Property Name="idt_tarefa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_tarefa" Type="varchar" Nullable="false" MaxLength="80" Collation="utf8_general_ci" />
+    <Property Name="dsc_tarefa" Type="varchar" Nullable="false" MaxLength="200" Collation="utf8_general_ci" />
+    <Property Name="fk_dificuldade" Type="int" Nullable="false" />
+    <Property Name="fk_sprint" Type="int" Nullable="false" />
+    <Property Name="fk_usuario" Type="int" Nullable="false" />
+    <Property Name="dta_inicio" Type="date" Nullable="false" />
+    <Property Name="dta_fim" Type="date" Nullable="false" />
+    <Property Name="fk_prioridade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_usuario">
+    <Key>
+      <PropertyRef Name="idt_usuario" />
+    </Key>
+    <Property Name="idt_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_usuario" Type="varchar" Nullable="false" MaxLength="80" Collation="utf8_general_ci" />
+    <Property Name="tel_usuario" Type="varchar" MaxLength="16" Collation="utf8_general_ci" />
+    <Property Name="lgn_usuario" Type="varchar" Nullable="false" MaxLength="20" Collation="utf8_general_ci" />
+    <Property Name="pwd_usuario" Type="varchar" Nullable="false" MaxLength="50" Collation="utf8_general_ci" />
+    <Property Name="exp_usuario" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+    <Property Name="fk_nivel" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tt_conquista">
+    <Key>
+      <PropertyRef Name="idt_conquista" />
+    </Key>
+    <Property Name="idt_conquista" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_conquista" Type="varchar" Nullable="false" MaxLength="80" Collation="utf8_general_ci" />
+    <Property Name="dsc_conquista" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+  </EntityType>
+  <EntityType Name="tt_dificuldade">
+    <Key>
+      <PropertyRef Name="idt_dificuldade" />
+    </Key>
+    <Property Name="idt_dificuldade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_dificuldade" Type="varchar" Nullable="false" MaxLength="80" Collation="utf8_general_ci" />
+    <Property Name="dsc_dificuldade" Type="varchar" Nullable="false" MaxLength="100" Collation="utf8_general_ci" />
+  </EntityType>
+  <EntityType Name="tt_nivel">
+    <Key>
+      <PropertyRef Name="idt_nivel" />
+    </Key>
+    <Property Name="idt_nivel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="des_nivel" Type="int" Nullable="false" />
+    <Property Name="vlr_exp_max" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tt_prioridade">
+    <Key>
+      <PropertyRef Name="idt_prioridade" />
+    </Key>
+    <Property Name="idt_prioridade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="des_prioridade" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+  </EntityType>
+  <EntityType Name="tt_titulo">
+    <Key>
+      <PropertyRef Name="idt_titulo" />
+    </Key>
+    <Property Name="idt_titulo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nme_titulo" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+    <Property Name="dsc_titulo" Type="varchar" Nullable="false" MaxLength="45" Collation="utf8_general_ci" />
+  </EntityType>
+  <Association Name="fk_ta_usuario_conquista_tb_usuario1">
+    <End Role="tb_usuario" Type="bdupteamModel.Store.tb_usuario" Multiplicity="1" />
+    <End Role="ta_usuario_conquista" Type="bdupteamModel.Store.ta_usuario_conquista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="idt_usuario" />
+      </Principal>
+      <Dependent Role="ta_usuario_conquista">
+        <PropertyRef Name="fk_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ta_usuario_conquista_tt_conquista1">
+    <End Role="tt_conquista" Type="bdupteamModel.Store.tt_conquista" Multiplicity="1" />
+    <End Role="ta_usuario_conquista" Type="bdupteamModel.Store.ta_usuario_conquista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tt_conquista">
+        <PropertyRef Name="idt_conquista" />
+      </Principal>
+      <Dependent Role="ta_usuario_conquista">
+        <PropertyRef Name="fk_conquista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ta_usuario_equipe_tb_equipe1">
+    <End Role="tb_equipe" Type="bdupteamModel.Store.tb_equipe" Multiplicity="1" />
+    <End Role="ta_usuario_equipe" Type="bdupteamModel.Store.ta_usuario_equipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_equipe">
+        <PropertyRef Name="idt_equipe" />
+      </Principal>
+      <Dependent Role="ta_usuario_equipe">
+        <PropertyRef Name="fk_equipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ta_usuario_equipe_tb_usuario">
+    <End Role="tb_usuario" Type="bdupteamModel.Store.tb_usuario" Multiplicity="1" />
+    <End Role="ta_usuario_equipe" Type="bdupteamModel.Store.ta_usuario_equipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="idt_usuario" />
+      </Principal>
+      <Dependent Role="ta_usuario_equipe">
+        <PropertyRef Name="fk_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ta_usuario_titulo_tb_usuario1">
+    <End Role="tb_usuario" Type="bdupteamModel.Store.tb_usuario" Multiplicity="1" />
+    <End Role="ta_usuario_titulo" Type="bdupteamModel.Store.ta_usuario_titulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="idt_usuario" />
+      </Principal>
+      <Dependent Role="ta_usuario_titulo">
+        <PropertyRef Name="fk_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ta_usuario_titulo_tt_titulo1">
+    <End Role="tt_titulo" Type="bdupteamModel.Store.tt_titulo" Multiplicity="1" />
+    <End Role="ta_usuario_titulo" Type="bdupteamModel.Store.ta_usuario_titulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tt_titulo">
+        <PropertyRef Name="idt_titulo" />
+      </Principal>
+      <Dependent Role="ta_usuario_titulo">
+        <PropertyRef Name="fk_titulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_marco_tb_projeto1">
+    <End Role="tb_projeto" Type="bdupteamModel.Store.tb_projeto" Multiplicity="1" />
+    <End Role="tb_marco" Type="bdupteamModel.Store.tb_marco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_projeto">
+        <PropertyRef Name="idt_projeto" />
+      </Principal>
+      <Dependent Role="tb_marco">
+        <PropertyRef Name="fk_projeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_mensagem_tb_equipe1">
+    <End Role="tb_equipe" Type="bdupteamModel.Store.tb_equipe" Multiplicity="1" />
+    <End Role="tb_mensagem" Type="bdupteamModel.Store.tb_mensagem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_equipe">
+        <PropertyRef Name="idt_equipe" />
+      </Principal>
+      <Dependent Role="tb_mensagem">
+        <PropertyRef Name="fk_equipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_projeto_tb_equipe1">
+    <End Role="tb_equipe" Type="bdupteamModel.Store.tb_equipe" Multiplicity="1" />
+    <End Role="tb_projeto" Type="bdupteamModel.Store.tb_projeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_equipe">
+        <PropertyRef Name="idt_equipe" />
+      </Principal>
+      <Dependent Role="tb_projeto">
+        <PropertyRef Name="fk_equipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_sprint_tb_projeto1">
+    <End Role="tb_projeto" Type="bdupteamModel.Store.tb_projeto" Multiplicity="1" />
+    <End Role="tb_sprint" Type="bdupteamModel.Store.tb_sprint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_projeto">
+        <PropertyRef Name="idt_projeto" />
+      </Principal>
+      <Dependent Role="tb_sprint">
+        <PropertyRef Name="fk_projeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_tarefa_tb_sprint1">
+    <End Role="tb_sprint" Type="bdupteamModel.Store.tb_sprint" Multiplicity="1" />
+    <End Role="tb_tarefa" Type="bdupteamModel.Store.tb_tarefa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_sprint">
+        <PropertyRef Name="idt_sprint" />
+      </Principal>
+      <Dependent Role="tb_tarefa">
+        <PropertyRef Name="fk_sprint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_tarefa_tb_usuario1">
+    <End Role="tb_usuario" Type="bdupteamModel.Store.tb_usuario" Multiplicity="1" />
+    <End Role="tb_tarefa" Type="bdupteamModel.Store.tb_tarefa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="idt_usuario" />
+      </Principal>
+      <Dependent Role="tb_tarefa">
+        <PropertyRef Name="fk_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_tarefa_tt_dificuldade1">
+    <End Role="tt_dificuldade" Type="bdupteamModel.Store.tt_dificuldade" Multiplicity="1" />
+    <End Role="tb_tarefa" Type="bdupteamModel.Store.tb_tarefa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tt_dificuldade">
+        <PropertyRef Name="idt_dificuldade" />
+      </Principal>
+      <Dependent Role="tb_tarefa">
+        <PropertyRef Name="fk_dificuldade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_tarefa_tt_prioridade1">
+    <End Role="tt_prioridade" Type="bdupteamModel.Store.tt_prioridade" Multiplicity="1" />
+    <End Role="tb_tarefa" Type="bdupteamModel.Store.tb_tarefa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tt_prioridade">
+        <PropertyRef Name="idt_prioridade" />
+      </Principal>
+      <Dependent Role="tb_tarefa">
+        <PropertyRef Name="fk_prioridade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_usuario_tt_nivel1">
+    <End Role="tt_nivel" Type="bdupteamModel.Store.tt_nivel" Multiplicity="1" />
+    <End Role="tb_usuario" Type="bdupteamModel.Store.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tt_nivel">
+        <PropertyRef Name="idt_nivel" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="fk_nivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

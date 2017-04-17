@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdupteamEntitiesStoreContainer" CdmEntityContainer="bdupteamEntities">
+    <EntitySetMapping Name="tausuarioconquistas">
+      <EntityTypeMapping TypeName="bdupteamModel.tausuarioconquista">
+        <MappingFragment StoreEntitySet="ta_usuario_conquistas">
+          <ScalarProperty Name="IdtUsuarioConquista" ColumnName="idt_usuario_conquista" />
+          <ScalarProperty Name="DtaConquista" ColumnName="dta_conquista" />
+          <ScalarProperty Name="FkUsuario" ColumnName="fk_usuario" />
+          <ScalarProperty Name="FkConquista" ColumnName="fk_conquista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tausuarioequipes">
+      <EntityTypeMapping TypeName="bdupteamModel.tausuarioequipe">
+        <MappingFragment StoreEntitySet="ta_usuario_equipes">
+          <ScalarProperty Name="IdtUsuarioEquipe" ColumnName="idt_usuario_equipe" />
+          <ScalarProperty Name="FkUsuario" ColumnName="fk_usuario" />
+          <ScalarProperty Name="FkEquipe" ColumnName="fk_equipe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tausuariotitulos">
+      <EntityTypeMapping TypeName="bdupteamModel.tausuariotitulo">
+        <MappingFragment StoreEntitySet="ta_usuario_titulos">
+          <ScalarProperty Name="IdtUsuarioTitulo" ColumnName="idt_usuario_titulo" />
+          <ScalarProperty Name="TaUsuarioTitulocol" ColumnName="ta_usuario_titulocol" />
+          <ScalarProperty Name="FkUsuario" ColumnName="fk_usuario" />
+          <ScalarProperty Name="FkTitulo" ColumnName="fk_titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbequipes">
+      <EntityTypeMapping TypeName="bdupteamModel.tbequipe">
+        <MappingFragment StoreEntitySet="tb_equipes">
+          <ScalarProperty Name="IdtEquipe" ColumnName="idt_equipe" />
+          <ScalarProperty Name="NmeEquipe" ColumnName="nme_equipe" />
+          <ScalarProperty Name="DscEquipe" ColumnName="dsc_equipe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbmarcos">
+      <EntityTypeMapping TypeName="bdupteamModel.tbmarco">
+        <MappingFragment StoreEntitySet="tb_marcos">
+          <ScalarProperty Name="IdtMarco" ColumnName="idt_marco" />
+          <ScalarProperty Name="NmeMarco" ColumnName="nme_marco" />
+          <ScalarProperty Name="DscMarco" ColumnName="dsc_marco" />
+          <ScalarProperty Name="DlnMarco" ColumnName="dln_marco" />
+          <ScalarProperty Name="FkProjeto" ColumnName="fk_projeto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbmensagems">
+      <EntityTypeMapping TypeName="bdupteamModel.tbmensagem">
+        <MappingFragment StoreEntitySet="tb_mensagems">
+          <ScalarProperty Name="IdtMensagem" ColumnName="idt_mensagem" />
+          <ScalarProperty Name="TxtMensagem" ColumnName="txt_mensagem" />
+          <ScalarProperty Name="FkEquipe" ColumnName="fk_equipe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbprojetos">
+      <EntityTypeMapping TypeName="bdupteamModel.tbprojeto">
+        <MappingFragment StoreEntitySet="tb_projetos">
+          <ScalarProperty Name="IdtProjeto" ColumnName="idt_projeto" />
+          <ScalarProperty Name="NmeProjeto" ColumnName="nme_projeto" />
+          <ScalarProperty Name="DscProjeto" ColumnName="dsc_projeto" />
+          <ScalarProperty Name="DtaInicio" ColumnName="dta_inicio" />
+          <ScalarProperty Name="DtaTermino" ColumnName="dta_termino" />
+          <ScalarProperty Name="FkEquipe" ColumnName="fk_equipe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbsprints">
+      <EntityTypeMapping TypeName="bdupteamModel.tbsprint">
+        <MappingFragment StoreEntitySet="tb_sprints">
+          <ScalarProperty Name="IdtSprint" ColumnName="idt_sprint" />
+          <ScalarProperty Name="VlrIteracaoSprint" ColumnName="vlr_iteracao_sprint" />
+          <ScalarProperty Name="DtaInicio" ColumnName="dta_inicio" />
+          <ScalarProperty Name="DtaTermino" ColumnName="dta_termino" />
+          <ScalarProperty Name="FkProjeto" ColumnName="fk_projeto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbtarefas">
+      <EntityTypeMapping TypeName="bdupteamModel.tbtarefa">
+        <MappingFragment StoreEntitySet="tb_tarefas">
+          <ScalarProperty Name="IdtTarefa" ColumnName="idt_tarefa" />
+          <ScalarProperty Name="NmeTarefa" ColumnName="nme_tarefa" />
+          <ScalarProperty Name="DscTarefa" ColumnName="dsc_tarefa" />
+          <ScalarProperty Name="FkDificuldade" ColumnName="fk_dificuldade" />
+          <ScalarProperty Name="FkSprint" ColumnName="fk_sprint" />
+          <ScalarProperty Name="FkUsuario" ColumnName="fk_usuario" />
+          <ScalarProperty Name="DtaInicio" ColumnName="dta_inicio" />
+          <ScalarProperty Name="DtaFim" ColumnName="dta_fim" />
+          <ScalarProperty Name="FkPrioridade" ColumnName="fk_prioridade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbusuarios">
+      <EntityTypeMapping TypeName="bdupteamModel.tbusuario">
+        <MappingFragment StoreEntitySet="tb_usuarios">
+          <ScalarProperty Name="IdtUsuario" ColumnName="idt_usuario" />
+          <ScalarProperty Name="NmeUsuario" ColumnName="nme_usuario" />
+          <ScalarProperty Name="TelUsuario" ColumnName="tel_usuario" />
+          <ScalarProperty Name="LgnUsuario" ColumnName="lgn_usuario" />
+          <ScalarProperty Name="PwdUsuario" ColumnName="pwd_usuario" />
+          <ScalarProperty Name="ExpUsuario" ColumnName="exp_usuario" />
+          <ScalarProperty Name="FkNivel" ColumnName="fk_nivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ttconquistas">
+      <EntityTypeMapping TypeName="bdupteamModel.ttconquista">
+        <MappingFragment StoreEntitySet="tt_conquistas">
+          <ScalarProperty Name="IdtConquista" ColumnName="idt_conquista" />
+          <ScalarProperty Name="NmeConquista" ColumnName="nme_conquista" />
+          <ScalarProperty Name="DscConquista" ColumnName="dsc_conquista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ttdificuldades">
+      <EntityTypeMapping TypeName="bdupteamModel.ttdificuldade">
+        <MappingFragment StoreEntitySet="tt_dificuldades">
+          <ScalarProperty Name="IdtDificuldade" ColumnName="idt_dificuldade" />
+          <ScalarProperty Name="NmeDificuldade" ColumnName="nme_dificuldade" />
+          <ScalarProperty Name="DscDificuldade" ColumnName="dsc_dificuldade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ttnivels">
+      <EntityTypeMapping TypeName="bdupteamModel.ttnivel">
+        <MappingFragment StoreEntitySet="tt_nivels">
+          <ScalarProperty Name="IdtNivel" ColumnName="idt_nivel" />
+          <ScalarProperty Name="DesNivel" ColumnName="des_nivel" />
+          <ScalarProperty Name="VlrExpMax" ColumnName="vlr_exp_max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ttprioridades">
+      <EntityTypeMapping TypeName="bdupteamModel.ttprioridade">
+        <MappingFragment StoreEntitySet="tt_prioridades">
+          <ScalarProperty Name="IdtPrioridade" ColumnName="idt_prioridade" />
+          <ScalarProperty Name="DesPrioridade" ColumnName="des_prioridade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tttitulos">
+      <EntityTypeMapping TypeName="bdupteamModel.tttitulo">
+        <MappingFragment StoreEntitySet="tt_titulos">
+          <ScalarProperty Name="IdtTitulo" ColumnName="idt_titulo" />
+          <ScalarProperty Name="NmeTitulo" ColumnName="nme_titulo" />
+          <ScalarProperty Name="DscTitulo" ColumnName="dsc_titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
