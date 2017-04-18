@@ -1,4 +1,0 @@
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.CrossCutting\obj\Debug\UpTeam.Infra.CrossCutting.csprojResolveAssemblyReference.cache
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.CrossCutting\obj\Debug\UpTeam.Infra.CrossCutting.Resources.Errors.resources
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.CrossCutting\obj\Debug\UpTeam.Infra.CrossCutting.Resources.Errors.pt-BR.resources
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.CrossCutting\obj\Debug\UpTeam.Infra.CrossCutting.csproj.GenerateResource.Cache

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E675048B-2DDB-4015-8D22-CD3D8079FA0C}</ProjectGuid>
+    <ProjectGuid>{39FF3486-E8C9-43B7-A8DB-FA9DC3958935}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UpTeam.Domain</RootNamespace>
-    <AssemblyName>UpTeam.Domain</AssemblyName>
+    <RootNamespace>UPTEAM.Domain</RootNamespace>
+    <AssemblyName>UPTEAM.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,19 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Entities\Conquista.cs" />
-    <Compile Include="Entities\Dificuldade.cs" />
-    <Compile Include="Entities\Equipe.cs" />
-    <Compile Include="Entities\Marco.cs" />
-    <Compile Include="Entities\Nivel.cs" />
-    <Compile Include="Entities\Prioridade.cs" />
-    <Compile Include="Entities\Projeto.cs" />
-    <Compile Include="Entities\Sprint.cs" />
-    <Compile Include="Entities\Tarefa.cs" />
-    <Compile Include="Entities\Titulo.cs" />
-    <Compile Include="Entities\Usuario.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IRepositoryUsuario.cs" />
+    <Compile Include="Entities\ta_usuario_conquista.cs" />
+    <Compile Include="Entities\ta_usuario_equipe.cs" />
+    <Compile Include="Entities\ta_usuario_titulo.cs" />
+    <Compile Include="Entities\tb_equipe.cs" />
+    <Compile Include="Entities\tb_marco.cs" />
+    <Compile Include="Entities\tb_mensagem.cs" />
+    <Compile Include="Entities\tb_projeto.cs" />
+    <Compile Include="Entities\tb_sprint.cs" />
+    <Compile Include="Entities\tb_tarefa.cs" />
+    <Compile Include="Entities\tb_usuario.cs" />
+    <Compile Include="Entities\tt_conquista.cs" />
+    <Compile Include="Entities\tt_dificuldade.cs" />
+    <Compile Include="Entities\tt_nivel.cs" />
+    <Compile Include="Entities\tt_prioridade.cs" />
+    <Compile Include="Entities\tt_titulo.cs" />
+    <Compile Include="Interfaces\IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

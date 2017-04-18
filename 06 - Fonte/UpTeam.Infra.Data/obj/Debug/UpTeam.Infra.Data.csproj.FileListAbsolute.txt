@@ -1,4 +1,1 @@
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.Data\obj\Debug\UpTeamDB.ssdl
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.Data\obj\Debug\UpTeamDB.csdl
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.Data\obj\Debug\UpTeamDB.msl
-C:\Users\vinicius.campos\UpTeam\06 - Fonte\UpTeam.Infra.Data\obj\Debug\UpTeam.Infra.Data.csprojResolveAssemblyReference.cache
+C:\Users\prate\documents\visual studio 2017\Projects\UPTEAM\UPTEAM.Infra.Data\obj\Debug\UPTEAM.Infra.Data.csprojResolveAssemblyReference.cache
