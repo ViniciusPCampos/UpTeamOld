@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UPTEAM.Domain.Interfaces
 {
-    interface IRepositoryBase<TEntity> where TEntity : class
+    public interface IRepositoryBase<TEntity> where TEntity : class
     {
         void Add(TEntity obj);
         TEntity GetById(int id);
