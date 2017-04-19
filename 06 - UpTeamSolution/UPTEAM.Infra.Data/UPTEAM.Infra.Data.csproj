@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\UpTeamContext.cs" />
+    <Compile Include="EntityConfig\EquipeMapping.cs" />
+    <Compile Include="EntityConfig\MarcoMapping.cs" />
     <Compile Include="EntityConfig\UsuarioConquistaMapping.cs" />
+    <Compile Include="EntityConfig\UsuarioEquipeMapping.cs" />
+    <Compile Include="EntityConfig\UsuarioTituloMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UPTEAM.Infra.Data.Context;
+﻿using System.Data.Entity.ModelConfiguration;
+using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Infra.Data.EntityConfig
 {
