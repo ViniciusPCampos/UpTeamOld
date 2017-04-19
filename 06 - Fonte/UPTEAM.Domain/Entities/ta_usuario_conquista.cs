@@ -1,18 +1,11 @@
-namespace UPTEAM.Infra.Data.Context
+namespace UPTEAM.Domain.Entities
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    public partial class ta_usuario_conquista
+    public class ta_usuario_conquista
     {
-        //[Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int idt_usuario_conquista { get; set; }
-
-        //[Column(TypeName = "date")]
+        
         public DateTime dta_conquista { get; set; }
 
         public int fk_usuario { get; set; }
