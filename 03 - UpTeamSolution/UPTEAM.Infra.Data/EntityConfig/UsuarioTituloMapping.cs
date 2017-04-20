@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using UPTEAM.Infra.Data.Context;
+using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Infra.Data.EntityConfig
 {
@@ -8,7 +8,7 @@ namespace UPTEAM.Infra.Data.EntityConfig
         public UsuarioTituloMapping()
         {
             HasKey(x => x.idt_usuario_titulo);
-            
+
         }
     }
 }

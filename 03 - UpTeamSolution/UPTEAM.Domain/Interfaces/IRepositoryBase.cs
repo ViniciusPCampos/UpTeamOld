@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace UPTEAM.Domain.Interfaces
 {
-    public interface IRepositoryBase<TEntity> where TEntity : class
+    public interface IRepositoryBase<TEntity> : IDisposable where TEntity : class
     {
         void Add(TEntity obj);
         TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
         void Update(TEntity obj);
         void Remove(TEntity obj);
-        void Dispose();
+        new void Dispose();
     }
 }

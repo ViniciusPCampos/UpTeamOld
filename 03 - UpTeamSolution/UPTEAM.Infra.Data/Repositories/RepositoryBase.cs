@@ -17,7 +17,7 @@ namespace UPTEAM.Infra.Data.Repositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Db.Dispose();
         }
 
         public IEnumerable<TEntity> GetAll()
