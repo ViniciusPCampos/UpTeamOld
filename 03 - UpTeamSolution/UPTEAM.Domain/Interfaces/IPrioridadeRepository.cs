@@ -2,7 +2,7 @@
 
 namespace UPTEAM.Domain.Interfaces
 {
-    interface IPrioridadeRepository : IRepositoryBase<tt_prioridade>
+    public interface IPrioridadeRepository : IRepositoryBase<tt_prioridade>
     {
     }
 }

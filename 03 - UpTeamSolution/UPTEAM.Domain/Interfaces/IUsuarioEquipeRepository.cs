@@ -2,7 +2,7 @@
 
 namespace UPTEAM.Domain.Interfaces
 {
-    interface IUsuarioEquipeRepository : IRepositoryBase<ta_usuario_equipe>
+    public interface IUsuarioEquipeRepository : IRepositoryBase<ta_usuario_equipe>
     {
     }
 }

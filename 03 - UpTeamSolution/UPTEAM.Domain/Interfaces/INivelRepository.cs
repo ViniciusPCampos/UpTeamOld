@@ -2,7 +2,7 @@
 
 namespace UPTEAM.Domain.Interfaces
 {
-    interface INivelRepository : IRepositoryBase<tt_nivel>
+    public interface INivelRepository : IRepositoryBase<tt_nivel>
     {
     }
 }
