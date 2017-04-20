@@ -56,7 +56,21 @@
     <Compile Include="EntityConfig\UsuarioEquipeMapping.cs" />
     <Compile Include="EntityConfig\UsuarioTituloMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ConquistaRepository.cs" />
+    <Compile Include="Repositories\DificuldadeRepository.cs" />
+    <Compile Include="Repositories\EquipeRepository.cs" />
+    <Compile Include="Repositories\MarcoRepository.cs" />
+    <Compile Include="Repositories\MensagemRepository.cs" />
+    <Compile Include="Repositories\NivelRepository.cs" />
+    <Compile Include="Repositories\PrioridadeRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\SprintRepository.cs" />
+    <Compile Include="Repositories\TarefaRepository.cs" />
+    <Compile Include="Repositories\TituloRepository.cs" />
+    <Compile Include="Repositories\UsuarioConquistaRepository.cs" />
+    <Compile Include="Repositories\UsuarioEquipeRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
+    <Compile Include="Repositories\UsuarioTituloRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

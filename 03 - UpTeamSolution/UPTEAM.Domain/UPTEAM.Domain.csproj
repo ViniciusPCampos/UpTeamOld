@@ -45,7 +45,21 @@
     <Compile Include="Entities\tt_nivel.cs" />
     <Compile Include="Entities\tt_prioridade.cs" />
     <Compile Include="Entities\tt_titulo.cs" />
+    <Compile Include="Interfaces\IConquistaRepository.cs" />
+    <Compile Include="Interfaces\IDificuldadeRepository.cs" />
+    <Compile Include="Interfaces\IEquipeRepository.cs" />
+    <Compile Include="Interfaces\IMarcoRepository.cs" />
+    <Compile Include="Interfaces\IMensagemRepository.cs" />
+    <Compile Include="Interfaces\INivelRepository.cs" />
+    <Compile Include="Interfaces\IPrioridadeRepository.cs" />
     <Compile Include="Interfaces\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\ISprintRepository.cs" />
+    <Compile Include="Interfaces\ITarefaRepository.cs" />
+    <Compile Include="Interfaces\ITituloRepository.cs" />
+    <Compile Include="Interfaces\IUsuarioConquistaRepository.cs" />
+    <Compile Include="Interfaces\IUsuarioEquipeRepository.cs" />
+    <Compile Include="Interfaces\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\IUsuarioTituloRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
