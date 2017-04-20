@@ -3,6 +3,7 @@ namespace UPTEAM.Domain.Entities
     public class ta_usuario_equipe
     {
         public int idt_usuario_equipe { get; set; }
+
         public int fk_usuario { get; set; }
 
         public int fk_equipe { get; set; }

@@ -68,9 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\UpTeamContext.cs" />
+    <Compile Include="EntityConfig\ConquistaMapping.cs" />
+    <Compile Include="EntityConfig\DificuldadeMapping.cs" />
     <Compile Include="EntityConfig\EquipeMapping.cs" />
     <Compile Include="EntityConfig\MarcoMapping.cs" />
     <Compile Include="EntityConfig\MensagemMapping.cs" />
+    <Compile Include="EntityConfig\NivelMapping.cs" />
+    <Compile Include="EntityConfig\PrioridadeMapping.cs" />
     <Compile Include="EntityConfig\ProjetoMapping.cs" />
     <Compile Include="EntityConfig\SprintMapping.cs" />
     <Compile Include="EntityConfig\TarefaMapping.cs" />
@@ -94,6 +98,7 @@
     <Compile Include="Repositories\UsuarioEquipeRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Repositories\UsuarioTituloRepository.cs" />
+    <Compile Include="TituloMapping.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
