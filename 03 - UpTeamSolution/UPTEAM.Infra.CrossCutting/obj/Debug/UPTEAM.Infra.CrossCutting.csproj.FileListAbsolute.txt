@@ -1,0 +1,5 @@
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting\bin\Debug\UPTEAM.Infra.CrossCutting.dll
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting\bin\Debug\UPTEAM.Infra.CrossCutting.pdb
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting\obj\Debug\UPTEAM.Infra.CrossCutting.csprojResolveAssemblyReference.cache
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting\obj\Debug\UPTEAM.Infra.CrossCutting.dll
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting\obj\Debug\UPTEAM.Infra.CrossCutting.pdb

@@ -98,7 +98,7 @@
     <Compile Include="Repositories\UsuarioEquipeRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Repositories\UsuarioTituloRepository.cs" />
-    <Compile Include="TituloMapping.cs" />
+    <Compile Include="EntityConfig\TituloMapping.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
