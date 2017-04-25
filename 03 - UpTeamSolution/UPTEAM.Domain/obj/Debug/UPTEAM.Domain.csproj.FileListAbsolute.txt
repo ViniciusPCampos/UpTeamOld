@@ -1,1 +1,6 @@
 C:\Users\prate\documents\visual studio 2017\Projects\UPTEAM\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.csprojResolveAssemblyReference.cache
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTEAM.Domain.dll
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTEAM.Domain.pdb
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.csprojResolveAssemblyReference.cache
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.dll
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.pdb
