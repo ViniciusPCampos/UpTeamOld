@@ -1,0 +1,7 @@
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.ApplicationServices\bin\Debug\UPTEAM.ApplicationServices.dll
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.ApplicationServices\bin\Debug\UPTEAM.ApplicationServices.pdb
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.ApplicationServices\bin\Debug\UPTEAM.Domain.dll
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.ApplicationServices\bin\Debug\UPTEAM.Domain.pdb
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.ApplicationServices\obj\Debug\UPTEAM.ApplicationServices.csprojResolveAssemblyReference.cache
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.ApplicationServices\obj\Debug\UPTEAM.ApplicationServices.dll
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.ApplicationServices\obj\Debug\UPTEAM.ApplicationServices.pdb
