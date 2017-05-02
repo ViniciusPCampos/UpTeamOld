@@ -1,4 +1,3 @@
-C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\obj\Debug\UPTEAM.Infra.CrossCutting.Identity.csprojResolveAssemblyReference.cache
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\UPTEAM.Infra.CrossCutting.Identity.dll.config
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\UPTEAM.Infra.CrossCutting.Identity.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\UPTEAM.Infra.CrossCutting.Identity.pdb
@@ -10,10 +9,8 @@ C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Id
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.IdentityModel.Logging.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.IdentityModel.Tokens.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.dll
-C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.Security.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.Security.OAuth.dll
-C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Newtonsoft.Json.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Owin.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\System.Web.Mvc.dll
@@ -28,12 +25,11 @@ C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Id
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.IdentityModel.Logging.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.Security.xml
-C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Owin.Security.OAuth.xml
-C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Newtonsoft.Json.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\System.Web.Mvc.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Twilio.xml
@@ -42,5 +38,6 @@ C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Id
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\System.Web.WebPages.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\Microsoft.Web.Infrastructure.xml
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\obj\Debug\UPTEAM.Infra.CrossCutting.Identity.csprojResolveAssemblyReference.cache
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\obj\Debug\UPTEAM.Infra.CrossCutting.Identity.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Infra.CrossCutting.Identity\obj\Debug\UPTEAM.Infra.CrossCutting.Identity.pdb
