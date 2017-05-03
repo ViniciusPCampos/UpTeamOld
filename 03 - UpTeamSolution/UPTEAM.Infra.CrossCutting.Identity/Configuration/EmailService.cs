@@ -14,8 +14,6 @@ namespace UPTEAM.Infra.CrossCutting.Identity.Configuration
         public Task SendAsync(IdentityMessage message)
         {
             // Habilitar o envio de e-mail
-            if (false)
-            {
                 var text = HttpUtility.HtmlEncode(message.Body);
 
                 var msg = new MailMessage {From = new MailAddress("admin@portal.com.br", "Admin do Portal")};
@@ -25,7 +23,7 @@ namespace UPTEAM.Infra.CrossCutting.Identity.Configuration
                 msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
                 msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Html));
 
-                var smtpClient = new SmtpClient("smtp.provedor.com", Convert.ToInt32(587));
+                var smtpClient = new SmtpClient("smtp-mail.outlook.com", Convert.ToInt32(587));
 
                 var credentials = new NetworkCredential(WebConfigurationManager.AppSettings["ContaDeEmail"],
                     WebConfigurationManager.AppSettings["SenhaEmail"]);
@@ -33,7 +31,6 @@ namespace UPTEAM.Infra.CrossCutting.Identity.Configuration
                 smtpClient.Credentials = credentials;
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(msg);
-            }
 
             return Task.FromResult(0);
         }

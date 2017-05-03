@@ -14,6 +14,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Data", "3.1 - Data", "{A3D7CFDC-9537-4F03-9E7E-117505FBC733}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 - CrossCutting", "3.2 - CrossCutting", "{5E1E65C6-E847-4F09-AA2E-81F1BA3FBC88}"
+	ProjectSection(SolutionItems) = preProject
+		UPTEAM.Presentation.Web\AutoMapper\DomainToViewModelMappingProfile.cs = UPTEAM.Presentation.Web\AutoMapper\DomainToViewModelMappingProfile.cs
+		UPTEAM.Presentation.Web\AutoMapper\ViewModelToDomainMappingProfile.cs = UPTEAM.Presentation.Web\AutoMapper\ViewModelToDomainMappingProfile.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPTEAM.Infra.Data", "UPTEAM.Infra.Data\UPTEAM.Infra.Data.csproj", "{C012F0B1-7E9A-4F29-A848-F0D59EDB4458}"
 EndProject
