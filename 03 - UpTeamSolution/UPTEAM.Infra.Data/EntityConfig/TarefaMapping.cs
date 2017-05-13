@@ -3,7 +3,7 @@ using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Infra.Data.EntityConfig
 {
-    class TarefaMapping : EntityTypeConfiguration<tb_tarefa>
+    public class TarefaMapping : EntityTypeConfiguration<tb_tarefa>
     {
         public TarefaMapping()
         {

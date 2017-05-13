@@ -2,7 +2,7 @@ namespace UPTEAM.Domain.Entities
 {
     using System.Collections.Generic;
 
-    public partial class tt_titulo
+    public class tt_titulo
     {
         public tt_titulo()
         {

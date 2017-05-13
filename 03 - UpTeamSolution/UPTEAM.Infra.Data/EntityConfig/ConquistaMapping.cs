@@ -15,7 +15,7 @@ namespace UPTEAM.Infra.Data.EntityConfig
 
             Property(x => x.dsc_conquista)
                 .IsRequired()
-                .HasMaxLength(45);
+                .HasMaxLength(200);
         }
     }
 }

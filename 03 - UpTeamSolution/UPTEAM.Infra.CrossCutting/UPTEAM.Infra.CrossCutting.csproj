@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,9 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\Criptography\CryptographyHelper.cs" />
-    <Compile Include="Helpers\Criptography\ICryptographyHelper.cs" />
+    <Compile Include="DependencyRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPTEAM.ApplicationServices\UPTEAM.ApplicationServices.csproj">
+      <Project>{DF762473-D383-4E10-846E-3CDAEF5B5C87}</Project>
+      <Name>UPTEAM.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPTEAM.Domain\UPTEAM.Domain.csproj">
+      <Project>{39FF3486-E8C9-43B7-A8DB-FA9DC3958935}</Project>
+      <Name>UPTEAM.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPTEAM.Infra.Data\UPTEAM.Infra.Data.csproj">
+      <Project>{C012F0B1-7E9A-4F29-A848-F0D59EDB4458}</Project>
+      <Name>UPTEAM.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

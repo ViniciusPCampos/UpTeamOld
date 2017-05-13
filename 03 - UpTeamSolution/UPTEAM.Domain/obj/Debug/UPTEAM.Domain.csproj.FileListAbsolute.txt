@@ -3,3 +3,12 @@ C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTE
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTEAM.Domain.pdb
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.dll
 C:\Users\vinicius.campos\UpTeam\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.pdb
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTEAM.Domain.dll
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTEAM.Domain.pdb
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.dll
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.pdb
+D:\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTEAM.Domain.dll
+D:\03 - UpTeamSolution\UPTEAM.Domain\bin\Debug\UPTEAM.Domain.pdb
+D:\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.dll
+D:\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.pdb
+D:\03 - UpTeamSolution\UPTEAM.Domain\obj\Debug\UPTEAM.Domain.csprojResolveAssemblyReference.cache

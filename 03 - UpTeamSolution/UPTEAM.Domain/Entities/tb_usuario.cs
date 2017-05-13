@@ -2,7 +2,7 @@ namespace UPTEAM.Domain.Entities
 {
     using System.Collections.Generic;
 
-    public partial class tb_usuario
+    public class tb_usuario
     {
         public tb_usuario()
         {
@@ -22,9 +22,10 @@ namespace UPTEAM.Domain.Entities
 
         public string pwd_usuario { get; set; }
 
-        public string exp_usuario { get; set; }
+        public long exp_usuario { get; set; }
+        public string email_usuario { get; set; }
 
-        public int fk_nivel { get; set; }
+        public int idt_nivel { get; set; }
 
         public virtual ICollection<ta_usuario_conquista> ta_usuario_conquista { get; set; }
 
@@ -33,7 +34,6 @@ namespace UPTEAM.Domain.Entities
         public virtual ICollection<ta_usuario_titulo> ta_usuario_titulo { get; set; }
 
         public virtual ICollection<tb_tarefa> tb_tarefa { get; set; }
-
         public virtual tt_nivel tt_nivel { get; set; }
     }
 }

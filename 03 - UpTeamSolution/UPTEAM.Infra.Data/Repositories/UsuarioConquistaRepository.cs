@@ -1,9 +1,9 @@
 ﻿using UPTEAM.Domain.Entities;
-using UPTEAM.Domain.Interfaces;
+using UPTEAM.Domain.RepositoryInterfaces;
 
 namespace UPTEAM.Infra.Data.Repositories
 {
-    class UsuarioConquistaRepository : RepositoryBase<ta_usuario_conquista>, IUsuarioConquistaRepository
+    public class UsuarioConquistaRepository : RepositoryBase<ta_usuario_conquista>, IUsuarioConquistaRepository
     {
     }
 }

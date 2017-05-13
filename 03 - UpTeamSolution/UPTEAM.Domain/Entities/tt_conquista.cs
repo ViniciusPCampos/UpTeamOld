@@ -2,7 +2,7 @@ namespace UPTEAM.Domain.Entities
 {
     using System.Collections.Generic;
 
-    public partial class tt_conquista
+    public class tt_conquista
     {
         public tt_conquista()
         {

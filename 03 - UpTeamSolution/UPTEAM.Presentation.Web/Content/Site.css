@@ -1,0 +1,21 @@
+﻿.validation_summary > ul {
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+.form-control{
+    border-radius: 4px;
+}
+.alert-danger {
+    color: #a94442 !important;
+    background-color: #f2dede !important;
+    border-color: #ebccd1 !important;
+}
+
+    .alert-danger hr {
+        border-top-color: #e4b9c0 !important;
+    }
+
+    .alert-danger .alert-link {
+        color: #843534 !important;
+    }

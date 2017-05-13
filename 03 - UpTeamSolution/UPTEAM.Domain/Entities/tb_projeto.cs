@@ -3,7 +3,7 @@ namespace UPTEAM.Domain.Entities
     using System;
     using System.Collections.Generic;
 
-    public partial class tb_projeto
+    public class tb_projeto
     {
         public tb_projeto()
         {
@@ -21,7 +21,7 @@ namespace UPTEAM.Domain.Entities
 
         public DateTime dta_termino { get; set; }
 
-        public int fk_equipe { get; set; }
+        public int cod_equipe { get; set; }
 
         public virtual tb_equipe tb_equipe { get; set; }
 

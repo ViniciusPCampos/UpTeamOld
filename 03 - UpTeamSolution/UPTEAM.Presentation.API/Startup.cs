@@ -1,39 +1,37 @@
 ﻿using Microsoft.Owin;
-using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
-using System.Web.Http;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using UPTEAM.Presentation.API.Security;
 
 namespace UPTEAM.Presentation.API
 {
     public class Startup
     {
+        private SimpleAuthorizationServerProvider _simpleAuthorizationServerProvider;
+        public Startup(SimpleAuthorizationServerProvider simpleAuthorizationServerProvider)
+        {
+            _simpleAuthorizationServerProvider = simpleAuthorizationServerProvider;
+        }
         public void Configuration(IAppBuilder app)
         {
-            HttpConfiguration config = new HttpConfiguration();
-
-            ConfigureOAuth(app);
-
-            WebApiConfig.Register(config);
-            app.UseCors(CorsOptions.AllowAll);
-            app.UseWebApi(config);
+            ConfigureAuth(app);
         }
-
-        private void ConfigureOAuth(IAppBuilder app)
+        public void ConfigureAuth(IAppBuilder app)
         {
-            OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
-            {
-                AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = new SimpleAuthorizationServerProvider()
-            };
-
-            app.UseOAuthAuthorizationServer(OAuthServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
 
+            // Ativar o método para gerar o OAuth Token
+            app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions()
+            {
+                TokenEndpointPath = new PathString("/Token"),
+                Provider = _simpleAuthorizationServerProvider,
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+                AllowInsecureHttp = true
+            });
         }
     }
 }

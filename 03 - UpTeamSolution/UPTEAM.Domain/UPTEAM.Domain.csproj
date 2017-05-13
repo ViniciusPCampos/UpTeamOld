@@ -42,29 +42,30 @@
     <Compile Include="Entities\tb_usuario.cs" />
     <Compile Include="Entities\tt_conquista.cs" />
     <Compile Include="Entities\tt_dificuldade.cs" />
+    <Compile Include="Entities\tt_estado_tarefa.cs" />
     <Compile Include="Entities\tt_nivel.cs" />
     <Compile Include="Entities\tt_prioridade.cs" />
+    <Compile Include="Entities\tt_tipo_tarefa.cs" />
     <Compile Include="Entities\tt_titulo.cs" />
-    <Compile Include="Interfaces\IConquistaRepository.cs" />
-    <Compile Include="Interfaces\IDificuldadeRepository.cs" />
-    <Compile Include="Interfaces\IEquipeRepository.cs" />
-    <Compile Include="Interfaces\IMarcoRepository.cs" />
-    <Compile Include="Interfaces\IMensagemRepository.cs" />
-    <Compile Include="Interfaces\INivelRepository.cs" />
-    <Compile Include="Interfaces\IPrioridadeRepository.cs" />
-    <Compile Include="Interfaces\IRepositoryBase.cs" />
-    <Compile Include="Interfaces\ISprintRepository.cs" />
-    <Compile Include="Interfaces\ITarefaRepository.cs" />
-    <Compile Include="Interfaces\ITituloRepository.cs" />
-    <Compile Include="Interfaces\IUsuarioConquistaRepository.cs" />
-    <Compile Include="Interfaces\IUsuarioEquipeRepository.cs" />
-    <Compile Include="Interfaces\IUsuarioRepository.cs" />
-    <Compile Include="Interfaces\IUsuarioTituloRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IConquistaRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IDificuldadeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IEquipeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMarcoRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMensagemRepository.cs" />
+    <Compile Include="RepositoryInterfaces\INivelRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IPrioridadeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IRepositoryBase.cs" />
+    <Compile Include="RepositoryInterfaces\ISprintRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITarefaRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITituloRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IUsuarioConquistaRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IUsuarioEquipeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IUsuarioRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IUsuarioTituloRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterfaces\IUsuarioService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>

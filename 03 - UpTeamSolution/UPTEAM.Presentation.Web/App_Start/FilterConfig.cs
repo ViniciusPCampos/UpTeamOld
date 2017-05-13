@@ -1,6 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Web;
+using System.Web.Mvc;
 
-namespace UPTEAM.Presentation.Web.App_Start
+namespace UPTEAM.Presentation.Web
 {
     public class FilterConfig
     {

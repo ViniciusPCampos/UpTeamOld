@@ -1,0 +1,4 @@
+D:\03 - UpTeamSolution\UPTEAM.Domain\bin\Release\UPTEAM.Domain.dll
+D:\03 - UpTeamSolution\UPTEAM.Domain\bin\Release\UPTEAM.Domain.pdb
+D:\03 - UpTeamSolution\UPTEAM.Domain\obj\Release\UPTEAM.Domain.dll
+D:\03 - UpTeamSolution\UPTEAM.Domain\obj\Release\UPTEAM.Domain.pdb

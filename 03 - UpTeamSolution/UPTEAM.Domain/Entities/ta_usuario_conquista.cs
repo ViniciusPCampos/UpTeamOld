@@ -8,9 +8,9 @@ namespace UPTEAM.Domain.Entities
 
         public DateTime dta_conquista { get; set; }
 
-        public int fk_usuario { get; set; }
+        public int cod_usuario { get; set; }
 
-        public int fk_conquista { get; set; }
+        public int cod_conquista { get; set; }
 
         public virtual tb_usuario tb_usuario { get; set; }
 

@@ -12,7 +12,7 @@ namespace UPTEAM.Domain.Entities
         
         public DateTime dln_marco { get; set; }
 
-        public int fk_projeto { get; set; }
+        public int cod_projeto { get; set; }
 
         public virtual tb_projeto tb_projeto { get; set; }
     }

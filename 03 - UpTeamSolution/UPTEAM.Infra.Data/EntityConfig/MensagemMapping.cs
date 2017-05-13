@@ -8,7 +8,7 @@ using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Infra.Data.EntityConfig
 {
-    class MensagemMapping : EntityTypeConfiguration<tb_mensagem>
+    public class MensagemMapping : EntityTypeConfiguration<tb_mensagem>
     {
         public MensagemMapping()
         {

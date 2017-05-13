@@ -1,9 +1,9 @@
 ﻿using UPTEAM.Domain.Entities;
-using UPTEAM.Domain.Interfaces;
+using UPTEAM.Domain.RepositoryInterfaces;
 
 namespace UPTEAM.Infra.Data.Repositories
 {
-    class EquipeRepository : RepositoryBase<tb_equipe>, IEquipeRepository
+    public class EquipeRepository : RepositoryBase<tb_equipe>, IEquipeRepository
     {
     }
 }

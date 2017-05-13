@@ -1,9 +1,9 @@
 ﻿using UPTEAM.Domain.Entities;
-using UPTEAM.Domain.Interfaces;
+using UPTEAM.Domain.RepositoryInterfaces;
 
 namespace UPTEAM.Infra.Data.Repositories
 {
-    class MarcoRepository : RepositoryBase<tb_marco>, IMarcoRepository
+    public class MarcoRepository : RepositoryBase<tb_marco>, IMarcoRepository
     {
     }
 }

@@ -2,7 +2,7 @@
 using UPTEAM.Infra.Data.Context;
 using System.Collections.Generic;
 using System.Linq;
-using UPTEAM.Domain.Interfaces;
+using UPTEAM.Domain.RepositoryInterfaces;
 using System.Data.Entity;
 
 namespace UPTEAM.Infra.Data.Repositories

@@ -1,0 +1,4 @@
+D:\03 - UpTeamSolution\UPTEAM.Models\bin\Release\UPTEAM.Models.dll
+D:\03 - UpTeamSolution\UPTEAM.Models\bin\Release\UPTEAM.Models.pdb
+D:\03 - UpTeamSolution\UPTEAM.Models\obj\Release\UPTEAM.Models.dll
+D:\03 - UpTeamSolution\UPTEAM.Models\obj\Release\UPTEAM.Models.pdb

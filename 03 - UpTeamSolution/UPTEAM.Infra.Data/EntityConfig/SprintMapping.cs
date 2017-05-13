@@ -3,7 +3,7 @@ using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Infra.Data.EntityConfig
 {
-    class SprintMapping :  EntityTypeConfiguration<tb_sprint>
+    public class SprintMapping :  EntityTypeConfiguration<tb_sprint>
     {
         public SprintMapping()
         {

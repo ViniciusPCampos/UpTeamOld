@@ -1,0 +1,11 @@
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\UPTEAM.AutoMapper.dll
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\UPTEAM.AutoMapper.pdb
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\AutoMapper.dll
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\UPTEAM.Domain.dll
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\UPTEAM.Models.dll
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\UPTEAM.Domain.pdb
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\UPTEAM.Models.pdb
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\bin\Debug\AutoMapper.xml
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\obj\Debug\UPTEAM.AutoMapper.csprojResolveAssemblyReference.cache
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\obj\Debug\UPTEAM.AutoMapper.dll
+D:\03 - UpTeamSolution\UPTEAM.AutoMapper\obj\Debug\UPTEAM.AutoMapper.pdb

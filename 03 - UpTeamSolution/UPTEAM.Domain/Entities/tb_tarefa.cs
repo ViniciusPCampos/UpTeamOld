@@ -2,7 +2,7 @@ namespace UPTEAM.Domain.Entities
 {
     using System;
 
-    public partial class tb_tarefa
+    public class tb_tarefa
     {
         public int idt_tarefa { get; set; }
 
@@ -10,17 +10,19 @@ namespace UPTEAM.Domain.Entities
 
         public string dsc_tarefa { get; set; }
 
-        public int fk_dificuldade { get; set; }
+        public int cod_dificuldade { get; set; }
 
-        public int fk_sprint { get; set; }
+        public int cod_sprint { get; set; }
 
-        public int fk_usuario { get; set; }
+        public int cod_usuario { get; set; }
 
         public DateTime dta_inicio { get; set; }
 
         public DateTime dta_fim { get; set; }
 
-        public int fk_prioridade { get; set; }
+        public int cod_prioridade { get; set; }
+        public int cod_estado_tarefa { get; set; }
+        public int cod_tipo_tarefa { get; set; }
 
         public virtual tb_sprint tb_sprint { get; set; }
 
@@ -29,5 +31,7 @@ namespace UPTEAM.Domain.Entities
         public virtual tt_dificuldade tt_dificuldade { get; set; }
 
         public virtual tt_prioridade tt_prioridade { get; set; }
+        public virtual tt_estado_tarefa tt_estado_tarefa { get; set; }
+        public virtual tt_tipo_tarefa tt_tipo_tarefa { get; set; }
     }
 }

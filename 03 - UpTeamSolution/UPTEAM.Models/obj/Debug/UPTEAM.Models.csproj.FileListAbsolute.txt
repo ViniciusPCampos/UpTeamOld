@@ -1,0 +1,8 @@
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Models\bin\Debug\UPTEAM.Models.dll
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Models\bin\Debug\UPTEAM.Models.pdb
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Models\obj\Debug\UPTEAM.Models.dll
+C:\GitHub\UpTeam-master\03 - UpTeamSolution\UPTEAM.Models\obj\Debug\UPTEAM.Models.pdb
+D:\03 - UpTeamSolution\UPTEAM.Models\bin\Debug\UPTEAM.Models.dll
+D:\03 - UpTeamSolution\UPTEAM.Models\bin\Debug\UPTEAM.Models.pdb
+D:\03 - UpTeamSolution\UPTEAM.Models\obj\Debug\UPTEAM.Models.dll
+D:\03 - UpTeamSolution\UPTEAM.Models\obj\Debug\UPTEAM.Models.pdb

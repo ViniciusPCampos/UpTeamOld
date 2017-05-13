@@ -1,9 +1,9 @@
 ﻿using UPTEAM.Domain.Entities;
-using UPTEAM.Domain.Interfaces;
+using UPTEAM.Domain.RepositoryInterfaces;
 
 namespace UPTEAM.Infra.Data.Repositories
 {
-    class PrioridadeRepository : RepositoryBase<tt_prioridade>, IPrioridadeRepository
+    public class PrioridadeRepository : RepositoryBase<tt_prioridade>, IPrioridadeRepository
     {
     }
 }
