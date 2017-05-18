@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AF932BB-64F9-4033-98DC-1FCB192197DF}</ProjectGuid>
+    <ProjectGuid>{3D96184A-CDCB-451B-BB11-881BF8B9BDA3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UPTEAM.Test.DomainUnityTest</RootNamespace>
@@ -49,14 +49,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TarefaServiceTests.cs" />
+    <Compile Include="UsuarioServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UPTEAM.ApplicationServices\UPTEAM.ApplicationServices.csproj">
+      <Project>{df762473-d383-4e10-846e-3cdaef5b5c87}</Project>
+      <Name>UPTEAM.ApplicationServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UPTEAM.Domain\UPTEAM.Domain.csproj">
-      <Project>{39ff3486-e8c9-43b7-a8db-fa9dc3958935}</Project>
+      <Project>{39FF3486-E8C9-43B7-A8DB-FA9DC3958935}</Project>
       <Name>UPTEAM.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPTEAM.Infra.Data\UPTEAM.Infra.Data.csproj">
+      <Project>{c012f0b1-7e9a-4f29-a848-f0d59edb4458}</Project>
+      <Name>UPTEAM.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
