@@ -17,7 +17,7 @@ namespace UPTEAM.Domain.Entities
 
         public DateTime dta_termino { get; set; }
 
-        public int cod_projeto { get; set; }
+        public int idt_projeto { get; set; }
 
         public virtual tb_projeto tb_projeto { get; set; }
 

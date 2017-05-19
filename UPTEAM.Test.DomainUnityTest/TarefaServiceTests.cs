@@ -2,6 +2,7 @@
 using UPTEAM.Infra.Data.Repositories;
 using UPTEAM.Domain.Entities;
 using System.Linq;
+using System;
 
 namespace UPTEAM.ApplicationServices.Tests
 {
@@ -19,7 +20,16 @@ namespace UPTEAM.ApplicationServices.Tests
         {
             var tarefa = new tb_tarefa()
             {
-                nme_tarefa = "UpTeamTeste@@"
+                nme_tarefa = "UpTeamTeste@@",
+                idt_dificuldade = 1,
+                idt_estado_tarefa = 1,
+                idt_prioridade = 1,
+                idt_sprint = 2,
+                idt_tipo_tarefa = 1,
+                idt_usuario = 1,
+                dsc_tarefa = "asd",
+                dta_inicio = DateTime.Now,
+                dta_fim = DateTime.Now
             };
 
             _tarefaService.CriarNovaTarefa(tarefa);
@@ -29,6 +39,7 @@ namespace UPTEAM.ApplicationServices.Tests
         [TestMethod()]
         public void AlterarTarefaTest()
         {
+            _tarefaTeste = _tarefaService.BuscarTarefasPorNome("UpTeamTeste@@").FirstOrDefault();
             _tarefaTeste.nme_tarefa = "UpTeamTeste@@1234";
             _tarefaService.AlterarTarefa(_tarefaTeste);
             var tarefaBanco = _tarefaService.BuscarTarefa(_tarefaTeste.idt_tarefa);
@@ -43,12 +54,13 @@ namespace UPTEAM.ApplicationServices.Tests
             };
             _tarefaService.AlterarTarefa(tarefa);
             var tarefaBanco = _tarefaService.BuscarTarefa(tarefa.idt_tarefa);
-            Assert.AreEqual(tarefa, tarefaBanco);
+            Assert.AreNotEqual(tarefa, tarefaBanco);
         }
 
         [TestMethod()]
         public void BuscarTarefaTest()
         {
+            _tarefaTeste = _tarefaService.BuscarTarefasPorNome("UpTeamTeste@@1234").FirstOrDefault();
             var tarefaBanco = _tarefaService.BuscarTarefa(_tarefaTeste.idt_tarefa);
             Assert.IsNotNull(tarefaBanco);
         }
@@ -63,20 +75,21 @@ namespace UPTEAM.ApplicationServices.Tests
         [TestMethod()]
         public void BuscarTarefasPorNomeTest()
         {
+            _tarefaTeste = _tarefaService.BuscarTarefasPorNome("UpTeamTeste@@1234").FirstOrDefault();
             var tarefaBanco = _tarefaService.BuscarTarefasPorNome(_tarefaTeste.nme_tarefa);
             Assert.IsNotNull(tarefaBanco);
         }
         [TestMethod()]
         public void BuscarTarefasPorNomeInexistenteTest()
         {
-            var tarefaBanco = _tarefaService.BuscarTarefasPorNome("UpTeamTesteInexistente@@1234");
+            var tarefaBanco = _tarefaService.BuscarTarefasPorNome("UpTeamTesteInexistente@@1234").FirstOrDefault();
             Assert.IsNull(tarefaBanco);
         }
 
         [TestMethod()]
         public void BuscarTarefasPorNomeEmBrancoTest()
         {
-            var tarefaBanco = _tarefaService.BuscarTarefasPorNome("");
+            var tarefaBanco = _tarefaService.BuscarTarefasPorNome("").FirstOrDefault();
             Assert.IsNull(tarefaBanco);
         }
 
@@ -98,7 +111,7 @@ namespace UPTEAM.ApplicationServices.Tests
             {
                 idt_projeto = 0
             };
-            var tarefaBanco = _tarefaService.BuscarTarefasPorProjeto(projeto);
+            var tarefaBanco = _tarefaService.BuscarTarefasPorProjeto(projeto).FirstOrDefault();
             Assert.IsNull(tarefaBanco);
         }
 
@@ -120,7 +133,7 @@ namespace UPTEAM.ApplicationServices.Tests
             {
                 idt_sprint = 0
             };
-            var tarefaBanco = _tarefaService.BuscarTarefasPorSprint(sprint);
+            var tarefaBanco = _tarefaService.BuscarTarefasPorSprint(sprint).FirstOrDefault();
             Assert.IsNull(tarefaBanco);
         }
 
@@ -142,13 +155,14 @@ namespace UPTEAM.ApplicationServices.Tests
             {
                 idt_usuario = 0
             };
-            var tarefaBanco = _tarefaService.BuscarTarefasPorUsuario(usuario);
+            var tarefaBanco = _tarefaService.BuscarTarefasPorUsuario(usuario).FirstOrDefault();
             Assert.IsNull(tarefaBanco);
         }
 
         [TestMethod()]
         public void DeletarTarefaTest()
         {
+            _tarefaTeste = _tarefaService.BuscarTarefasPorNome("UpTeamTeste@@1234").FirstOrDefault();
             _tarefaService.DeletarTarefa(_tarefaTeste);
             var tarefaBanco = _tarefaService.BuscarTarefa(_tarefaTeste.idt_tarefa);
             Assert.IsNull(tarefaBanco);
