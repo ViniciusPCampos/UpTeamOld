@@ -10,19 +10,19 @@ namespace UPTEAM.Domain.Entities
 
         public string dsc_tarefa { get; set; }
 
-        public int cod_dificuldade { get; set; }
+        public int idt_dificuldade { get; set; }
 
-        public int cod_sprint { get; set; }
+        public int idt_sprint { get; set; }
 
-        public int cod_usuario { get; set; }
+        public int idt_usuario { get; set; }
 
         public DateTime dta_inicio { get; set; }
 
         public DateTime dta_fim { get; set; }
 
-        public int cod_prioridade { get; set; }
-        public int cod_estado_tarefa { get; set; }
-        public int cod_tipo_tarefa { get; set; }
+        public int idt_prioridade { get; set; }
+        public int idt_estado_tarefa { get; set; }
+        public int idt_tipo_tarefa { get; set; }
 
         public virtual tb_sprint tb_sprint { get; set; }
 
