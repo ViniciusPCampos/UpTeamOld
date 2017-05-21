@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UPTEAM.ApplicationServices.Helpers.Criptography;
 using UPTEAM.Domain.Entities;
+using UPTEAM.Domain.RepositoryInterfaces;
 using UPTEAM.Domain.ServiceInterfaces;
 using UPTEAM.Infra.Data.Repositories;
 
@@ -12,9 +13,9 @@ namespace UPTEAM.ApplicationServices
 {
     public class UsuarioService : IUsuarioService
     {
-        private UsuarioRepository _repository;
+        private IUsuarioRepository _repository;
         private ICryptographyHelper _cript;
-        public UsuarioService(UsuarioRepository repository, ICryptographyHelper cript)
+        public UsuarioService(IUsuarioRepository repository, ICryptographyHelper cript)
         {
             _repository = repository;
             _cript = cript;
@@ -23,7 +24,8 @@ namespace UPTEAM.ApplicationServices
         {
             var user = _repository.Authenticate(login);
 
-            if(user != null)
+
+            if (user != null)
             {
                 if (_cript.ValidatePassword(password, user.pwd_usuario))
                     return user;

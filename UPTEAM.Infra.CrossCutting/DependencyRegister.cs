@@ -28,10 +28,11 @@ namespace UPTEAM.Infra.CrossCutting
         public static void ResolverRepository(IKernel kernel)
         {
             kernel.Bind<IUsuarioRepository>().To<UsuarioRepository>();
+            kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
         }
         public static void ResolverOthers(IKernel kernel)
         {
-            kernel.Bind<ICryptographyHelper>().To<CryptographyHelper>();          
+            kernel.Bind<ICryptographyHelper>().To<CryptographyHelper>();       
         }
     }
 }

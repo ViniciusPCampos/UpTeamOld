@@ -517,6 +517,10 @@
     <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UPTEAM.ApplicationServices\UPTEAM.ApplicationServices.csproj">
+      <Project>{DF762473-D383-4E10-846E-3CDAEF5B5C87}</Project>
+      <Name>UPTEAM.ApplicationServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UPTEAM.AutoMapper\UPTEAM.AutoMapper.csproj">
       <Project>{67924AE0-C32B-4D6D-BAD8-4F7726CCB8D0}</Project>
       <Name>UPTEAM.AutoMapper</Name>
@@ -524,6 +528,10 @@
     <ProjectReference Include="..\UPTEAM.Domain\UPTEAM.Domain.csproj">
       <Project>{39FF3486-E8C9-43B7-A8DB-FA9DC3958935}</Project>
       <Name>UPTEAM.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPTEAM.Infra.Data\UPTEAM.Infra.Data.csproj">
+      <Project>{C012F0B1-7E9A-4F29-A848-F0D59EDB4458}</Project>
+      <Name>UPTEAM.Infra.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\UPTEAM.IoC\UPTEAM.IoC.csproj">
       <Project>{eae39d0d-9f7d-4f5f-8e79-710584335185}</Project>
