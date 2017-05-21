@@ -17,6 +17,7 @@ namespace UPTEAM.IoC
             DependencyRegister.Resolver(kernel);
 
             kernel.Bind<ITbUsuarioToUsuarioModelParse>().To<TbUsuarioToUsuarioModelParse>();
+            kernel.Bind<IUsuarioModelToTbUsuarioParse>().To<UsuarioModelToTbUsuarioParse>();
 
         }
     }

@@ -11,6 +11,8 @@ namespace UPTEAM.Presentation.API.App_Start
     using IoC;
     using Ninject.Web.Common;
     using Security;
+    using ApplicationServices.Helpers.Criptography;
+    using System.Web.Http;
 
     public static class NinjectWebCommon 
     {
@@ -63,7 +65,6 @@ namespace UPTEAM.Presentation.API.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             DependenceResolver.Resolver(kernel);
-            kernel.Bind<SimpleAuthorizationServerProvider>().To<SimpleAuthorizationServerProvider>();
         }        
     }
 }
