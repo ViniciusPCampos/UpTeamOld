@@ -1,26 +1,25 @@
 ﻿using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Ninject;
 using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using UPTEAM.Domain.ServiceInterfaces;
 using UPTEAM.Presentation.API.Security;
 
 namespace UPTEAM.Presentation.API
 {
     public class Startup
     {
-        private SimpleAuthorizationServerProvider _simpleAuthorizationServerProvider;
-        public Startup(SimpleAuthorizationServerProvider simpleAuthorizationServerProvider)
-        {
-            _simpleAuthorizationServerProvider = simpleAuthorizationServerProvider;
-        }
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            IKernel kernel = new StandardKernel();
+            IoC.DependenceResolver.Resolver(kernel);
+            ConfigureAuth(app, kernel.Get<IUsuarioService>());
         }
-        public void ConfigureAuth(IAppBuilder app)
+        public void ConfigureAuth(IAppBuilder app, IUsuarioService userService)
         {
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
 
@@ -28,7 +27,7 @@ namespace UPTEAM.Presentation.API
             app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions()
             {
                 TokenEndpointPath = new PathString("/Token"),
-                Provider = _simpleAuthorizationServerProvider,
+                Provider = new SimpleAuthorizationServerProvider(userService),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 AllowInsecureHttp = true
             });

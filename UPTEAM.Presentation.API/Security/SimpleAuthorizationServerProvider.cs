@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin.Security.OAuth;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace UPTEAM.Presentation.API.Security
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
         private IUsuarioService _usuarioService;
+        IKernel kernel = new StandardKernel();
         public SimpleAuthorizationServerProvider(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
@@ -24,18 +26,26 @@ namespace UPTEAM.Presentation.API.Security
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            var user = _usuarioService.Authenticate(context.UserName, context.Password);
-            if (user == null)
+            try
             {
-                context.SetError("invelid_grant", "O login ou a senha estão incorretos.");
-                return;
+                var user = _usuarioService.Authenticate(context.UserName, context.Password);
+                if (user == null)
+                {
+                    context.SetError("invalid_grant", "O login ou a senha estão incorretos.");
+                    return;
+                }
+
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim("role", "user"));
+
+                context.Validated(identity);
             }
+            catch (Exception)
+            {
 
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
-
-            context.Validated(identity);
+                context.SetError("invalid_request", "Requisição invalida.");
+            }
         }
     }
 }
