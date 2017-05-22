@@ -4,9 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 using UPTEAM.Models;
 
 namespace UPTEAM.Presentation.API.Controllers
@@ -19,12 +17,22 @@ namespace UPTEAM.Presentation.API.Controllers
         {
             ResponseMessage = new HttpResponseMessage();
         }
-        public Task<HttpResponseMessage> CreateResponse(HttpStatusCode code, object result)
+        public Task<HttpResponseMessage> CreateResponse(HttpStatusCode code, object result, List<ErrosJson> erros)
         {
+
             var jsonResult = new JsonResult<object>();
             jsonResult.Src = result;
+            switch (code)
+            {
+                case HttpStatusCode.NotFound:
+                    jsonResult.Erros.Add(new ErrosJson("Erro 404", new List<string>() { "Nenhum resultado encontrado." }));
+                    break;
+                case HttpStatusCode.BadRequest:
+                    jsonResult.Erros.Add(new ErrosJson("Erro 400", new List<string>() { "Requisição invalida." }));
+                    break;
+            }
 
-            ResponseMessage = Request.CreateResponse(code, result);
+            ResponseMessage = Request.CreateResponse(code, jsonResult);
 
             return Task.FromResult<HttpResponseMessage>(ResponseMessage);
         }

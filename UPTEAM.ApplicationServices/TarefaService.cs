@@ -45,9 +45,19 @@ namespace UPTEAM.ApplicationServices
             return _repositorio.GetByOwner(usuario.idt_usuario).ToList();
         }
 
-        public void CriarNovaTarefa(tb_tarefa tarefa)
+        public tb_tarefa CriarNovaTarefa(tb_tarefa tarefa)
         {
-            _repositorio.Add(tarefa);
+            try
+            {
+                _repositorio.Add(tarefa);
+
+                return tarefa;
+            }
+            catch (System.Exception)
+            {
+
+                return null;
+            }
         }
 
         public void DeletarTarefa(tb_tarefa tarefa)

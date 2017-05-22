@@ -15,6 +15,8 @@ namespace UPTEAM.AutoMapper.Config
             Mapper.Initialize(x =>
             {
                 x.AddProfile<UsuarioMappingProfile>();
+                x.AddProfile<TarefaMappingProfile>(); 
+                x.AddProfile<TbTarefaMappingProfile>();
             });
 
         }

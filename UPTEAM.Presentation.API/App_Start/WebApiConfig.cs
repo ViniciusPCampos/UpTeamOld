@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Serialization;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace UPTEAM.Presentation.API
@@ -12,9 +12,14 @@ namespace UPTEAM.Presentation.API
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            // Formatter
-            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
-            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var formatters = config.Formatters;
+            formatters.Remove(formatters.XmlFormatter);
+
+            var jsonSettings = formatters.JsonFormatter.SerializerSettings;
+            jsonSettings.Formatting = Formatting.Indented;
+            jsonSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+            formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
 
             // Web API routes
             config.MapHttpAttributeRoutes();
