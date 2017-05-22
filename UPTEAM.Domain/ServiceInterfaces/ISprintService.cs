@@ -5,9 +5,9 @@ namespace UPTEAM.Domain.ServiceInterfaces
 {
     public interface ISprintService
     {
-        void CriarSprint();
+        void CriarSprint(tb_sprint sprint);
         void AtualizarSprint(tb_sprint sprint);
-        List<tb_sprint> BuscarSprintPorProjeto();
+        List<tb_sprint> BuscarSprintPorProjeto(int projectId);
         void ExcluirSprint(tb_sprint sprint);
     }
 }
