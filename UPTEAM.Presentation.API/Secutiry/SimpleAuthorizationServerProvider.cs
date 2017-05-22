@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using UPTEAM.Domain.ServiceInterfaces;
 
-namespace UPTEAM.Presentation.API.Security
+namespace UPTEAM.Presentation.API.Secutiry
 {
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
@@ -24,18 +24,26 @@ namespace UPTEAM.Presentation.API.Security
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            var user = _usuarioService.Authenticate(context.UserName, context.Password);
-            if (user == null)
+            try
             {
-                context.SetError("invelid_grant", "O login ou a senha estão incorretos.");
-                return;
+                var user = _usuarioService.Authenticate(context.UserName, context.Password);
+                if (user == null)
+                {
+                    context.SetError("invalid_grant", "O login ou a senha estão incorretos.");
+                    return;
+                }
+
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim("role", "user"));
+
+                context.Validated(identity);
             }
+            catch (Exception)
+            {
 
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
-
-            context.Validated(identity);
+                context.SetError("invalid_request", "Requisição invalida.");
+            }
         }
     }
 }

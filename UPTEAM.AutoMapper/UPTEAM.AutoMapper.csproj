@@ -45,11 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\AutoMapperConfig.cs" />
+    <Compile Include="MappingProfile\TarefaMappingProfile.cs" />
+    <Compile Include="MappingProfile\TbTarefaMappingProfile.cs" />
     <Compile Include="MappingProfile\UsuarioMappingProfile.cs" />
     <Compile Include="Parses\Interfaces\IParse.cs" />
+    <Compile Include="Parses\Interfaces\ITarefaModelToTbTarefaParse.cs" />
+    <Compile Include="Parses\Interfaces\ITbTarefaToTarefaModelParse.cs" />
     <Compile Include="Parses\Interfaces\ITbUsuarioToUsuarioModelParse.cs" />
     <Compile Include="Parses\Interfaces\IUsuarioModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\ParseBase.cs" />
+    <Compile Include="Parses\TarefaModelToTbTarefaParse.cs" />
+    <Compile Include="Parses\TbTarefaToTarefaModelParse.cs" />
     <Compile Include="Parses\UsuarioModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\TbUsuarioToUsuarioModelParse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

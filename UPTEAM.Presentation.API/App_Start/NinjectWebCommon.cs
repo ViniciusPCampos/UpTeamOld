@@ -7,10 +7,12 @@ namespace UPTEAM.Presentation.API.App_Start
     using System.Web;
 
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+
     using Ninject;
-    using IoC;
     using Ninject.Web.Common;
-    using Security;
+    using System.Web.Http;
+    using Ninject.Web.WebApi;
+    using IoC;
 
     public static class NinjectWebCommon 
     {
@@ -47,6 +49,7 @@ namespace UPTEAM.Presentation.API.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch
@@ -63,7 +66,6 @@ namespace UPTEAM.Presentation.API.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             DependenceResolver.Resolver(kernel);
-            kernel.Bind<SimpleAuthorizationServerProvider>().To<SimpleAuthorizationServerProvider>();
         }        
     }
 }
