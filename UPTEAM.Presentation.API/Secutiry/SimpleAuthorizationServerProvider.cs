@@ -1,5 +1,4 @@
 ﻿using Microsoft.Owin.Security.OAuth;
-using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +7,11 @@ using System.Threading.Tasks;
 using System.Web;
 using UPTEAM.Domain.ServiceInterfaces;
 
-namespace UPTEAM.Presentation.API.Security
+namespace UPTEAM.Presentation.API.Secutiry
 {
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
         private IUsuarioService _usuarioService;
-        IKernel kernel = new StandardKernel();
         public SimpleAuthorizationServerProvider(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;

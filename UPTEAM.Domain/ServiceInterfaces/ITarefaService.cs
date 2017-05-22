@@ -5,7 +5,7 @@ namespace UPTEAM.Domain.ServiceInterfaces
 {
     public interface ITarefaService
     {
-        void CriarNovaTarefa(tb_tarefa tarefa);
+        tb_tarefa CriarNovaTarefa(tb_tarefa tarefa);
 
         List<tb_tarefa> BuscarTarefasPorNome(string nomeTarefa);
 

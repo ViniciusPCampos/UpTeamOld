@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
-using UPTEAM.IoC;
+using UPTEAM.AutoMapper.Config;
 
 namespace UPTEAM.Presentation.API
 {
@@ -13,6 +13,7 @@ namespace UPTEAM.Presentation.API
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }

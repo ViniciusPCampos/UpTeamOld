@@ -10,6 +10,7 @@ namespace UPTEAM.Infra.Data.Context
             : base("name=UpTeamContext")
         {
             Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<ta_usuario_conquista> ta_usuario_conquista { get; set; }
