@@ -1,9 +1,4 @@
 ﻿using Ninject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UPTEAM.AutoMapper.Parses;
 using UPTEAM.AutoMapper.Parses.Interfaces;
 using UPTEAM.Infra.CrossCutting;
@@ -20,6 +15,8 @@ namespace UPTEAM.IoC
             kernel.Bind<IUsuarioModelToTbUsuarioParse>().To<UsuarioModelToTbUsuarioParse>();
             kernel.Bind<ITbTarefaToTarefaModelParse>().To<TbTarefaToTarefaModelParse>();
             kernel.Bind<ITarefaModelToTbTarefaParse>().To<TarefaModelToTbTarefaParse>();
+            kernel.Bind<ITbMarcoToMarcoModelParse>().To<TbMarcoToMarcoModelParse>();
+            kernel.Bind<IMarcoModelToTbMarcoParse>().To<MarcoModelToTbMarcoParse>();
         }
     }
 }

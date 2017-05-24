@@ -16,7 +16,7 @@ namespace UPTEAM.Infra.Data.EntityConfig
 
             Property(x => x.nme_marco)
                 .IsRequired()
-                .HasMaxLength(45);
+                .HasMaxLength(80);
 
             Property(x => x.dsc_marco)
                 .IsRequired()
