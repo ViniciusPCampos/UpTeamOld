@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace UPTEAM.Models
 {
     public class MarcoModel

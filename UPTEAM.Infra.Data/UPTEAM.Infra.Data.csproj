@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -68,7 +71,6 @@
     <Compile Include="EntityConfig\UsuarioConquistaMapping.cs" />
     <Compile Include="EntityConfig\UsuarioEquipeMapping.cs" />
     <Compile Include="EntityConfig\UsuarioMapping.cs" />
-    <Compile Include="EntityConfig\UsuarioTituloMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ConquistaRepository.cs" />
     <Compile Include="Repositories\DificuldadeRepository.cs" />
@@ -80,12 +82,9 @@
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\SprintRepository.cs" />
     <Compile Include="Repositories\TarefaRepository.cs" />
-    <Compile Include="Repositories\TituloRepository.cs" />
     <Compile Include="Repositories\UsuarioConquistaRepository.cs" />
     <Compile Include="Repositories\UsuarioEquipeRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
-    <Compile Include="Repositories\UsuarioTituloRepository.cs" />
-    <Compile Include="EntityConfig\TituloMapping.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
