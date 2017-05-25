@@ -11,9 +11,5 @@ namespace UPTEAM.Domain.ServiceInterfaces
     {
         List<tb_marco> BuscarPorProjeto(tb_projeto projeto);
 
-namespace UPTEAM.Domain.ServiceInterfaces
-{
-    interface IMarcoService
-    {
     }
 }

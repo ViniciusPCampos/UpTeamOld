@@ -8,5 +8,6 @@ namespace UPTEAM.Domain.ServiceInterfaces
 {
     interface IMensagemService
     {
+        
     }
 }

@@ -9,7 +9,7 @@ namespace UPTEAM.ApplicationServices
     public  class MarcoService : IMarcoService
     {
         private readonly MarcoRepository _repository;
-        0
+        
         public MarcoService(MarcoRepository repositorio)
         {
             _repository = repositorio;
