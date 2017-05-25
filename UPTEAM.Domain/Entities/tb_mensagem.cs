@@ -7,7 +7,7 @@ namespace UPTEAM.Domain.Entities
 
         public string txt_mensagem { get; set; }
 
-        public int cod_equipe { get; set; }
+        public int idt_equipe { get; set; }
 
         public virtual tb_equipe tb_equipe { get; set; }
     }

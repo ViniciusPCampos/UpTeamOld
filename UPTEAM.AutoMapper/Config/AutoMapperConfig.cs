@@ -14,6 +14,8 @@ namespace UPTEAM.AutoMapper.Config
                 x.AddProfile<TbTarefaMappingProfile>();
                 x.AddProfile<MarcoMappingProfile>();
                 x.AddProfile<TbMarcoMappingProfile>();
+                x.AddProfile<MensagemMappingProfile>();
+                x.AddProfile<TbMensagemMappingProfile>();
             });
 
         }
