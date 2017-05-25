@@ -7,13 +7,14 @@ using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Domain.ServiceInterfaces
 {
-    public interface IMarcoService
-    {
-        List<tb_marco> BuscarPorProjeto(tb_projeto projeto);
-
-namespace UPTEAM.Domain.ServiceInterfaces
-{
     interface IMarcoService
     {
+        void CriarNovoMarco(tb_marco marco);
+
+        List<tb_marco> BuscarPorProjeto(int projetoId);
+
+        void AtualizarMarco(tb_marco marco);
+
+        void DeletarMarco(tb_marco marco);
     }
 }
