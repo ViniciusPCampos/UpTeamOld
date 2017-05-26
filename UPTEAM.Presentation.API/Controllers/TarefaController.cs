@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using UPTEAM.AutoMapper.Parses.Interfaces;
-using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.ServiceInterfaces;
 using UPTEAM.Models;
 
