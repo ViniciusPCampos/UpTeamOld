@@ -39,6 +39,8 @@ namespace UPTEAM.ApplicationServices
         {
             var password = _cript.CreateHash(usuario.pwd_usuario);
             usuario.pwd_usuario = password;
+            usuario.idt_nivel = 1;
+            usuario.exp_usuario = 0;
 
             if(_repository.Register(usuario))
                 return usuario;
