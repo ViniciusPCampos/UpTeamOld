@@ -230,11 +230,6 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Scripts\iCheck.min.js" />
-    <None Include="bundleconfig.json" />
-    <None Include="compilerconfig.json" />
-    <None Include="compilerconfig.json.defaults">
-      <DependentUpon>compilerconfig.json</DependentUpon>
-    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\inputmask.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -262,11 +257,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Autenticacao\Autenticar.cshtml" />
     <Content Include="Views\Autenticacao\Registrar.cshtml" />
-    <Content Include="Views\Equipe\Criar.cshtml" />
-    <Content Include="Views\Autenticacao\Registrar.cshtml" />
-    <Content Include="Views\Equipe\Detalhe.cshtml" />
-    <Content Include="Views\Equipe\Index.cshtml" />
-    <Content Include="Views\Equipe\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
