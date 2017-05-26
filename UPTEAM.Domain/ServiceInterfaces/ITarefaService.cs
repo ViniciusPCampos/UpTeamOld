@@ -9,7 +9,7 @@ namespace UPTEAM.Domain.ServiceInterfaces
 
         List<tb_tarefa> BuscarTarefasPorNome(string nomeTarefa);
 
-        List<tb_tarefa> BuscarTarefasPorProjeto(tb_projeto projeto);
+        List<tb_tarefa> BuscarTarefasPorProjeto(int idProjeto);
 
         List<tb_tarefa> BuscarTarefasPorUsuario(tb_usuario usuario);
 

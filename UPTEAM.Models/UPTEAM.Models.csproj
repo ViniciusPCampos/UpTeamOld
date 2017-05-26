@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutenticacaoModel.cs" />
+    <Compile Include="EquipeModel.cs" />
     <Compile Include="ErrosJson.cs" />
     <Compile Include="JsonResult.cs" />
     <Compile Include="MarcoModel.cs" />

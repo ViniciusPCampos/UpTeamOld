@@ -9,5 +9,6 @@ namespace UPTEAM.Domain.ServiceInterfaces
         void AtualizarEquipe(tb_equipe equipe);
         List<tb_equipe> BuscarEquipesPorUsuario(tb_usuario usuario);
         void ExcluirEquipe(tb_equipe equipe);
+        ICollection<tb_equipe> BuscarEquipePorNome(string nome);
     }
 }
