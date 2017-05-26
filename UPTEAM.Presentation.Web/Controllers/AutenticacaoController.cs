@@ -51,12 +51,17 @@ namespace UPTEAM.Presentation.Web.Controllers
         [HttpPost]
         public ActionResult Registrar(RegistrarModel usuario)
         {
-            if (ModelState.IsValid)
+            if (usuario.Senha != usuario.ConfirmacaoSenha)
             {
-                _usuarioService.Register(_registrarModelToTbUsuario.Parse(usuario));
-                RedirectToAction("autenticar");
+                ModelState.AddModelError("Senha", "A Senha e a Confirmação da Senha não combinam.");
             }
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            _usuarioService.Register(_registrarModelToTbUsuario.Parse(usuario));
+            return RedirectToAction("autenticar");
+
 
         }
 
