@@ -10,9 +10,6 @@ namespace UPTEAM.Models
         [Required(ErrorMessage = "A Senha é obrigatório.")]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
-        [Required(ErrorMessage ="A Confirmação da Senha é obrigatória")]
-        [DataType(DataType.Password)]
-        public string ConfirmacaoSenha { get; set; }
         [Required(ErrorMessage = "o E-mail é obrigatório.")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
