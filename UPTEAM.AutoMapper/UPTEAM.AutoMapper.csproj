@@ -83,9 +83,14 @@
     <Compile Include="Parses\MarcoModelToTbMarcoParse.cs" />
     <Compile Include="Parses\MensagemModelToTbMensagemParse.cs" />
     <Compile Include="Parses\ParseBase.cs" />
+<<<<<<<
     <Compile Include="Parses\RegistrarModelToTbUsuarioParse.cs" />
+=======
+<<<<<<<
+>>>>>>>
     <Compile Include="Parses\ProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\SprintModelToTbSprintParse.cs" />
+    <Compile Include="Parses\RegistrarModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\TarefaModelToTbTarefaParse.cs" />
     <Compile Include="Parses\TbDificuldadeToDificuldadeModel.cs" />
     <Compile Include="Parses\TbEquipeToEquipeModelParse.cs" />
