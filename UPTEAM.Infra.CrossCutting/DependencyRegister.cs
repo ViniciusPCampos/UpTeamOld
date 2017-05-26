@@ -25,12 +25,16 @@ namespace UPTEAM.Infra.CrossCutting
         {
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
             kernel.Bind<ITarefaService>().To<TarefaService>();
+            kernel.Bind<IMarcoService>().To<MarcoService>();
+            kernel.Bind<IEquipeService>().To<EquipeService>();
         }
         public static void ResolverRepository(IKernel kernel)
         {
             kernel.Bind<IUsuarioRepository>().To<UsuarioRepository>();
             kernel.Bind<ITarefaRepository>().To<TarefaRepository>();
+            kernel.Bind<IMarcoRepository>().To<MarcoRepository>();
 
+            kernel.Bind<IEquipeRepository>().To<EquipeRepository>();
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
         }
         public static void ResolverOthers(IKernel kernel)

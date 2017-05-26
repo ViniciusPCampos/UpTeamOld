@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UPTEAM.AutoMapper.MappingProfile;
 
 namespace UPTEAM.AutoMapper.Config
@@ -15,8 +10,13 @@ namespace UPTEAM.AutoMapper.Config
             Mapper.Initialize(x =>
             {
                 x.AddProfile<UsuarioMappingProfile>();
-                x.AddProfile<TarefaMappingProfile>(); 
-                x.AddProfile<TbTarefaMappingProfile>();
+                x.AddProfile<TbTarefaMappingProfile>(); 
+                x.AddProfile<TarefaMappingProfile>();
+                x.AddProfile<TbMarcoMappingProfile>();
+                x.AddProfile<MarcoMappingProfile>();
+                x.AddProfile<TbMensagemMappingProfile>();
+                x.AddProfile<MensagemMappingProfile>(); 
+                x.AddProfile<TbEquipeMappingProfile>();
             });
 
         }

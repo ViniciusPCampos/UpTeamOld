@@ -30,9 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EquipeService.cs" />
     <Compile Include="Helpers\Criptography\CryptographyHelper.cs" />
     <Compile Include="Helpers\Criptography\ICryptographyHelper.cs" />
+    <Compile Include="MarcoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SprintService.cs" />
     <Compile Include="TarefaService.cs" />
     <Compile Include="UsuarioService.cs" />
   </ItemGroup>
