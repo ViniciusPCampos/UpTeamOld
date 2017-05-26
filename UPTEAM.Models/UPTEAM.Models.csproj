@@ -52,6 +52,7 @@
     <Compile Include="PrioridadeModel.cs" />
     <Compile Include="ProjetoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarModel.cs" />
     <Compile Include="SprintModel.cs" />
     <Compile Include="TarefaModel.cs" />
     <Compile Include="TipoTarefaModel.cs" />
