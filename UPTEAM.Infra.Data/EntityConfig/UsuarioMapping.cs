@@ -21,7 +21,7 @@ namespace UPTEAM.Infra.Data.EntityConfig
 
             Property(x => x.pwd_usuario)
                 .IsRequired()
-                .HasMaxLength(50);
+                .HasMaxLength(100);
 
             Property(x => x.exp_usuario)
                 .IsRequired();
