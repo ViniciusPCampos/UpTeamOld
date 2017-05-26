@@ -33,7 +33,9 @@ namespace UPTEAM.Presentation.Web
                       "~/Scripts/app.js",
                       "~/Scripts/demo.js",
                       "~/Scripts/js/ajax.js",
-                      "~/Scripts/toastr/toastr.min.js"));
+                      "~/Scripts/toastr/toastr.min.js",
+                      "~/Scripts/iCheck.min.js",
+                      "~/Scripts/inputmask.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/template").Include(
                       "~/Content/bootstrap/bootstrap.css",
@@ -41,7 +43,8 @@ namespace UPTEAM.Presentation.Web
                       "~/Content/toastr/toastr.min.css",
                       "~/Content/AdminLTE.min.css",
                       "~/Content/_all-skins.min.css",
-                      "~/Content/Site.css"));
+                      "~/Content/Site.css",
+                      "~/Content/blue.css"));
         }
     }
 }
