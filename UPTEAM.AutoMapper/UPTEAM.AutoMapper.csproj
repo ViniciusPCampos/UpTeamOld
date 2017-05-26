@@ -60,6 +60,7 @@
     <Compile Include="Parses\Interfaces\IMarcoModelToTbMarcoParse.cs" />
     <Compile Include="Parses\Interfaces\IMensagemModelToTbMensagemParse.cs" />
     <Compile Include="Parses\Interfaces\IParse.cs" />
+    <Compile Include="Parses\Interfaces\IRegistrarModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\Interfaces\IProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\Interfaces\ISprintModelToTbSprintParse.cs" />
     <Compile Include="Parses\Interfaces\ITarefaModelToTbTarefaParse.cs" />
@@ -74,8 +75,12 @@
     <Compile Include="Parses\MarcoModelToTbMarcoParse.cs" />
     <Compile Include="Parses\MensagemModelToTbMensagemParse.cs" />
     <Compile Include="Parses\ParseBase.cs" />
+<<<<<<<
     <Compile Include="Parses\ProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\SprintModelToTbSprintParse.cs" />
+=======
+    <Compile Include="Parses\RegistrarModelToTbUsuarioParse.cs" />
+>>>>>>>
     <Compile Include="Parses\TarefaModelToTbTarefaParse.cs" />
     <Compile Include="Parses\TbEquipeToEquipeModelParse.cs" />
     <Compile Include="Parses\TbMarcoToMarcoModelParse.cs" />
