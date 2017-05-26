@@ -19,7 +19,7 @@ namespace UPTEAM.Infra.Data.Repositories
                 Db.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;
