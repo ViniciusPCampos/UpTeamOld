@@ -17,6 +17,10 @@ namespace UPTEAM.AutoMapper.Config
                 x.AddProfile<TbMensagemMappingProfile>();
                 x.AddProfile<MensagemMappingProfile>(); 
                 x.AddProfile<TbEquipeMappingProfile>();
+                x.AddProfile<ProjetoMappingProfile>();
+                x.AddProfile<TbProjetoMappingProfile>();
+                x.AddProfile<SprintMappingProfile>();
+                x.AddProfile<TbSprintMappingProfile>();
             });
 
         }

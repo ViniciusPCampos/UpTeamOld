@@ -45,9 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\AutoMapperConfig.cs" />
+    <Compile Include="MappingProfile\ProjetoMappingProfile.cs" />
+    <Compile Include="MappingProfile\SprintMappingProfile.cs" />
     <Compile Include="MappingProfile\TbEquipeMappingProfile.cs" />
     <Compile Include="MappingProfile\TbMarcoMappingProfile.cs" />
     <Compile Include="MappingProfile\TbMensagemMappingProfile.cs" />
+    <Compile Include="MappingProfile\TbProjetoMappingProfile.cs" />
+    <Compile Include="MappingProfile\TbSprintMappingProfile.cs" />
     <Compile Include="MappingProfile\TbTarefaMappingProfile.cs" />
     <Compile Include="MappingProfile\MarcoMappingProfile.cs" />
     <Compile Include="MappingProfile\MensagemMappingProfile.cs" />
@@ -56,20 +60,28 @@
     <Compile Include="Parses\Interfaces\IMarcoModelToTbMarcoParse.cs" />
     <Compile Include="Parses\Interfaces\IMensagemModelToTbMensagemParse.cs" />
     <Compile Include="Parses\Interfaces\IParse.cs" />
+    <Compile Include="Parses\Interfaces\IProjetoModelToTbProjetoParse.cs" />
+    <Compile Include="Parses\Interfaces\ISprintModelToTbSprintParse.cs" />
     <Compile Include="Parses\Interfaces\ITarefaModelToTbTarefaParse.cs" />
     <Compile Include="Parses\Interfaces\ITbEquipeToEquipeModelParse.cs" />
     <Compile Include="Parses\Interfaces\ITbMarcoToMarcoModelParse.cs" />
     <Compile Include="Parses\Interfaces\ITbMensagemToMensagemModelParse.cs" />
+    <Compile Include="Parses\Interfaces\ITbSprintToSprintModelParse.cs" />
     <Compile Include="Parses\Interfaces\ITbTarefaToTarefaModelParse.cs" />
     <Compile Include="Parses\Interfaces\ITbUsuarioToUsuarioModelParse.cs" />
     <Compile Include="Parses\Interfaces\IUsuarioModelToTbUsuarioParse.cs" />
+    <Compile Include="Parses\Interfaces\ITbProjetoToProjetoModelParse.cs" />
     <Compile Include="Parses\MarcoModelToTbMarcoParse.cs" />
     <Compile Include="Parses\MensagemModelToTbMensagemParse.cs" />
     <Compile Include="Parses\ParseBase.cs" />
+    <Compile Include="Parses\ProjetoModelToTbProjetoParse.cs" />
+    <Compile Include="Parses\SprintModelToTbSprintParse.cs" />
     <Compile Include="Parses\TarefaModelToTbTarefaParse.cs" />
     <Compile Include="Parses\TbEquipeToEquipeModelParse.cs" />
     <Compile Include="Parses\TbMarcoToMarcoModelParse.cs" />
     <Compile Include="Parses\TbMensagemToMensagemModelParse.cs" />
+    <Compile Include="Parses\TbProjetoToProjetoModelParse.cs" />
+    <Compile Include="Parses\TbSprintToSprintModelParse.cs" />
     <Compile Include="Parses\TbTarefaToTarefaModelParse.cs" />
     <Compile Include="Parses\UsuarioModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\TbUsuarioToUsuarioModelParse.cs" />

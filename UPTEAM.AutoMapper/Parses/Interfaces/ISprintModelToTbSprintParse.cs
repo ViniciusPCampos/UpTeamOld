@@ -3,7 +3,7 @@ using UPTEAM.Models;
 
 namespace UPTEAM.AutoMapper.Parses.Interfaces
 {
-    public interface ITbTarefaToTarefaModelParse : IParse<tb_tarefa,TarefaModel>
+    public interface ISprintModelToTbSprintParse : IParse<SprintModel, tb_sprint>
     {
     }
 }

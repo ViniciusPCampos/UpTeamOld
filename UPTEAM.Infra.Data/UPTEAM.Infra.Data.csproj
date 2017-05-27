@@ -79,6 +79,7 @@
     <Compile Include="Repositories\MensagemRepository.cs" />
     <Compile Include="Repositories\NivelRepository.cs" />
     <Compile Include="Repositories\PrioridadeRepository.cs" />
+    <Compile Include="Repositories\ProjetoRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\SprintRepository.cs" />
     <Compile Include="Repositories\TarefaRepository.cs" />

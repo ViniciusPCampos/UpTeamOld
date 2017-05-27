@@ -8,9 +8,9 @@ namespace UPTEAM.Infra.Data.Repositories
 {
     public class SprintRepository : RepositoryBase<tb_sprint>, ISprintRepository
     {
-        public IEnumerable<tb_sprint> GetSprintsByProject(int idt_projeto)
+        public IEnumerable<tb_sprint> BuscarPorProjeto(int idProjeto)
         {
-            return Db.Set<tb_sprint>().Where( x => x.idt_projeto == idt_projeto);
+            return Db.Set<tb_sprint>().Where(x => x.idt_projeto == idProjeto);
         }
     }
 }
