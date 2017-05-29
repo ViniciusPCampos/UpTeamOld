@@ -93,27 +93,27 @@ namespace UPTEAM.ApplicationServices.Tests
             Assert.IsNull(tarefaBanco);
         }
 
-        [TestMethod()]
-        public void BuscarTarefasPorProjetoTest()
-        {
-            var projeto = new tb_projeto()
-            {
-                idt_projeto = 1
-            };
-            var tarefaBanco = _tarefaService.BuscarTarefasPorProjeto(projeto);
-            Assert.IsNotNull(tarefaBanco);
-        }
+        //[TestMethod()]
+        //public void BuscarTarefasPorProjetoTest()
+        //{
+        //    var projeto = new tb_projeto()
+        //    {
+        //        idt_projeto = 1
+        //    };
+        //    var tarefaBanco = _tarefaService.BuscarTarefasPorProjeto(projeto);
+        //    Assert.IsNotNull(tarefaBanco);
+        //}
 
-        [TestMethod()]
-        public void BuscarTarefasPorProjetoInexistenteTest()
-        {
-            var projeto = new tb_projeto()
-            {
-                idt_projeto = 0
-            };
-            var tarefaBanco = _tarefaService.BuscarTarefasPorProjeto(projeto).FirstOrDefault();
-            Assert.IsNull(tarefaBanco);
-        }
+        //[TestMethod()]
+        //public void BuscarTarefasPorProjetoInexistenteTest()
+        //{
+        //    var projeto = new tb_projeto()
+        //    {
+        //        idt_projeto = 0
+        //    };
+        //    var tarefaBanco = _tarefaService.BuscarTarefasPorProjeto(projeto).FirstOrDefault();
+        //    Assert.IsNull(tarefaBanco);
+        //}
 
         [TestMethod()]
         public void BuscarTarefasPorSprintTest()

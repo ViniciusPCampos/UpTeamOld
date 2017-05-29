@@ -4,7 +4,7 @@ using UPTEAM.Models;
 
 namespace UPTEAM.AutoMapper.Parses
 {
-    public class TbTarefaToTarefaModelParse : ParseBase<tb_tarefa,TarefaModel>, ITbTarefaToTarefaModelParse
+    public class TbSprintToSprintModelParse : ParseBase<tb_sprint, SprintModel>, ITbSprintToSprintModelParse
     {
     }
 }

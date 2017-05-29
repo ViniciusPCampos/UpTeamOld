@@ -178,6 +178,9 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EquipeController.cs" />
     <Compile Include="Controllers\MarcoController.cs" />
+    <Compile Include="Controllers\MensagemController.cs" />
+    <Compile Include="Controllers\ProjetoControler.cs" />
+    <Compile Include="Controllers\SprintController.cs" />
     <Compile Include="Controllers\TarefaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -9,31 +9,40 @@ namespace UPTEAM.ApplicationServices
 {
     public class SprintService : ISprintService
     {
-        private SprintRepository _sprintRepository;
+        private SprintRepository _sprintRepositorio;
 
-        public SprintService(SprintRepository repository)
+        public SprintService(SprintRepository repositorio)
         {
-            _sprintRepository = repository;
+            _sprintRepositorio = repositorio;
         }
 
         public void AtualizarSprint(tb_sprint sprint)
         {
-            _sprintRepository.Update(sprint);
+            _sprintRepositorio.Update(sprint);
         }
 
-        public List<tb_sprint> BuscarSprintPorProjeto(int projectId)
+        public List<tb_sprint> BuscarPorProjeto(int idProjeto)
         {
-            return _sprintRepository.GetSprintsByProject(projectId).ToList();
-        }
-
-        public void CriarSprint(tb_sprint sprint)
-        {
-            _sprintRepository.Add(sprint);
+            return _sprintRepositorio.BuscarPorProjeto(idProjeto).ToList();
         }
 
         public void ExcluirSprint(tb_sprint sprint)
         {
-            _sprintRepository.Remove(sprint);
+            _sprintRepositorio.Remove(sprint);
+        }
+
+        tb_sprint ISprintService.CriarSprint(tb_sprint sprint)
+        {
+            try
+            {
+                _sprintRepositorio.Add(sprint);
+
+                return sprint;
+            }
+            catch(System.Exception)
+            {
+                return null;
+            }
         }
     }
 }
