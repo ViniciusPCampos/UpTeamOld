@@ -10,12 +10,17 @@ namespace UPTEAM.AutoMapper.Config
             Mapper.Initialize(x =>
             {
                 x.AddProfile<UsuarioMappingProfile>();
-                x.AddProfile<TarefaMappingProfile>(); 
-                x.AddProfile<TbTarefaMappingProfile>();
-                x.AddProfile<MarcoMappingProfile>();
+                x.AddProfile<TbTarefaMappingProfile>(); 
+                x.AddProfile<TarefaMappingProfile>();
                 x.AddProfile<TbMarcoMappingProfile>();
-                x.AddProfile<MensagemMappingProfile>();
+                x.AddProfile<MarcoMappingProfile>();
                 x.AddProfile<TbMensagemMappingProfile>();
+                x.AddProfile<MensagemMappingProfile>(); 
+                x.AddProfile<TbEquipeMappingProfile>();
+                x.AddProfile<ProjetoMappingProfile>();
+                x.AddProfile<TbProjetoMappingProfile>();
+                x.AddProfile<SprintMappingProfile>();
+                x.AddProfile<TbSprintMappingProfile>();
             });
 
         }

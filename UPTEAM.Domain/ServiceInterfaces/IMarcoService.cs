@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Domain.ServiceInterfaces
 {
     public interface IMarcoService
     {
-        List<tb_marco> BuscarPorProjeto(tb_projeto projeto);
+        tb_marco CriarNovaMarco(tb_marco marco);
+
+        List<tb_marco> BuscarPorProjeto(int idProjeto);
+
+        tb_marco BuscarMarco(int idMarco);
+
+        void AlterarMarco(tb_marco marco);
+
+        void DeletarMarco(tb_marco marco);
 
     }
 }

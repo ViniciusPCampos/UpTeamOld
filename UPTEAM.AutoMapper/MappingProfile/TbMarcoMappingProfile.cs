@@ -8,11 +8,11 @@ namespace UPTEAM.AutoMapper.MappingProfile
     {
         public TbMarcoMappingProfile()
         {
-            CreateMap<MarcoModel, tb_marco>()
-                .ForMember(x => x.nme_marco, x => x.MapFrom(y => y.NomeMarco))
-                .ForMember(x => x.dsc_marco, x => x.MapFrom(y => y.Descricao))
-                .ForMember(x => x.dln_marco, x => x.MapFrom(y => y.Deadline))
-                .ForMember(x => x.idt_projeto, x => x.MapFrom(y => y.Projeto)).ReverseMap();
+            CreateMap<tb_marco, MarcoModel>()
+                .ForMember(x => x.NomeMarco, x => x.MapFrom(y => y.nme_marco))
+                .ForMember(x => x.Descricao, x => x.MapFrom(y => y.dsc_marco))
+                .ForMember(x => x.Deadline, x => x.MapFrom(y => y.dln_marco))
+                .ForMember(x => x.Projeto, x => x.MapFrom(y => y.idt_projeto));
         }
     }
 }

@@ -42,11 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutenticacaoModel.cs" />
+    <Compile Include="EquipeModel.cs" />
     <Compile Include="ErrosJson.cs" />
     <Compile Include="JsonResult.cs" />
     <Compile Include="MarcoModel.cs" />
     <Compile Include="MensagemModel.cs" />
+    <Compile Include="ProjetoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SprintModel.cs" />
     <Compile Include="TarefaModel.cs" />
     <Compile Include="UsuarioModel.cs" />
   </ItemGroup>
