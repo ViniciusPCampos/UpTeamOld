@@ -261,9 +261,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Autenticacao\Autenticar.cshtml" />
+<<<<<<<
     <Content Include="Views\Autenticacao\Registrar.cshtml" />
     <Content Include="Views\Equipe\Index.cshtml" />
     <Content Include="Views\Equipe\Criar.cshtml" />
+=======
+    <Content Include="Views\Autenticacao\Registrar.cshtml" />
+>>>>>>>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
