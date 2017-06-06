@@ -25,5 +25,9 @@ namespace UPTEAM.Infra.Data.Repositories
                 return false;
             }
         }
+        public tb_usuario BuscarPorEmail(string email)
+        {
+            return Db.tb_usuario.Where(x => x.email_usuario == email).FirstOrDefault();
+        }
     }
 }
