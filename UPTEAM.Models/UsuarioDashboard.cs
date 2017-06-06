@@ -9,6 +9,6 @@ namespace UPTEAM.Models
         public List<tb_tarefa> ListaTarefa { get; set; }
         public List<tb_projeto> ListaProjetos { get; set; }
         public List<tb_equipe> ListaEquipes { get; set; }
-        public List<tt_conquista> ListaConquista { get; set; }
+        public List<tb_conquista> ListaConquista { get; set; }
     }
 }
