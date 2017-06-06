@@ -26,29 +26,26 @@
             </div>
         </div>
         <!-- /.box-header -->
-        @using (Html.BeginForm("Criar","Equipe", FormMethod.Post))
-        {
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <label labelfor="NomeEquipe">Nome:</label><br />
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <label labelfor="NomeEquipe">Nome:</label><br />
                         @Html.TextBoxFor(x => x.NomeEquipe, new { htmlAttributes = new { @class = "form-control", placeholder = "Nome da Equipe"} })
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label>Descrição:</label><br />
-                        @Html.TextAreaFor(x => x.Descricao, new { htmlAttributes = new { @class = "form-control", placeholder = "Descrição" } })
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Descrição:</label><br />
+                    <textarea class="form-group-lg" cols="50" rows="2"></textarea>
+                    @Html.TextAreaFor(x => x.Descricao, new { htmlAttributes = new { @class = "form-control", placeholder = "Descrição" } })
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.box-body -->
-            <div class="box-footer">
-                <input type="submit" class="btn btn-primary" value="Salvar"/>
-                <button class="btn btn-default">Cancelar</button>
-            </div>
-        }
-        
+            <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <button class="btn btn-primary">Salvar</button>
+            <button class="btn btn-default">Cancelar</button>
+        </div>
     </div>
 </section>
