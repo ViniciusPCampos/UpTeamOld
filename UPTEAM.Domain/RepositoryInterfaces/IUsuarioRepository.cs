@@ -7,5 +7,6 @@ namespace UPTEAM.Domain.RepositoryInterfaces
     {
         tb_usuario Authenticate(string login);
         bool Register(tb_usuario usuario);
+        tb_usuario BuscarPorEmail(string email);
     }
 }
