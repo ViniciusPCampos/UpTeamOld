@@ -78,6 +78,7 @@
     <Compile Include="Parses\ProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\SprintModelToTbSprintParse.cs" />
     <Compile Include="Parses\RegistrarModelToTbUsuarioParse.cs" />
+    <Compile Include="Parses\RegistrarModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\TarefaModelToTbTarefaParse.cs" />
     <Compile Include="Parses\TbEquipeToEquipeModelParse.cs" />
     <Compile Include="Parses\TbMarcoToMarcoModelParse.cs" />
@@ -103,7 +104,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
