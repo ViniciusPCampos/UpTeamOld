@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ConquistaService.cs" />
     <Compile Include="EquipeService.cs" />
     <Compile Include="Helpers\Criptography\CryptographyHelper.cs" />
     <Compile Include="Helpers\Criptography\ICryptographyHelper.cs" />

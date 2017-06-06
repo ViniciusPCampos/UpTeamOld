@@ -52,5 +52,9 @@ namespace UPTEAM.ApplicationServices
         {
             return _repository.Authenticate(login);
         }
+        public tb_usuario BuscarPorEmail(string email)
+        {
+            return _repository.BuscarPorEmail(email);
+        }
     }
 }
