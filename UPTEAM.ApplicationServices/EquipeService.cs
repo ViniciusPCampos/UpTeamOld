@@ -40,9 +40,9 @@ namespace UPTEAM.ApplicationServices
             });
         }
 
-        public ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe)
+        public tb_equipe BuscarPorId(int idtEquipe)
         {
-            return _equipeRepositorio.BuscarUsuariosEquipe(idEquipe);
+            return _equipeRepositorio.GetById(idtEquipe);
         }
 
         public tb_equipe BuscarPorId(int idtEquipe)
