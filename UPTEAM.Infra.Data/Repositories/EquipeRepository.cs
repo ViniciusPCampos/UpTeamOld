@@ -8,6 +8,13 @@ namespace UPTEAM.Infra.Data.Repositories
 {
     public class EquipeRepository : RepositoryBase<tb_equipe>, IEquipeRepository
     {
+        public new tb_equipe Add(tb_equipe obj)
+        {
+            var equipe = Db.Set<tb_equipe>().Add(obj);
+            Db.SaveChanges();
+            return equipe;
+        }
+
         public IEnumerable<tb_equipe> BuscarEquipePorUsuario(int idt_usuario)
         {
             var query = $@"select e.* from ta_usuario_equipe ue join tb_usuario u on ue.idt_usuario = u.idt_usuario
