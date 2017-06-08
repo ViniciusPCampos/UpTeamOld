@@ -5,10 +5,12 @@ namespace UPTEAM.Domain.ServiceInterfaces
 {
     public interface IEquipeService
     {
-        void CriarNovaEquipe(tb_equipe equipe);
+        tb_equipe CriarNovaEquipe(tb_equipe equipe);
         void AtualizarEquipe(tb_equipe equipe);
-        List<tb_equipe> BuscarEquipesPorUsuario(tb_usuario usuario);
+        List<tb_equipe> BuscarPorUsuario(int idtUsuario);
         void ExcluirEquipe(tb_equipe equipe);
         ICollection<tb_equipe> BuscarEquipePorNome(string nome);
+        void AdicionarUsuario(int idtUsuario, int idtEquipe);
+        tb_equipe BuscarPorId(int idtEquipe);
     }
 }
