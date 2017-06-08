@@ -13,5 +13,7 @@ namespace UPTEAM.Domain.ServiceInterfaces
         void AdicionarUsuario(int idtUsuario, int idtEquipe);
         tb_equipe BuscarPorId(int idtEquipe);
         ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe);
+        void AdicionarUsuario(int idtUsuario, int idtEquipe);
+        tb_equipe BuscarPorId(int idtEquipe);
     }
 }
