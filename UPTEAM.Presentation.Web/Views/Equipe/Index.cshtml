@@ -53,21 +53,7 @@
                     <th></th>
                 </tr>
 
-                @foreach (var item in Model) {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NomeEquipe)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Descricao)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Editar", new { id=item.Id }) |
-                            @Html.ActionLink("Details", "Detalhe", new { id=item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                        </td>
-                    </tr>
-                }
+
 
             </table>
         </div>
@@ -81,3 +67,51 @@
 
 </section>
 <!-- /.content -->
+
+
+<!------------------------------------------------------------------------------------------------------>
+<div class="col-xs-12">
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Hover Data Table</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Equipe</th>
+                        <th>Descrição</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NomeEquipe)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descricao)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Editar", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Detalhe", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Equipe</th>
+                        <th>Descrição</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
