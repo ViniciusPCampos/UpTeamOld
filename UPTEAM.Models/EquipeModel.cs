@@ -4,7 +4,7 @@ namespace UPTEAM.Models
 {
     public class EquipeModel
     {
-        public int IdEquipe { get; set; }
+        public int Id { get; set; }
         [Required]
         public string NomeEquipe { get; set; }
         [Required]
