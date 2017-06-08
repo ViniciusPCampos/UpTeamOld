@@ -11,10 +11,10 @@ namespace UPTEAM.Presentation.Web.Controllers
     [Authorize]
     public class HomeController : BaseController
     {
-        private IUsuarioService _usuarioService;
-        private ITarefaService _tarefaService;
-        private IProjetoService _projetoService;
-        private IEquipeService _equipeService;
+        private readonly IUsuarioService _usuarioService;
+        private readonly ITarefaService _tarefaService;
+        private readonly IProjetoService _projetoService;
+        private readonly IEquipeService _equipeService;
         private IConquistaService _conquistaService;
         public HomeController(IUsuarioService usuarioService, ITarefaService tarefaService, IProjetoService projetoService, IEquipeService equipeService, IConquistaService conquistaService)
         {
@@ -30,16 +30,9 @@ namespace UPTEAM.Presentation.Web.Controllers
             {
                 Usuario = _usuarioService.ObterUsuarioPorLogin(Membership.GetUser().Email)
             };
-            usuarioDashboard.ListaEquipes = _equipeService.BuscarEquipesPorUsuario(usuarioDashboard.Usuario);
+            usuarioDashboard.ListaEquipes = _equipeService.BuscarPorUsuario(usuarioDashboard.Usuario.idt_usuario);
             usuarioDashboard.ListaTarefa = _tarefaService.BuscarTarefasPorUsuario(usuarioDashboard.Usuario);
-            List<tb_projeto> aux = new List<tb_projeto>();
-            foreach (var equipe in usuarioDashboard.ListaEquipes)
-            {
-                foreach (var item in _projetoService.BuscarPorEquipe(equipe.idt_equipe))
-                {
-                    aux.Add(item);
-                }
-            }
+            List<tb_projeto> aux = usuarioDashboard.ListaEquipes.SelectMany(equipe => _projetoService.BuscarPorEquipe(equipe.idt_equipe)).ToList();
             usuarioDashboard.ListaProjetos = aux;
             //usuarioDashboard.ListaConquista = _conquistaService.BuscarConquistas().ToList();
             return View(usuarioDashboard);

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.ServiceInterfaces;
@@ -9,11 +8,19 @@ namespace UPTEAM.ApplicationServices
 {
     public class EquipeService : IEquipeService
     {
-        private EquipeRepository _equipeRepositorio;
-        public EquipeService(EquipeRepository repositorio)
+        private readonly EquipeRepository _equipeRepositorio;
+        private readonly UsuarioEquipeRepository _usuarioEquipeRepository;
+        public EquipeService(EquipeRepository repositorio, UsuarioEquipeRepository usuarioEquipeRepository)
         {
             _equipeRepositorio = repositorio;
+            _usuarioEquipeRepository = usuarioEquipeRepository;
         }
+
+        public tb_equipe CriarNovaEquipe(tb_equipe equipe)
+        {
+            return _equipeRepositorio.Add(equipe);
+        }
+
         public void AtualizarEquipe(tb_equipe equipe)
         {
             _equipeRepositorio.Update(equipe);
@@ -24,9 +31,13 @@ namespace UPTEAM.ApplicationServices
             return _equipeRepositorio.BuscarEquipePorNome(nome).ToList();
         }
 
-        public List<tb_equipe> BuscarEquipesPorUsuario(tb_usuario usuario)
+        public void AdicionarUsuario(int idtUsuario, int idtEquipe)
         {
-            return _equipeRepositorio.BuscarEquipePorUsuario(usuario.idt_usuario).ToList();
+            _usuarioEquipeRepository.Add(new ta_usuario_equipe()
+            {
+                idt_equipe = idtEquipe,
+                idt_usuario = idtUsuario
+            });
         }
 
         public ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe)
@@ -36,12 +47,18 @@ namespace UPTEAM.ApplicationServices
 
         public void CriarNovaEquipe(tb_equipe equipe)
         {
-            _equipeRepositorio.Add(equipe);
+            return _equipeRepositorio.GetById(idtEquipe);
+        }
+
+        public List<tb_equipe> BuscarPorUsuario(int idtUsuario)
+        {
+            return _equipeRepositorio.BuscarEquipePorUsuario(idtUsuario).ToList();
         }
 
         public void ExcluirEquipe(tb_equipe equipe)
         {
             _equipeRepositorio.Remove(equipe);
         }
+
     }
 }
