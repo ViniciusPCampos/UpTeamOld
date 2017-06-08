@@ -30,16 +30,9 @@ namespace UPTEAM.Presentation.Web.Controllers
             {
                 Usuario = _usuarioService.ObterUsuarioPorLogin(Membership.GetUser().Email)
             };
-            usuarioDashboard.ListaEquipes = _equipeService.BuscarEquipesPorUsuario(usuarioDashboard.Usuario);
+            usuarioDashboard.ListaEquipes = _equipeService.BuscarPorUsuario(usuarioDashboard.Usuario.idt_usuario);
             usuarioDashboard.ListaTarefa = _tarefaService.BuscarTarefasPorUsuario(usuarioDashboard.Usuario);
-            List<tb_projeto> aux = new List<tb_projeto>();
-            foreach (var equipe in usuarioDashboard.ListaEquipes)
-            {
-                foreach (var item in _projetoService.BuscarPorEquipe(equipe.idt_equipe))
-                {
-                    aux.Add(item);
-                }
-            }
+            List<tb_projeto> aux = usuarioDashboard.ListaEquipes.SelectMany(equipe => _projetoService.BuscarPorEquipe(equipe.idt_equipe)).ToList();
             usuarioDashboard.ListaProjetos = aux;
             //usuarioDashboard.ListaConquista = _conquistaService.BuscarConquistas().ToList();
             return View(usuarioDashboard);

@@ -15,7 +15,7 @@ namespace UPTEAM.AutoMapper.MappingProfile
         public TbEquipeMappingProfile()
         {
             CreateMap<tb_equipe, EquipeModel>()
-                .ForMember(x => x.IdEquipe, x => x.MapFrom(y => y.idt_equipe))
+                .ForMember(x => x.Id, x => x.MapFrom(y => y.idt_equipe))
                 .ForMember(x => x.NomeEquipe, x => x.MapFrom(y => y.nme_equipe))
                 .ForMember(x => x.Descricao, x => x.MapFrom(y => y.dsc_equipe));
             CreateMap<EquipeModel, tb_equipe>()
