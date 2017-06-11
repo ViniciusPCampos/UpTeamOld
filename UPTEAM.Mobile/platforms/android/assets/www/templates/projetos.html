@@ -1,0 +1,9 @@
+<ion-view view-title="Projetos">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="proj in projetos" href="#/app/playlists/{{proj.id}}">
+                {{proj.title}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
 using UPTEAM.AutoMapper.Parses;
@@ -15,12 +16,15 @@ namespace UPTEAM.Presentation.API.Controllers
     public class EquipeController : BaseController
     {
         private IEquipeService _equipeService;
+        private IUsuarioService _usuarioService;
 
         private ITbEquipeToEquipeModelParse _equipeParse;
 
-        public EquipeController(IEquipeService equipeService, ITbEquipeToEquipeModelParse equipeParse)
+        public EquipeController(IEquipeService equipeService, ITbEquipeToEquipeModelParse equipeParse, IUsuarioService usuarioService)
         {
             _equipeService = equipeService;
+            _usuarioService = usuarioService;
+
             _equipeParse = equipeParse;
         }
 
@@ -35,6 +39,30 @@ namespace UPTEAM.Presentation.API.Controllers
                 if (equipeTb != null)
                 {
                     
+                    var equipeVM = _equipeParse.Parse(equipeTb);
+
+                    return CreateResponse(HttpStatusCode.OK, equipeVM, null);
+                }
+
+                return CreateResponse(HttpStatusCode.NotFound, null, null);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(HttpStatusCode.BadRequest, null, null);
+            }
+        }
+        [HttpGet]
+        [Authorize]
+        [Route("equipes")]
+        public Task<HttpResponseMessage> BuscarEquipesPorUsuario()
+        {
+            try
+            {
+                var usuario = _usuarioService.ObterUsuarioPorLogin(ObterUsuarioLogado());
+                var equipeTb = _equipeService.BuscarEquipesPorUsuario(usuario);
+                if (equipeTb != null)
+                {
+
                     var equipeVM = _equipeParse.Parse(equipeTb);
 
                     return CreateResponse(HttpStatusCode.OK, equipeVM, null);
