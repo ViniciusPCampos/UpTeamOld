@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
 using UPTEAM.Models;
 
 namespace UPTEAM.Presentation.API.Controllers
@@ -17,6 +19,7 @@ namespace UPTEAM.Presentation.API.Controllers
         {
             ResponseMessage = new HttpResponseMessage();
         }
+        [ApiExplorerSettings(IgnoreApi = true)]
         public Task<HttpResponseMessage> CreateResponse(HttpStatusCode code, object result, List<ErrosJson> erros)
         {
 
@@ -35,6 +38,13 @@ namespace UPTEAM.Presentation.API.Controllers
             ResponseMessage = Request.CreateResponse(code, jsonResult);
 
             return Task.FromResult<HttpResponseMessage>(ResponseMessage);
+        }
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public string ObterUsuarioLogado()
+        {
+            ClaimsIdentity claimsIdentity = User.Identity as ClaimsIdentity;
+
+            return claimsIdentity.Claims.FirstOrDefault(x => x.Type == "sub").Value;
         }
     }
 }
