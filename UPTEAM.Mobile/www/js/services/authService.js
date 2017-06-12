@@ -2,7 +2,7 @@
     angular.module('starter.services')
 
 
-        .factory('authService', ['$http', '$q', 'localStorageService', 'config', function ($http, $q, localStorageService, config) {
+        .factory('authService', ['$http', '$httpParamSerializer', '$q', 'localStorageService', 'config', function ($http, $httpParamSerializer, $q, localStorageService, config) {
             var authServiceFactory = {};
 
             var _authentication = {
@@ -27,33 +27,20 @@
                     url: config.baseUrlToken,
                     crossDomain: true,
                     headers: {
-                        'Content-Type': "application/json"
+                        'Content-Type': "application/x-www-form-urlencoded"
                     },
-                    data: { grant_type: 'password', username: loginData.username, password: loginData.password }
+                    data: $httpParamSerializer({ grant_type: 'password', username: loginData.username, password: loginData.password })
                 }
-                
                 $http(req)
-                    .success(function(){
-                            console.log('foi');
-                        }).error(function(){
-                            console.log('n foi');
-                        });
-
-                //$http.post(config.baseUrlToken, data, {
-                //    header: { 'Content-Type': 'application/x-www-form-urlencoded' }
-                //}).success(function (response) {
-                //    console.log('sim');
-                //    localStorageService.set('authorizationData', { token: response.access_token, userName: response.userName });
-
-                //    _authentication.isAuth = true;
-                //    _authentication.userName = loginData.userName;
-
-                //    deferred.resolve(response);
-                //}).error(function (err) {
-                //    console.log('não');
-                //    //_logOut();
-                //    deferred.reject(err);
-                //});
+                    .success(function (response) {
+                        localStorageService.set('authorizationData', { token: response.access_token, userName: response.userName });
+                        console.log('logado com sucesso!!');
+                        _authentication.isAuth = true;
+                        _authentication.userName = loginData.userName;
+                        deferred.resolve(response);
+                    }).error(function (err) {
+                            deferred.reject(err);
+                    });
 
                 return deferred.promise;
             };
@@ -74,12 +61,6 @@
                 else {
                     _authentication.isAuth = false;
                 }
-            };
-
-            authServiceFactory.changePassword = function (passwordData) {
-
-                return $http.post('/api/Manage/ChangePassword', passwordData)
-
             };
 
             return authServiceFactory;

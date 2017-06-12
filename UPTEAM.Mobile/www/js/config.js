@@ -27,12 +27,12 @@
             controller: 'LoginCtrl'
             }
         )
-          .state('app.playlists', {
-              url: '/playlists',
+          .state('app.dashboard', {
+              url: '/dashboard',
               views: {
                   'menuContent': {
-                      templateUrl: 'templates/playlists.html',
-                      controller: 'PlaylistsCtrl'
+                      templateUrl: 'templates/dashboard.html',
+                      controller: 'DashboardCtrl'
                   }
               }
           })
