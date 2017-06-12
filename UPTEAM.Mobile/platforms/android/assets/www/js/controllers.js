@@ -10,21 +10,24 @@
     .controller('EquipesCtrl', function ($scope, equipesService) {
         $scope.equipes = [];
 
-        equipesService.obterEquipe('teste').success(function (data) {
+        equipesService.obterEquipes().success(function (data) {
             $scope.equipes = data.src;
         });
 
     })
-    .controller('LoginCtrl', function ($scope, $location, authService) {
+    .controller('DashboardCtrl', function ($scope) {
+        
+
+    })
+    .controller('LoginCtrl', function ($scope, $location, $state, authService) {
         $scope.loginData = {};
 
         $scope.doLogin = function () {
-            console.log('Doing login', $scope.loginData);
 
             authService.login($scope.loginData).then(function (response) {
-                alert("Login Successfully");
-                //$window.location.href = "user.html";
-            }, function () {
+                console.log('ctrl');
+                $state.go('app.dashboard');
+            }, function (error) {
                 alert("Failed.Please try again.");
             })
         };

@@ -4,12 +4,12 @@
 
         .factory('equipesService', function ($http, config) {
 
-            var _obterEquipe = function (nome) {
-                return $http.get(config.baseUrl + "/equipe?nome=" + nome);
+            var _obterEquipes = function () {
+                return $http.get(config.baseUrl + "/equipes");
             };
 
             return {
-                obterEquipe: _obterEquipe
+                obterEquipes: _obterEquipes
             };
         });
 
