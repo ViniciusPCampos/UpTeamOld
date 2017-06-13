@@ -10,7 +10,7 @@ namespace UPTEAM.AutoMapper.MappingProfile
         {
             CreateMap<MensagemModel, tb_mensagem>()
                 .ForMember(x => x.txt_mensagem, x => x.MapFrom(y => y.TextoMensagem))
-                .ForMember(x => x.idt_equipe, x => x.MapFrom(y => y.Equipe)).ReverseMap();
+                .ForMember(x => x.idt_equipe, x => x.MapFrom(y => y.Equipe));
         }
     }
 }

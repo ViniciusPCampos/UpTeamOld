@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.ServiceInterfaces;
@@ -8,29 +9,45 @@ namespace UPTEAM.ApplicationServices
 {
     public class ProjetoService : IProjetoService
     {
-        private ProjetoRepository _projetoRepository;
-        public ProjetoService(ProjetoRepository repository)
+        private ProjetoRepository _projetoRepositorio;
+
+        public ProjetoService(ProjetoRepository repositorio)
         {
-            _projetoRepository = repository;
+            _projetoRepositorio = repositorio;
         }
+
         public void AtualizarProjeto(tb_projeto projeto)
         {
-            _projetoRepository.Update(projeto);
+            _projetoRepositorio.Update(projeto);
         }
 
-        public List<tb_projeto> BuscarProjetosPorEquipe(tb_equipe equipe)
+        public List<tb_projeto> BuscarPorEquipe(int idEquipe)
         {
-            return _projetoRepository.GetProjectByTeam(equipe.idt_equipe).ToList();
+            return _projetoRepositorio.BuscarPorEquipe(idEquipe).ToList();
         }
 
-        public void CriarNovoProjeto(tb_projeto projeto)
+        public List<tb_projeto> BuscarPorNome(string nomeProjeto)
         {
-            _projetoRepository.Add(projeto);
+            return _projetoRepositorio.BuscarPorNome(nomeProjeto).ToList();
+        }
+
+        public tb_projeto CriarNovoProjeto(tb_projeto projeto)
+        {
+            try
+            {
+                _projetoRepositorio.Add(projeto);
+
+                return projeto;
+            }
+            catch(System.Exception)
+            {
+                return null;
+            }
         }
 
         public void ExcluirProjeto(tb_projeto projeto)
         {
-            _projetoRepository.Remove(projeto);
+            _projetoRepositorio.Remove(projeto);
         }
     }
 }

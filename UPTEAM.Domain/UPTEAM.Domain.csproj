@@ -52,6 +52,7 @@
     <Compile Include="RepositoryInterfaces\IMensagemRepository.cs" />
     <Compile Include="RepositoryInterfaces\INivelRepository.cs" />
     <Compile Include="RepositoryInterfaces\IPrioridadeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IProjetoRepository.cs" />
     <Compile Include="RepositoryInterfaces\IRepositoryBase.cs" />
     <Compile Include="RepositoryInterfaces\ISprintRepository.cs" />
     <Compile Include="RepositoryInterfaces\ITarefaRepository.cs" />

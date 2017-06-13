@@ -9,33 +9,33 @@ namespace UPTEAM.ApplicationServices
 {
     public class EquipeService : IEquipeService
     {
-        private EquipeRepository _equipeRepository;
-        public EquipeService(EquipeRepository repository)
+        private EquipeRepository _equipeRepositorio;
+        public EquipeService(EquipeRepository repositorio)
         {
-            _equipeRepository = repository;
+            _equipeRepositorio = repositorio;
         }
         public void AtualizarEquipe(tb_equipe equipe)
         {
-            _equipeRepository.Update(equipe);
+            _equipeRepositorio.Update(equipe);
         }
 
         public ICollection<tb_equipe> BuscarEquipePorNome(string nome)
         {
-            return _equipeRepository.BuscarEquipePorNome(nome).ToList();
+            return _equipeRepositorio.BuscarEquipePorNome(nome).ToList();
         }
 
         public List<tb_equipe> BuscarEquipesPorUsuario(tb_usuario usuario)
         {
-            return _equipeRepository.BuscarEquipePorUsuario(usuario.idt_usuario).ToList();
+            return _equipeRepositorio.BuscarEquipePorUsuario(usuario.idt_usuario).ToList();
         }
         public void CriarNovaEquipe(tb_equipe equipe)
         {
-            _equipeRepository.Add(equipe);
+            _equipeRepositorio.Add(equipe);
         }
 
         public void ExcluirEquipe(tb_equipe equipe)
         {
-            _equipeRepository.Remove(equipe);
+            _equipeRepositorio.Remove(equipe);
         }
     }
 }

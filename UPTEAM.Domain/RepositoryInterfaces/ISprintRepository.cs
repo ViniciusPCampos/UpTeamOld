@@ -5,6 +5,6 @@ namespace UPTEAM.Domain.RepositoryInterfaces
 {
     public interface ISprintRepository: IRepositoryBase<tb_sprint>
     {
-        IEnumerable<tb_sprint> GetSprintsByProject(int idt_projeto);
+        IEnumerable<tb_sprint> BuscarPorProjeto(int idt_projeto);
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.ServiceInterfaces;
@@ -9,48 +8,48 @@ namespace UPTEAM.ApplicationServices
 {
     public class TarefaService : ITarefaService
     {
-        private TarefaRepository _repositorio;
+        private TarefaRepository _tarefaRepositorio;
 
         public TarefaService(TarefaRepository repositorio)
         {
-            _repositorio = repositorio;
+            _tarefaRepositorio = repositorio;
         }
 
         public void AlterarTarefa(tb_tarefa tarefa)
         {
-            _repositorio.Update(tarefa);
+            _tarefaRepositorio.Update(tarefa);
         }
 
         public tb_tarefa BuscarTarefa(int idTarefa)
         {
-            return _repositorio.GetById(idTarefa);
+            return _tarefaRepositorio.GetById(idTarefa);
         }
 
         public List<tb_tarefa> BuscarTarefasPorNome(string nomeTarefa)
         {
-            return _repositorio.GetByName(nomeTarefa).ToList();
+            return _tarefaRepositorio.GetByName(nomeTarefa).ToList();
         }
 
         public List<tb_tarefa> BuscarTarefasPorProjeto(int idProjeto)
         {
-            return _repositorio.GetByProject(idProjeto).ToList();
+            return _tarefaRepositorio.GetByProject(idProjeto).ToList();
         }
 
         public List<tb_tarefa> BuscarTarefasPorSprint(tb_sprint sprint)
         {
-            return _repositorio.GetBySprint(sprint.idt_sprint).ToList();
+            return _tarefaRepositorio.GetBySprint(sprint.idt_sprint).ToList();
         }
 
         public List<tb_tarefa> BuscarTarefasPorUsuario(tb_usuario usuario)
         {
-            return _repositorio.GetByOwner(usuario.idt_usuario).ToList();
+            return _tarefaRepositorio.GetByOwner(usuario.idt_usuario).ToList();
         }
 
         public tb_tarefa CriarNovaTarefa(tb_tarefa tarefa)
         {
             try
             {
-                _repositorio.Add(tarefa);
+                _tarefaRepositorio.Add(tarefa);
 
                 return tarefa;
             }
@@ -62,7 +61,7 @@ namespace UPTEAM.ApplicationServices
 
         public void DeletarTarefa(tb_tarefa tarefa)
         {
-            _repositorio.Remove(tarefa);
+            _tarefaRepositorio.Remove(tarefa);
         }
     }
 }
