@@ -39,7 +39,7 @@ namespace UPTEAM.Presentation.API.Controllers
                 {
                     var sprintVM = _parseTbSprintToSprintModel.Parse(sprintTb);
 
-                    return CreateResponse(HttpStatusCode.OK, sprintVM, null)
+                    return CreateResponse(HttpStatusCode.OK, sprintVM, null);
                 }
 
                 return CreateResponse(HttpStatusCode.NotFound, null, null);

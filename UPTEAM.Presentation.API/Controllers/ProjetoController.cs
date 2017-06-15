@@ -13,13 +13,20 @@ namespace UPTEAM.Presentation.API.Controllers
     public class ProjetoController : BaseController
     {
         private IProjetoService _projetoService;
+        private IUsuarioService _usuarioService;
+
         private ITbProjetoToProjetoModelParse _parseTbProjetoToProjetoModel;
         private IProjetoModelToTbProjetoParse _parseProjetoModelToTbProjeto;
 
-        public ProjetoController(IProjetoService projetoService, ITbProjetoToProjetoModelParse parseTbProjetoToProjetoModel,
-                                IProjetoModelToTbProjetoParse parseProjetoModelToTbProjeto)
+        public ProjetoController(
+            IProjetoService projetoService,
+            IUsuarioService usuarioService,
+            ITbProjetoToProjetoModelParse parseTbProjetoToProjetoModel,
+            IProjetoModelToTbProjetoParse parseProjetoModelToTbProjeto
+            )
         {
             _projetoService = projetoService;
+            _usuarioService = usuarioService;
             _parseTbProjetoToProjetoModel = parseTbProjetoToProjetoModel;
             _parseProjetoModelToTbProjeto = parseProjetoModelToTbProjeto;
         }
@@ -71,7 +78,31 @@ namespace UPTEAM.Presentation.API.Controllers
                 return CreateResponse(HttpStatusCode.BadRequest, null, null);
             }
         }
+        [HttpGet]
+        [Authorize]
+        [Route("projetos")]
+        public Task<HttpResponseMessage> BuscarPorUsuario()
+        {
+            try
+            {
+                var usuario = _usuarioService.ObterUsuarioPorLogin(ObterUsuarioLogado());
+                var projetos = _projetoService.BuscarPorUsuario(usuario);
 
+                if (projetos != null)
+                {
+                    var projetoVM = _parseTbProjetoToProjetoModel.Parse(projetos);
+
+                    return CreateResponse(HttpStatusCode.OK, projetoVM, null);
+                }
+
+                return CreateResponse(HttpStatusCode.NotFound, null, null);
+
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(HttpStatusCode.BadRequest, null, null);
+            }
+        }
 
 
     }

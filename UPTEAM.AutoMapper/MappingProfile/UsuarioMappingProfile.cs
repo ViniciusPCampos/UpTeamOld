@@ -15,8 +15,8 @@ namespace UPTEAM.AutoMapper.MappingProfile
         {
             CreateMap<tb_usuario, UsuarioModel>()
               .ForMember(x => x.Nome, x => x.MapFrom(y => y.nme_usuario))
+              .ForMember(x => x.Telefone, x => x.MapFrom(y => y.tel_usuario))
               .ForMember(x => x.Login, x => x.MapFrom(y => y.lgn_usuario))
-              .ForMember(x => x.Password, x => x.MapFrom(y => y.pwd_usuario))
               .ForMember(x => x.Experiencia, x => x.MapFrom(y => y.exp_usuario))
               .ForMember(x => x.IdNivel, x => x.MapFrom(y => y.idt_nivel)).ReverseMap();
         }

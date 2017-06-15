@@ -77,6 +77,5 @@ namespace UPTEAM.Presentation.API.Controllers
                 return CreateResponse(HttpStatusCode.BadRequest, null, null);
             }
         }
-
     }
 }
