@@ -20,6 +20,33 @@
                 }
             }
         })
+        .state('app.equipe', {
+            url: '/equipes/:equipeId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/equipeMenu.html',
+                    controller: 'EquipeCtrl'
+                }
+            }
+        })
+        .state('app.participantes', {
+            url: '/participantes/:equipeId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/participantes.html',
+                    controller: 'ParticipantesCtrl'
+                }
+            }
+        })
+        .state('app.projetos', {
+            url: '/projetos',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/projetos.html',
+                    controller: 'ProjetosCtrl'
+                }
+            }
+        })
 
         .state('login', {
             url: '/login',

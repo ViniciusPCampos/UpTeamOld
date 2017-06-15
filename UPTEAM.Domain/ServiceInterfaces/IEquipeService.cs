@@ -10,5 +10,6 @@ namespace UPTEAM.Domain.ServiceInterfaces
         List<tb_equipe> BuscarEquipesPorUsuario(tb_usuario usuario);
         void ExcluirEquipe(tb_equipe equipe);
         ICollection<tb_equipe> BuscarEquipePorNome(string nome);
+        ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe);
     }
 }

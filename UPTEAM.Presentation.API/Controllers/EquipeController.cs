@@ -19,13 +19,15 @@ namespace UPTEAM.Presentation.API.Controllers
         private IUsuarioService _usuarioService;
 
         private ITbEquipeToEquipeModelParse _equipeParse;
+        private ITbUsuarioToUsuarioModelParse _usuarioParse;
 
-        public EquipeController(IEquipeService equipeService, ITbEquipeToEquipeModelParse equipeParse, IUsuarioService usuarioService)
+        public EquipeController(IEquipeService equipeService, ITbEquipeToEquipeModelParse equipeParse, IUsuarioService usuarioService, ITbUsuarioToUsuarioModelParse usuarioParse)
         {
             _equipeService = equipeService;
             _usuarioService = usuarioService;
 
             _equipeParse = equipeParse;
+            _usuarioParse = usuarioParse;
         }
 
         [HttpGet]
@@ -66,6 +68,29 @@ namespace UPTEAM.Presentation.API.Controllers
                     var equipeVM = _equipeParse.Parse(equipeTb);
 
                     return CreateResponse(HttpStatusCode.OK, equipeVM, null);
+                }
+
+                return CreateResponse(HttpStatusCode.NotFound, null, null);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(HttpStatusCode.BadRequest, null, null);
+            }
+        }
+        [HttpGet]
+        [Authorize]
+        [Route("equipes/{id:int}/usuarios")]
+        public Task<HttpResponseMessage> BuscarUsuariosEquipe(int id)
+        {
+            try
+            {
+                var usuarios = _equipeService.BuscarUsuariosEquipe(id);
+                if (usuarios != null)
+                {
+
+                    var usuariosVM = _usuarioParse.Parse(usuarios);
+
+                    return CreateResponse(HttpStatusCode.OK, usuariosVM, null);
                 }
 
                 return CreateResponse(HttpStatusCode.NotFound, null, null);

@@ -23,5 +23,11 @@ namespace UPTEAM.Infra.Data.Repositories
             return Db.Set<tb_projeto>().Where(x => x.nme_projeto.Contains(nomeProjeto)).ToList();
         }
 
+        public List<tb_projeto> BuscarPorUsuario(tb_usuario usuario)
+        {
+            return Db.Set<ta_usuario_equipe>().Include("tb_projeto").Include("tb_equipe.tb_projeto")
+                .Where(x => x.idt_usuario == usuario.idt_usuario)
+                .SelectMany(x => x.tb_equipe.tb_projeto).ToList();
+        }
     }
 }

@@ -28,6 +28,12 @@ namespace UPTEAM.ApplicationServices
         {
             return _equipeRepositorio.BuscarEquipePorUsuario(usuario.idt_usuario).ToList();
         }
+
+        public ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe)
+        {
+            return _equipeRepositorio.BuscarUsuariosEquipe(idEquipe);
+        }
+
         public void CriarNovaEquipe(tb_equipe equipe)
         {
             _equipeRepositorio.Add(equipe);

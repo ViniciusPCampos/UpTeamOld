@@ -12,6 +12,7 @@ namespace UPTEAM.Domain.ServiceInterfaces
         List<tb_projeto> BuscarPorEquipe(int idEquipe);
 
         List<tb_projeto> BuscarPorNome(string nomeProjeto);
+        List<tb_projeto> BuscarPorUsuario(tb_usuario usuario);
 
         //List<tb_projeto> BuscarPorEstado(int idEstado);
 

@@ -7,5 +7,6 @@ namespace UPTEAM.Domain.RepositoryInterfaces
     {
         IEnumerable<tb_equipe> BuscarEquipePorUsuario(int idt_usuario);
         IEnumerable<tb_equipe> BuscarEquipePorNome(string nome);
+        ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe);
     }
 }
