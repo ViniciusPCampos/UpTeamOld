@@ -18,10 +18,8 @@
             };
 
             authServiceFactory.login = function (loginData) {
-                var data = "grant_type=password&username=" + loginData.username + "&password=" + loginData.password;
-
                 var deferred = $q.defer();
-
+                console.log(loginData);
                 var req = {
                     method: 'POST',
                     url: config.baseUrlToken,
@@ -31,6 +29,7 @@
                     },
                     data: $httpParamSerializer({ grant_type: 'password', username: loginData.username, password: loginData.password })
                 }
+                console.log(req);
                 $http(req)
                     .success(function (response) {
                         localStorageService.set('authorizationData', { token: response.access_token, userName: response.userName });

@@ -1,9 +1,10 @@
-<ion-view view-title="Projetos">
+<ion-view view-title="Meus Projetos">
     <ion-content>
-        <ion-list>
-            <ion-item ng-repeat="proj in projetos" href="#/app/playlists/{{proj.id}}">
-                {{proj.title}}
-            </ion-item>
-        </ion-list>
+        <div class="list card">
+            <a href="#" class="item item-icon-left" ng-repeat="proj in projetos">
+                <i class="icon ion-ios-people"></i>
+                {{proj.nomeProjeto}}
+            </a>
+        </div>
     </ion-content>
 </ion-view>

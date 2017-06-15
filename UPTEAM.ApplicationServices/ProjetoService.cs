@@ -31,6 +31,11 @@ namespace UPTEAM.ApplicationServices
             return _projetoRepositorio.BuscarPorNome(nomeProjeto).ToList();
         }
 
+        public List<tb_projeto> BuscarPorUsuario(tb_usuario usuario)
+        {
+            return _projetoRepositorio.BuscarPorUsuario(usuario);
+        }
+
         public tb_projeto CriarNovoProjeto(tb_projeto projeto)
         {
             try

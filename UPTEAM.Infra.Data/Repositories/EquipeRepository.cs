@@ -20,5 +20,13 @@ namespace UPTEAM.Infra.Data.Repositories
         {
             return Db.tb_equipe.Where(x => x.nme_equipe.Contains(nome)).ToList();
         }
+
+        public ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe)
+        {
+            var query = $@"select u.* from tb_usuario u 
+                join ta_usuario_equipe ue on u.idt_usuario = ue.idt_usuario
+                where ue.idt_equipe = {idEquipe}";
+            return Db.Database.SqlQuery<tb_usuario>(query).ToList();
+        }
     }
 }

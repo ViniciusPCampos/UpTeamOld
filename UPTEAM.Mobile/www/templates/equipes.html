@@ -1,9 +1,10 @@
-<ion-view view-title="Equipes">
+<ion-view view-title="Minhas Equipes">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="equipe in equipes" >
-        {{equipe.nomeEquipe}}
-      </ion-item>
-    </ion-list>
+      <div class="list card">
+          <a href="#/app/equipes/{{equipe.idEquipe}}" class="item item-icon-left" ng-repeat="equipe in equipes">
+              <i class="icon ion-ios-people"></i>
+              {{equipe.nomeEquipe}}
+          </a>
+      </div>
   </ion-content>
 </ion-view>
