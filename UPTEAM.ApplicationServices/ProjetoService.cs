@@ -9,7 +9,7 @@ namespace UPTEAM.ApplicationServices
 {
     public class ProjetoService : IProjetoService
     {
-        private ProjetoRepository _projetoRepositorio;
+        private readonly ProjetoRepository _projetoRepositorio;
 
         public ProjetoService(ProjetoRepository repositorio)
         {
@@ -44,7 +44,7 @@ namespace UPTEAM.ApplicationServices
 
                 return projeto;
             }
-            catch(System.Exception)
+            catch(Exception ex)
             {
                 return null;
             }
@@ -53,6 +53,11 @@ namespace UPTEAM.ApplicationServices
         public void ExcluirProjeto(tb_projeto projeto)
         {
             _projetoRepositorio.Remove(projeto);
+        }
+
+        public tb_projeto BuscarPorID(int id)
+        {
+            return _projetoRepositorio.GetById(id);
         }
     }
 }

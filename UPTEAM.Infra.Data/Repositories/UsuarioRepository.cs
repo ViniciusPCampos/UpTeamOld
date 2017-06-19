@@ -9,7 +9,7 @@ namespace UPTEAM.Infra.Data.Repositories
     {
         public tb_usuario Authenticate(string login)
         {
-            return Db.tb_usuario.Where(x => x.lgn_usuario.ToLower() == login.ToLower()).FirstOrDefault();
+            return Db.tb_usuario.FirstOrDefault(x => x.lgn_usuario == login);
         }
         public bool Register(tb_usuario usuario)
         {
@@ -27,7 +27,7 @@ namespace UPTEAM.Infra.Data.Repositories
         }
         public tb_usuario BuscarPorEmail(string email)
         {
-            return Db.tb_usuario.Where(x => x.email_usuario == email).FirstOrDefault();
+            return Db.tb_usuario.FirstOrDefault(x => x.email_usuario == email);
         }
     }
 }

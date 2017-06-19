@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace UPTEAM.Models
 {
@@ -9,5 +10,7 @@ namespace UPTEAM.Models
         public string NomeEquipe { get; set; }
         [Required]
         public string Descricao { get; set; }
+
+        public List<ProjetoModel> ListaProjetos { get; set; }
     }
 }

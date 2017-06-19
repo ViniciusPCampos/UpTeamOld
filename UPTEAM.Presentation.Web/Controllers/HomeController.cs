@@ -30,6 +30,7 @@ namespace UPTEAM.Presentation.Web.Controllers
             {
                 Usuario = _usuarioService.ObterUsuarioPorLogin(Membership.GetUser().Email)
             };
+            Session["usuario"] = usuarioDashboard.Usuario.idt_usuario;
             usuarioDashboard.ListaEquipes = _equipeService.BuscarPorUsuario(usuarioDashboard.Usuario.idt_usuario);
             usuarioDashboard.ListaTarefa = _tarefaService.BuscarTarefasPorUsuario(usuarioDashboard.Usuario);
             List<tb_projeto> aux = usuarioDashboard.ListaEquipes.SelectMany(equipe => _projetoService.BuscarPorEquipe(equipe.idt_equipe)).ToList();

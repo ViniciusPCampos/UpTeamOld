@@ -171,6 +171,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EquipeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjetoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,6 +192,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\blue.css" />
+    <Content Include="Content\Images\user2-160x160.jpg" />
     <Content Include="Content\toastr\toastr.min.css" />
     <Content Include="Content\_all-skins.min.css" />
     <Content Include="favicon.ico" />
@@ -277,6 +279,8 @@
     <Content Include="Views\Equipe\Detalhe.cshtml" />
     <Content Include="Views\Equipe\Index.cshtml" />
     <Content Include="Views\Equipe\Editar.cshtml" />
+    <Content Include="Views\Projeto\Criar.cshtml" />
+    <Content Include="Views\Projeto\Detalhe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
