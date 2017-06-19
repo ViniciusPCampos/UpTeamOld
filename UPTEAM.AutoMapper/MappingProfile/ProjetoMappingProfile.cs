@@ -14,6 +14,7 @@ namespace UPTEAM.AutoMapper.MappingProfile
         public ProjetoMappingProfile()
         {
             CreateMap<ProjetoModel, tb_projeto>()
+                .ForMember(x => x.idt_projeto, x=> x.MapFrom(y => y.ID))
                 .ForMember(x => x.nme_projeto, x => x.MapFrom(y => y.NomeProjeto))
                 .ForMember(x => x.dsc_projeto, x => x.MapFrom(y => y.DescricaoProjeto))
                 .ForMember(x => x.dta_inicio, x => x.MapFrom(y => y.DataInicioProjeto))

@@ -3,9 +3,12 @@
     margin-bottom: 0px;
     padding-left: 10px;
 }
-.form-control{
+
+.form-control {
+    -ms-border-radius: 4px;
     border-radius: 4px;
 }
+
 .alert-danger {
     color: #a94442 !important;
     background-color: #f2dede !important;
@@ -19,3 +22,6 @@
     .alert-danger .alert-link {
         color: #843534 !important;
     }
+.user-panel {
+    min-height: 130px;
+}

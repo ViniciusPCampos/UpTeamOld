@@ -8,13 +8,8 @@
 
 <section class="content-header">
     <h1>
-        Equipes
+        @Html.DisplayFor(model => model.NomeEquipe)
     </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Layout</a></li>
-        <li class="active">Fixed</li>
-    </ol>
 </section>
 
 <!-- Main content -->
@@ -22,7 +17,7 @@
     <!-- Default box -->
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">@Html.DisplayFor(model => model.NomeEquipe)</h3>
+            <h3 class="box-title">Informações</h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -44,26 +39,102 @@
                 </dd>
 
             </dl>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Adicionar Membros:</h2>
-                    <label>Usuários:</label>
-                    <input type="text" class="form-control" name="name" value="" />
-                    <br/>
-                    <input type="submit" name="name" class="btn btn-primary" value="Adicionar" />
-                </div>
-            </div>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
             <p>
-                @Html.ActionLink("Edit", "Editar", new {  id = Model.Id }) |
+                @Html.ActionLink("Edit", "Editar", new { id = Model.Id }) |
                 @Html.ActionLink("Back to List", "Index")
             </p>
         </div>
         <!-- /.box-footer-->
     </div>
     <!-- /.box -->
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Membros</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Adicionar Membros:</p>
+                    <label>Usuários:</label>
+                    <input type="text" class="form-control" name="name" value="" />
+                    <br />
+                    <input type="submit" name="name" class="btn btn-primary" value="Adicionar" />
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    @Html.ActionLink("Novo Projeto", "Criar", "Projeto")
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Projetos</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+
+            @if (Model.ListaProjetos != null)
+            {
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Projeto</th>
+                            <th>Descrição</th>
+                            <th>Data de Início</th>
+                            <th>Data de Fim</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListaProjetos)
+                        {
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomeProjeto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DescricaoProjeto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataInicioProjeto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataTerminoProjeto)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Editar", new { id = item.ID }) |
+                                    @Html.ActionLink("Details", "Detalhe", new { id = item.ID }) |
+                                    @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Projeto</th>
+                            <th>Descrição</th>
+                            <th>Data de Início</th>
+                            <th>Data de Fim</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            }
+            else
+            {
+
+                <p>Essa Equipe ainda não possui Projetos.</p>
+
+            }
+
+
+        </div>
+        <!-- /.box-body -->
+    </div>
 
 </section>
 <!-- /.content -->

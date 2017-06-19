@@ -72,6 +72,8 @@ namespace UPTEAM.Presentation.Web.Providers
             }
         }
 
+        public override MembershipPasswordFormat PasswordFormat { get; }
+
         public override int MinRequiredPasswordLength
         {
             get
@@ -87,15 +89,7 @@ namespace UPTEAM.Presentation.Web.Providers
                 throw new NotImplementedException();
             }
         }
-
-        public override MembershipPasswordFormat PasswordFormat
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
+    
         public override string PasswordStrengthRegularExpression
         {
             get

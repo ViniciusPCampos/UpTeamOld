@@ -17,6 +17,8 @@ namespace UPTEAM.Domain.ServiceInterfaces
         //List<tb_projeto> BuscarPorEstado(int idEstado);
 
         void ExcluirProjeto(tb_projeto projeto);
+
+        tb_projeto BuscarPorID(int id);
     }
 }
 
