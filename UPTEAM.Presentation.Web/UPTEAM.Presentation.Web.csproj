@@ -271,6 +271,12 @@
     <Content Include="Views\Equipe\Editar.cshtml" />
     <Content Include="Views\Projeto\Criar.cshtml" />
     <Content Include="Views\Projeto\Detalhe.cshtml" />
+    <Content Include="Views\Autenticacao\Registrar.cshtml" />
+    <Content Include="Views\Equipe\Criar.cshtml" />
+    <Content Include="Views\Autenticacao\Registrar.cshtml" />
+    <Content Include="Views\Equipe\Detalhe.cshtml" />
+    <Content Include="Views\Equipe\Index.cshtml" />
+    <Content Include="Views\Equipe\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
