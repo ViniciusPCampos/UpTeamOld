@@ -278,6 +278,8 @@
     <Content Include="Views\Equipe\Detalhe.cshtml" />
     <Content Include="Views\Equipe\Index.cshtml" />
     <Content Include="Views\Equipe\Editar.cshtml" />
+    <Content Include="Views\Projeto\Criar.cshtml" />
+    <Content Include="Views\Projeto\Detalhe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
