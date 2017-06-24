@@ -7,7 +7,9 @@ namespace UPTEAM.Models
         public string NomeTarefa { get; set; }
         public string Descricao { get; set; }
         public DateTime DataInicio { get; set; }
+        public string DataInicioFmt { get { return DataInicio.ToString("dd/MM/yyyy"); } }
         public DateTime DataFim { get; set; }
+        public string DataFimFmt { get { return DataFim.ToString("dd/MM/yyyy"); } }
         public int Dificuldade { get; set; }
         public int Sprint { get; set; }
         public int Usuario { get; set; }

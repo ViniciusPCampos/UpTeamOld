@@ -1,0 +1,12 @@
+﻿<ion-view view-title="Projetos da Equipe">
+  <ion-content>
+    <div class="list card">
+      <a href="#/app/projetos/{{projEquipe.idProjeto}}" class="item item-icon-left" ng-repeat="projEquipe in projetosEquipe">
+        <i class="icon ion-ios-people"></i>
+        {{projEquipe.nomeProjeto}}
+        </br>
+        {{projEquipe.descricaoProjeto}}
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

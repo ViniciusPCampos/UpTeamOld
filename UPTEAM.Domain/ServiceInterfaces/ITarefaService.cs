@@ -13,7 +13,7 @@ namespace UPTEAM.Domain.ServiceInterfaces
 
         List<tb_tarefa> BuscarTarefasPorUsuario(tb_usuario usuario);
 
-        List<tb_tarefa> BuscarTarefasPorSprint(tb_sprint sprint);
+        List<tb_tarefa> BuscarTarefasPorSprint(int  idSprint);
 
         tb_tarefa BuscarTarefa(int idTarefa);
 

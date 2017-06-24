@@ -46,6 +46,31 @@ namespace UPTEAM.Presentation.API.Controllers
                 return CreateResponse(HttpStatusCode.BadRequest, null, null);
             }
         }
+
+        [HttpGet]
+        [Authorize]
+        [Route("sprint/{id:int}/tarefa")]
+        public Task<HttpResponseMessage> BuscarPorSprint(int id)
+        {
+            try
+            {
+                var tarefaTb = _tarefaService.BuscarTarefasPorSprint(id);
+                if (tarefaTb != null)
+                {
+                    
+                    var tarefaVM = _parseTbTarefaToTarefaModel.Parse(tarefaTb);
+
+                    return CreateResponse(HttpStatusCode.OK, tarefaVM, null);
+                }
+
+                return CreateResponse(HttpStatusCode.NotFound, null, null);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(HttpStatusCode.BadRequest, null, null);
+            }
+        }
+
         [HttpGet]
         [Authorize]
         [Route("tarefa")]
@@ -74,19 +99,8 @@ namespace UPTEAM.Presentation.API.Controllers
         [Authorize]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
         {
-                // Exemplo de request
-                //{
-                //    "nometarefa": "Teste1",
-                //    "descricao": "Teste1",
-                //    "datainicio": "2016-05-05",
-                //    "datafim": "2016-05-05",
-                //    "dificuldade":1,
-                //    "sprint":1,
-                //    "usuario":1,
-                //    "prioridade":1,
-                //    "estadotarefa":1,
-                //    "tipotarefa": 1
-                //}
+            // Exemplo de request
+            
             try
             {
                 var tarefaModel = new TarefaModel()
@@ -101,8 +115,8 @@ namespace UPTEAM.Presentation.API.Controllers
                     Prioridade = (int)body.prioridade,
                     EstadoTarefa = (int)body.estadotarefa,
                     TipoTarefa = (int)body.tipotarefa
-
                 };
+
                 var tarefaTb = _parseTarefaModelToTbTarefa.Parse(tarefaModel);
 
                 var novaTarefa = _tarefaService.CriarNovaTarefa(tarefaTb);

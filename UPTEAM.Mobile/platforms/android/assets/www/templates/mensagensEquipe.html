@@ -1,0 +1,18 @@
+﻿<ion-view view-title="Mensagens">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar" ng-repeat="mensagem in mensagens">
+        <h2>{{mensagem.textoMensagem}}</h2>
+      </div>
+      <form ng-submit="mandarMensagem()">
+        <label class="item item-input">
+          <input type="text" placeholder="Mensagem" ng-model="mensagem.textomensagem">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="equip" ng-model="mensagem.equipe">
+        </label>
+        <button class="button button-block button-positive" type="submit">Enviar Mensagem</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
