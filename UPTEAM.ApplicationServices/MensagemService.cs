@@ -25,6 +25,7 @@ namespace UPTEAM.ApplicationServices
         {
             try
             {
+                mensagem.dta_envio = DateTime.Now;
                 _mensagemRepositorio.Add(mensagem);
 
                 return mensagem;

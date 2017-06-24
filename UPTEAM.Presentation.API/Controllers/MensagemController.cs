@@ -14,13 +14,15 @@ namespace UPTEAM.Presentation.API.Controllers
     public class MensagemController : BaseController
     {
         private IMensagemService _mensagemService;
+        private IUsuarioService _usuarioService;
         private ITbMensagemToMensagemModelParse _parseTbMensagemToMensagemModel;
         private IMensagemModelToTbMensagemParse _parseMensagemModelToTbMensagem;
-        public MensagemController(IMensagemService mensagemService,
+        public MensagemController(IMensagemService mensagemService, IUsuarioService usuarioService,
                                   ITbMensagemToMensagemModelParse parseTbMensagemToMensagemModel,
                                   IMensagemModelToTbMensagemParse parseMensagemModelToTbMensagem)
         {
             _mensagemService = mensagemService;
+            _usuarioService = usuarioService;
             _parseTbMensagemToMensagemModel = parseTbMensagemToMensagemModel;
             _parseMensagemModelToTbMensagem = parseMensagemModelToTbMensagem;
         }
@@ -32,10 +34,13 @@ namespace UPTEAM.Presentation.API.Controllers
         {
             try
             {
+                var usuario = _usuarioService.ObterUsuarioPorLogin(ObterUsuarioLogado());
                 var mensagemModel = new MensagemModel()
                 {
                     TextoMensagem = (string)body.textomensagem,
-                    Equipe = (int)body.equipe
+                    Equipe = (int)body.equipe,
+                    Usuario = usuario.idt_usuario
+                    
                 };
 
                 var mensagemTb = _parseMensagemModelToTbMensagem.Parse(mensagemModel);

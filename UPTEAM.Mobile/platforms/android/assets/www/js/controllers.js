@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     angular.module('starter.controllers')
 
     .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
@@ -10,6 +10,4 @@
         
 
     })
-    .controller('PlaylistCtrl', function ($scope, $stateParams) {
-    });
 })()

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.ServiceInterfaces;
@@ -35,9 +36,9 @@ namespace UPTEAM.ApplicationServices
             return _tarefaRepositorio.GetByProject(idProjeto).ToList();
         }
 
-        public List<tb_tarefa> BuscarTarefasPorSprint(tb_sprint sprint)
+        public List<tb_tarefa> BuscarTarefasPorSprint(int idSprint)
         {
-            return _tarefaRepositorio.GetBySprint(sprint.idt_sprint).ToList();
+            return _tarefaRepositorio.GetBySprint(idSprint).ToList();
         }
 
         public List<tb_tarefa> BuscarTarefasPorUsuario(tb_usuario usuario)
