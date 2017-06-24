@@ -60,7 +60,7 @@ namespace UPTEAM.Presentation.API.Controllers
                 {
                     var marcoVM = _parseTbMarcoToMarcoModel.Parse(marcoTb);
 
-                    return CreateResponse(HttpStatusCode.OK, marcoTb, null);
+                    return CreateResponse(HttpStatusCode.OK, marcoVM, null);
                 }
 
                 return CreateResponse(HttpStatusCode.NotFound, null, null);

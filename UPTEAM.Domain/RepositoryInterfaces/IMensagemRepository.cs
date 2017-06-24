@@ -5,6 +5,6 @@ namespace UPTEAM.Domain.RepositoryInterfaces
 {
     public interface IMensagemRepository : IRepositoryBase<tb_mensagem>
     {
-        IEnumerable<tb_mensagem> BuscarPorUsuario(int idUsuario);
+        IEnumerable<tb_mensagem> BuscarPorEquipe(int idEquipe);
     }
 }

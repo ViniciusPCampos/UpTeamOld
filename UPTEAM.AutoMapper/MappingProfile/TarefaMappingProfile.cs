@@ -23,7 +23,7 @@ namespace UPTEAM.AutoMapper.MappingProfile
               .ForMember(x => x.idt_usuario, x => x.MapFrom (y => y.Usuario))
               .ForMember(x => x.idt_prioridade, x => x.MapFrom(y => y.Prioridade))
               .ForMember(x => x.idt_estado_tarefa, x => x.MapFrom(y => y.EstadoTarefa))
-              .ForMember(x => x.idt_tipo_tarefa, x => x.MapFrom(y => y.TipoTarefa)).ReverseMap();
+              .ForMember(x => x.idt_tipo_tarefa, x => x.MapFrom(y => y.TipoTarefa));
         }
     }
 }

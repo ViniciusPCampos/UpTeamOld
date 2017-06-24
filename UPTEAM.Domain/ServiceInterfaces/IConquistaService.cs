@@ -3,7 +3,7 @@ using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Domain.ServiceInterfaces
 {
-    interface IConquistaService
+    public interface IConquistaService
     {
         List<tt_conquista> BuscarConquistas();
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.ModelConfiguration;
 using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Infra.Data.EntityConfig
@@ -13,6 +8,11 @@ namespace UPTEAM.Infra.Data.EntityConfig
         public MensagemMapping()
         {
             HasKey(x => x.idt_mensagem);
+
+            Property(x => x.txt_mensagem)
+                .IsRequired()
+                .HasMaxLength(500);
+
         }
     }
 }

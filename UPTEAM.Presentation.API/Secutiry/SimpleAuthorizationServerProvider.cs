@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
 using UPTEAM.Domain.ServiceInterfaces;
@@ -34,8 +35,10 @@ namespace UPTEAM.Presentation.API.Secutiry
                 }
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                
                 identity.AddClaim(new Claim("sub", context.UserName));
                 identity.AddClaim(new Claim("role", "user"));
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
 
                 context.Validated(identity);
             }

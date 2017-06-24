@@ -1,0 +1,11 @@
+﻿<ion-view view-title="Tarefas">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar" ng-repeat="tarefa in tarefas">
+        <h3>{{tarefa.nomeTarefa}}</h3> <br/>
+        <p>{{tarefa.descricao}}</p> <br/>
+        <p>Data Inicio: {{tarefa.dataInicioFmt}} <br/> Data Fim: {{tarefa.dataFimFmt}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -36,6 +36,7 @@ namespace UPTEAM.Presentation.API
         {
             var formatters = config.Formatters;
             formatters.Remove(formatters.XmlFormatter);
+            formatters.JsonFormatter.SerializerSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
 
             var jsonSettings = formatters.JsonFormatter.SerializerSettings;
             jsonSettings.Formatting = Formatting.Indented;
