@@ -39,7 +39,7 @@ namespace UPTEAM.Presentation.API.Controllers
                 {
                     TextoMensagem = (string)body.textomensagem,
                     Equipe = (int)body.equipe,
-                    Usuario = usuario.idt_usuario
+                    IdUsuario = usuario.idt_usuario
                     
                 };
 
@@ -72,7 +72,7 @@ namespace UPTEAM.Presentation.API.Controllers
                 if (mensagemTb != null)
                 {
                     var mensagemVM = _parseTbMensagemToMensagemModel.Parse(mensagemTb);
-
+                    mensagemVM.ToList().ForEach(x => x.IdUsuario = null);
                     return CreateResponse(HttpStatusCode.OK, mensagemVM, null);
                 }
                 return CreateResponse(HttpStatusCode.NotFound, null, null);

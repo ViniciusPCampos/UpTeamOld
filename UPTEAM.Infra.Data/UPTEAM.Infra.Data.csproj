@@ -73,6 +73,7 @@
     <Compile Include="EntityConfig\UsuarioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ConquistaRepository.cs" />
+    <Compile Include="Repositories\DashboardRepository.cs" />
     <Compile Include="Repositories\DificuldadeRepository.cs" />
     <Compile Include="Repositories\EquipeRepository.cs" />
     <Compile Include="Repositories\MarcoRepository.cs" />

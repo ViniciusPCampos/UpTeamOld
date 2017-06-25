@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UPTEAM.Models
 {
@@ -11,5 +12,6 @@ namespace UPTEAM.Models
         public DateTime DataFim { get; set; }
         public string DataFimFmt { get { return DataFim.ToString("dd/MM/yyyy"); } }
         public int Projeto { get; set; }
+        public ICollection<TarefaModel> Tarefas { get; set; }
     }
 }

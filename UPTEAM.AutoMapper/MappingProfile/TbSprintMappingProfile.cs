@@ -13,7 +13,8 @@ namespace UPTEAM.AutoMapper.MappingProfile
                 .ForMember(x => x.ValorIteracao, x => x.MapFrom(y => y.vlr_iteracao_sprint))
                 .ForMember(x => x.DataInicio, x => x.MapFrom(y => y.dta_inicio))
                 .ForMember(x => x.DataFim, x => x.MapFrom(y => y.dta_termino))
-                .ForMember(x => x.Projeto, x => x.MapFrom(y => y.idt_projeto));
+                .ForMember(x => x.Projeto, x => x.MapFrom(y => y.idt_projeto))
+                .ForMember(x => x.Tarefas, x => x.MapFrom(y => y.tb_tarefa));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UPTEAM.Models
 {
@@ -10,5 +11,6 @@ namespace UPTEAM.Models
         public DateTime DataInicioProjeto { get; set; }
         public DateTime DataTerminoProjeto { get; set; }
         public int EquipeProjeto { get; set; }
+        public ICollection<SprintModel> Sprints { get; set; }
     }
 }

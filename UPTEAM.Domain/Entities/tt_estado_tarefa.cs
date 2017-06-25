@@ -15,7 +15,7 @@ namespace UPTEAM.Domain.Entities
 
         public int idt_estado_tarefa { get; set; }
 
-        public int dsc_estado_tarefa { get; set; }
+        public string nme_estado_tarefa { get; set; }
 
         public virtual ICollection<tb_tarefa> tb_tarefa { get; set; }
     }

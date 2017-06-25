@@ -11,7 +11,8 @@ namespace UPTEAM.Domain.Entities
 
         public int idt_prioridade { get; set; }
 
-        public string des_prioridade { get; set; }
+        public string nme_prioridade { get; set; }
+        public double mtp_exp_prioridade { get; set; }
 
         public virtual ICollection<tb_tarefa> tb_tarefa { get; set; }
     }

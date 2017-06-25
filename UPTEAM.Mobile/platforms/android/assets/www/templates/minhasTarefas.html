@@ -1,0 +1,37 @@
+﻿<ion-view view-title="Minhas Tarefas">
+  <ion-content>
+    <div class="list">
+      <div class="mensagem-alerta" ng-if="minhasTarefas.length == 0">Você não possui nenhuma tarefa</div>
+      <div ng-repeat="projeto in minhasTarefas">
+        <div class="item item-divider" style="font-size: 20px;">
+          {{projeto.nomeProjeto}}
+        </div>
+        <div ng-repeat="sprint in projeto.sprints">
+          <div class="list card" ng-repeat="tarefa in sprint.tarefas">
+
+            <div class="item">
+              <h2 class="tarefa-nome">{{tarefa.nomeTarefa}}</h2>
+              <p>
+                <span class="tarefa-tags">{{tarefa.dificuldade.nomeDificuldade}}</span>
+                <span class="tarefa-tags">{{tarefa.prioridade.nomePrioridade}}</span>
+                <span class="tarefa-tags">{{tarefa.estadoTarefa.nomeEstadoTarefa}}</span>
+                <span class="tarefa-tags">{{tarefa.tipoTarefa.nomeTipoTarefa}}</span>
+              </p>
+            </div>
+
+            <div class="item item-body">
+              <p>
+                {{tarefa.descricao}}
+              </p>
+              <p>
+                <a class="subdued">Inicio: {{tarefa.dataInicioFmt}}</a>
+                <a class="subdued">Fim: {{tarefa.dataFimFmt}}</a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

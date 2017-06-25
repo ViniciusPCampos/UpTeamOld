@@ -14,7 +14,8 @@ namespace UPTEAM.AutoMapper.MappingProfile
                 .ForMember(x => x.DescricaoProjeto, x => x.MapFrom(y => y.dsc_projeto))
                 .ForMember(x => x.DataInicioProjeto, x => x.MapFrom(y => y.dta_inicio))
                 .ForMember(x => x.DataTerminoProjeto, x => x.MapFrom(y => y.dta_termino))
-                .ForMember(x => x.EquipeProjeto, x => x.MapFrom(y => y.idt_equipe));
+                .ForMember(x => x.EquipeProjeto, x => x.MapFrom(y => y.idt_equipe))
+                .ForMember(x => x.Sprints, x => x.MapFrom(y => y.tb_sprint));
         }
             
     }

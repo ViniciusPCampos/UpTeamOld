@@ -1,18 +1,25 @@
 ﻿<ion-view view-title="Mensagens">
-  <ion-content>
-    <div class="list card">
-      <div class="item item-avatar" ng-repeat="mensagem in mensagens">
+  <ion-content style="margin-bottom: 70px;">
+    <div class="mensagem-alerta" ng-if="mensagens.length == 0">Nenhuma mensagem para a equipe</div>
+    <div class="list card" ng-repeat="mensagem in mensagens">
+      <div class="item item-avatar mensagem">
         <h2>{{mensagem.textoMensagem}}</h2>
-      </div>
-      <form ng-submit="mandarMensagem()">
-        <label class="item item-input">
-          <input type="text" placeholder="Mensagem" ng-model="mensagem.textomensagem">
-        </label>
-        <label class="item item-input">
-          <input type="text" placeholder="equip" ng-model="mensagem.equipe">
-        </label>
-        <button class="button button-block button-positive" type="submit">Enviar Mensagem</button>
-      </form>
+        <p style="float:right;font-size: 12px;">Enviado por: {{mensagem.usuario.nome}} {{mensagem.dataEnvioFmt}}</p>
+      </div>   
     </div>
   </ion-content>
+  <div class="caixa-mensagem">
+    <form ng-submit="mandarMensagem()">
+      <div class="row" style="background: white;border-top: 1px solid #d6d6d6;">
+        <div class="col col-80">
+          <label class="item item-input">
+            <input type="text" placeholder="Mensagem" ng-model="mensagem.textomensagem">
+          </label>
+        </div>
+        <div class="col col-20">
+          <button class="button button-block button-small button-positive" type="submit"><i class="icon ion-android-send"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
 </ion-view>
