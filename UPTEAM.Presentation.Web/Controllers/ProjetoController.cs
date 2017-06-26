@@ -19,8 +19,7 @@ namespace UPTEAM.Presentation.Web.Controllers
         private ITbProjetoToProjetoModelParse _tbProjetoParser { get; }
         public ActionResult Criar()
         {
-            var projeto = new ProjetoModel();
-            projeto.EquipeProjeto = (int)Session["equipe"];
+            var projeto = new ProjetoModel {EquipeProjeto = (int) Session["equipe"]};
             return View(projeto);
         }
         [HttpPost]
@@ -37,7 +36,18 @@ namespace UPTEAM.Presentation.Web.Controllers
 
         public ActionResult Detalhe(ProjetoModel projeto)
         {
+            Session["Projeto"] = projeto;
             return View(projeto);
+        }
+
+        public ActionResult Index()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public ActionResult Editar(int id)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
