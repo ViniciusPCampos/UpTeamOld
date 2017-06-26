@@ -280,11 +280,6 @@
     <Content Include="Views\Equipe\Editar.cshtml" />
     <Content Include="Views\Projeto\Criar.cshtml" />
     <Content Include="Views\Projeto\Detalhe.cshtml" />
-    <Content Include="Views\Marco\Index.cshtml" />
-    <Content Include="Views\Marco\Criar.cshtml" />
-    <Content Include="Views\Marco\Editar.cshtml" />
-    <Content Include="Views\Marco\Detalhe.cshtml" />
-    <Content Include="Views\Marco\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
