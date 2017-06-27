@@ -14,6 +14,7 @@ namespace UPTEAM.Domain.Entities
         public string nme_dificuldade { get; set; }
 
         public string dsc_dificuldade { get; set; }
+        public double mtp_exp_dificuldade { get; set; }
 
         public virtual ICollection<tb_tarefa> tb_tarefa { get; set; }
     }

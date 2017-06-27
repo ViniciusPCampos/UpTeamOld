@@ -36,6 +36,11 @@ namespace UPTEAM.ApplicationServices
             return _projetoRepositorio.BuscarPorUsuario(usuario);
         }
 
+        public IEnumerable<tb_projeto> BuscarProjetosTarefasPorUsuario(int idUsuario)
+        {
+            return _projetoRepositorio.BuscarProjetosTarefasPorUsuario(idUsuario);
+        }
+
         public tb_projeto CriarNovoProjeto(tb_projeto projeto)
         {
             try

@@ -13,7 +13,7 @@ namespace UPTEAM.Domain.ServiceInterfaces
 
         List<tb_projeto> BuscarPorNome(string nomeProjeto);
         List<tb_projeto> BuscarPorUsuario(tb_usuario usuario);
-
+        IEnumerable<tb_projeto> BuscarProjetosTarefasPorUsuario(int idUsuario);
         //List<tb_projeto> BuscarPorEstado(int idEstado);
 
         void ExcluirProjeto(tb_projeto projeto);

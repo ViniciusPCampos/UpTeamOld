@@ -5,14 +5,19 @@
             $scope.mensagens = [];
 
             $scope.mensagem = {};
-
-            
-
-            mensagensEquipeService.obterMensagensEquipe($stateParams.equipeId).success(function (data) {       
-                $scope.mensagens = data.src;
-            });
+          
+            $scope.carregarMensagens = function () {
+                mensagensEquipeService.obterMensagensEquipe($stateParams.equipeId).success(function (data) {
+                    console.log(data.src);
+                    $scope.mensagens = data.src;
+                });
+            }
+            $scope.carregarMensagens();
             $scope.mandarMensagem = function () {
-                mensagensEquipeService.enviarMensagem($scope.mensagem);
+                $scope.mensagem.equipe = $stateParams.equipeId;
+                mensagensEquipeService.enviarMensagem($scope.mensagem).then(function () {
+                    $scope.carregarMensagens();
+                })
             }
             
         })

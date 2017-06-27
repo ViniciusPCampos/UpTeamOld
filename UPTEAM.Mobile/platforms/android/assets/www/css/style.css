@@ -1,1 +1,50 @@
-/* Empty. Add your own CSS if you like */
+﻿/* Empty. Add your own CSS if you like */
+.caixa-mensagem {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.mensagem {
+  background: #4678ce;
+  padding-left: 16px;
+}
+.mensagem h2, .mensagem p{
+  color: white;
+}
+.mensagem-alerta {
+  background: #89a0c5;
+  margin: 10px;
+  height: 74px;
+  color: white;
+  text-align: center;
+  font-size: 21px;
+  padding-top: 25px;
+  border-radius: 10px;
+}
+.dashboard-titulo {
+  background: #2f73d8;
+  padding: 20px;
+  color: white;
+  width: 96%;
+  margin: 10px 10px 10px 10px;
+  height: 80px;
+}
+.dashboard-valor {
+  font-size: 90px;
+  margin-top: 0px;
+  text-align: center
+}
+.margin-b60 {
+  margin-bottom: 60px;
+}
+.tarefa-tags {
+  background: blue;
+  padding: 0px 15px;
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.tarefa-nome {
+  font-size: 25px !important;
+  font-weight: bold !important;
+}

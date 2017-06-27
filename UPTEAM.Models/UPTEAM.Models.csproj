@@ -42,15 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutenticacaoModel.cs" />
+    <Compile Include="DificuldadeModel.cs" />
     <Compile Include="EquipeModel.cs" />
     <Compile Include="ErrosJson.cs" />
+    <Compile Include="EstadoTarefaModel.cs" />
     <Compile Include="JsonResult.cs" />
     <Compile Include="MarcoModel.cs" />
     <Compile Include="MensagemModel.cs" />
+    <Compile Include="PrioridadeModel.cs" />
     <Compile Include="ProjetoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SprintModel.cs" />
     <Compile Include="TarefaModel.cs" />
+    <Compile Include="TipoTarefaModel.cs" />
     <Compile Include="UsuarioModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

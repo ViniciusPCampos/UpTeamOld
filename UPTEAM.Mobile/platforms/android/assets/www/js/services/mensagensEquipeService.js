@@ -1,12 +1,12 @@
 ﻿(function () {
     angular.module('starter.services')
-        .factory('mensagensEquipeService', function ($http, config) {
+        .factory('mensagensEquipeService', function ($http, $q, config) {
             var _obterMensagensEquipe = function (id) {
                 return $http.get(config.baseUrl + "/equipe/" + id + "/mensagem");
             };
             
-            _enviarMensagem = function(mensagem) {
-                console.log(mensagem);
+            _enviarMensagem = function (mensagem) {
+                var deferred = $q.defer();
                 var req = {
                     method: 'POST',
                     url: config.baseUrl + "/mensagem",
@@ -16,10 +16,11 @@
 
                 $http(req)
                     .success(function (response) {
-                        console.log("Mensagem Enviada!!");
+                        deferred.resolve(response);
                     }).error(function (err) {
-                        console.log("Erro");
                     });
+
+                return deferred.promise;
             }
             
             return {

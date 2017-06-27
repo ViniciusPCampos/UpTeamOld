@@ -18,12 +18,16 @@ namespace UPTEAM.AutoMapper.MappingProfile
               .ForMember(x => x.Descricao, x => x.MapFrom(y => y.dsc_tarefa))
               .ForMember(x => x.DataInicio, x => x.MapFrom(y => y.dta_inicio))
               .ForMember(x => x.DataFim, x => x.MapFrom(y => y.dta_fim))
-              .ForMember(x => x.Dificuldade, x => x.MapFrom(y => y.idt_dificuldade))
+              .ForMember(x => x.IdDificuldade, x => x.MapFrom(y => y.idt_dificuldade))
               .ForMember(x => x.Sprint, x => x.MapFrom(y => y.idt_sprint))
               .ForMember(x => x.Usuario, x => x.MapFrom(y => y.idt_usuario))
-              .ForMember(x => x.Prioridade, x => x.MapFrom(y => y.idt_prioridade))
-              .ForMember(x => x.EstadoTarefa, x => x.MapFrom(y => y.idt_estado_tarefa))
-              .ForMember(x => x.TipoTarefa, x => x.MapFrom(y => y.idt_tipo_tarefa));
+              .ForMember(x => x.IdPrioridade, x => x.MapFrom(y => y.idt_prioridade))
+              .ForMember(x => x.IdEstadoTarefa, x => x.MapFrom(y => y.idt_estado_tarefa))
+              .ForMember(x => x.IdTipoTarefa, x => x.MapFrom(y => y.idt_tipo_tarefa))
+              .ForMember(x => x.Dificuldade, x => x.MapFrom(y => y.tt_dificuldade))
+              .ForMember(x => x.Prioridade, x => x.MapFrom(y => y.tt_prioridade))
+              .ForMember(x => x.TipoTarefa, x => x.MapFrom(y => y.tt_tipo_tarefa))
+              .ForMember(x => x.EstadoTarefa, x => x.MapFrom(y => y.tt_estado_tarefa));
         }
     }
 }

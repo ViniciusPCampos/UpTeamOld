@@ -24,6 +24,10 @@ namespace UPTEAM.IoC
             kernel.Bind<ITbProjetoToProjetoModelParse>().To<TbProjetoToProjetoModelParse>();
             kernel.Bind<ISprintModelToTbSprintParse>().To<SprintModelToTbSprintParse>();
             kernel.Bind<ITbSprintToSprintModelParse>().To<TbSprintToSprintModelParse>();
+            kernel.Bind<ITbPrioridadeToPrioridadeModel>().To<TbPrioridadeToPrioridadeModel>();
+            kernel.Bind<ITbDificuldadeToDificuldadeModel>().To<TbDificuldadeToDificuldadeModel>();
+            kernel.Bind<ITbEstadoTarefaToEstadoTarefaModel>().To<TbEstadoTarefaToEstadoTarefaModel>();
+            kernel.Bind<ITbTipoTarefaToTipoTarefaModel>().To<TbTipoTarefaToTipoTarefaModel>();
         }
     }
 }
