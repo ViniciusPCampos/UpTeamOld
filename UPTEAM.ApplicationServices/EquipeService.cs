@@ -47,11 +47,6 @@ namespace UPTEAM.ApplicationServices
 
         public List<tb_equipe> BuscarPorUsuario(int idtUsuario)
         {
-            return _equipeRepositorio.GetById(idtEquipe);
-        }
-
-        public List<tb_equipe> BuscarPorUsuario(int idtUsuario)
-        {
             return _equipeRepositorio.BuscarEquipePorUsuario(idtUsuario).ToList();
         }
 

@@ -19,8 +19,7 @@ namespace UPTEAM.Presentation.Web.Controllers
         private ITbProjetoToProjetoModelParse _tbProjetoParser { get; }
         public ActionResult Criar()
         {
-            var projeto = new ProjetoModel();
-            projeto.EquipeProjeto = (int)Session["equipe"];
+            var projeto = new ProjetoModel {EquipeProjeto = (int) Session["equipe"]};
             return View(projeto);
         }
         [HttpPost]
@@ -35,8 +34,10 @@ namespace UPTEAM.Presentation.Web.Controllers
             return RedirectToAction("Detalhe", aux);
         }
 
-        public ActionResult Detalhe(ProjetoModel projeto)
+        public ActionResult Detalhe(int id)
         {
+            var tbProjeto = _projetoService.BuscarPorID(id);
+            var projeto = _tbProjetoParser.Parse(tbProjeto);
             return View(projeto);
         }
     }
