@@ -106,8 +106,8 @@
                                     @Html.DisplayFor(modelItem => item.DataTerminoProjeto)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Editar", new { id = item.ID }) |
-                                    @Html.ActionLink("Details", "Detalhe", new { id = item.ID }) |
+                                    @Html.ActionLink("Editar", "Editar","Projeto", new { id = item.ID }) |
+                                    @Html.ActionLink("Detalhes", "Detalhe","Projeto", new{ id = item.ID}, null) |
                                     @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
                                 </td>
                             </tr>

@@ -19,7 +19,6 @@ namespace UPTEAM.IoC
             kernel.Bind<IMarcoModelToTbMarcoParse>().To<MarcoModelToTbMarcoParse>();
             kernel.Bind<ITbMensagemToMensagemModelParse>().To<TbMensagemToMensagemModelParse>();
             kernel.Bind<IMensagemModelToTbMensagemParse>().To<MensagemModelToTbMensagemParse>();
-            kernel.Bind<IRegistrarModelToTbUsuarioParse>().To<RegistrarModelToTbUsuarioParse>();
             kernel.Bind<ITbEquipeToEquipeModelParse>().To<TbEquipeToEquipeModelParse>();
             kernel.Bind<IRegistrarModelToTbUsuarioParse>().To<RegistrarModelToTbUsuarioParse>();
             kernel.Bind<IProjetoModelToTbProjetoParse>().To<ProjetoModelToTbProjetoParse>();

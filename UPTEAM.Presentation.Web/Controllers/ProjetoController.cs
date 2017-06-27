@@ -34,9 +34,11 @@ namespace UPTEAM.Presentation.Web.Controllers
             return RedirectToAction("Detalhe", aux);
         }
 
-        public ActionResult Detalhe(ProjetoModel projeto)
+        public ActionResult Detalhe(int id)
         {
             Session["Projeto"] = projeto;
+            var tbProjeto = _projetoService.BuscarPorID(id);
+            var projeto = _tbProjetoParser.Parse(tbProjeto);
             return View(projeto);
         }
 
