@@ -173,6 +173,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcoController.cs" />
     <Compile Include="Controllers\ProjetoController.cs" />
+    <Compile Include="Controllers\SprintController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -269,14 +270,10 @@
     <Content Include="Views\Autenticacao\Registrar.cshtml" />
     <Content Include="Views\Equipe\Detalhe.cshtml" />
     <Content Include="Views\Equipe\Index.cshtml" />
-    <Content Include="Views\Equipe\Editar.cshtml" />
     <Content Include="Views\Projeto\Criar.cshtml" />
     <Content Include="Views\Projeto\Detalhe.cshtml" />
     <Content Include="Views\Autenticacao\Registrar.cshtml" />
-    <Content Include="Views\Equipe\Criar.cshtml" />
     <Content Include="Views\Autenticacao\Registrar.cshtml" />
-    <Content Include="Views\Equipe\Detalhe.cshtml" />
-    <Content Include="Views\Equipe\Index.cshtml" />
     <Content Include="Views\Equipe\Editar.cshtml" />
     <Content Include="Views\Projeto\Criar.cshtml" />
     <Content Include="Views\Projeto\Detalhe.cshtml" />
@@ -285,6 +282,7 @@
     <Content Include="Views\Marco\Editar.cshtml" />
     <Content Include="Views\Marco\Detalhe.cshtml" />
     <Content Include="Views\Marco\Delete.cshtml" />
+    <Content Include="Views\Sprint\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -43,7 +43,7 @@
         <!-- /.box-body -->
         <div class="box-footer">
             <p>
-                @Html.ActionLink("Edit", "Editar", new { id = Model.Id }) |
+                @Html.ActionLink("Edit", "Editar", new { id = Model.IdEquipe }) |
                 @Html.ActionLink("Back to List", "Index")
             </p>
         </div>
@@ -106,8 +106,8 @@
                                     @Html.DisplayFor(modelItem => item.DataTerminoProjeto)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Editar", "Editar","Projeto", new { id = item.ID }) |
-                                    @Html.ActionLink("Detalhes", "Detalhe","Projeto", new{ id = item.ID}, null) |
+                                    @Html.ActionLink("Editar", "Editar","Projeto", new { id = item.IdProjeto }) |
+                                    @Html.ActionLink("Detalhes", "Detalhe","Projeto", new{ id = item.IdProjeto}, null) |
                                     @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
                                 </td>
                             </tr>
