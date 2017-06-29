@@ -23,8 +23,6 @@ namespace UPTEAM.Infra.Data.EntityConfig
                 .IsRequired()
                 .HasMaxLength(100);
 
-            Property(x => x.exp_usuario)
-                .IsRequired();
         }
     }
 }

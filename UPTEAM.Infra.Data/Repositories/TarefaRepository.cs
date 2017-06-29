@@ -15,7 +15,12 @@ namespace UPTEAM.Infra.Data.Repositories
 
         public IEnumerable<tb_tarefa> GetByOwner(int userId)
         {
-            return Db.Set<tb_tarefa>().Where(x => x.idt_usuario == userId);
+            return Db.Set<tb_tarefa>()
+                .Include(x => x.tt_dificuldade)
+                .Include(x => x.tt_estado_tarefa)
+                .Include(x => x.tt_prioridade)
+                .Include(x => x.tt_tipo_tarefa)
+                .Where(x => x.idt_usuario == userId);
         }
 
         public IEnumerable<tb_tarefa> GetByProject(int projectId)

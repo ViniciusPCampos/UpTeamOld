@@ -31,6 +31,16 @@
                         }
                     }
                 })
+                .state('app.perfil', {
+                    url: '/perfil',
+                    cache: false,
+                    views: {
+                        'menuContent': {
+                            templateUrl: 'templates/usuario.html',
+                            controller: 'UsuarioCtrl'
+                        }
+                    }
+                })
                 .state('app.participantes', {
                     url: '/participantes/:equipeId',
                     cache: false,
