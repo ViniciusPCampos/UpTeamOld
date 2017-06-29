@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.ServiceInterfaces;
@@ -45,7 +46,7 @@ namespace UPTEAM.ApplicationServices
             return _equipeRepositorio.GetById(idtEquipe);
         }
 
-        public tb_equipe BuscarPorId(int idtEquipe)
+        public List<tb_equipe> BuscarPorUsuario(int idtUsuario)
         {
             return _equipeRepositorio.BuscarEquipePorUsuario(idtUsuario).ToList();
         }
@@ -55,5 +56,9 @@ namespace UPTEAM.ApplicationServices
             _equipeRepositorio.Remove(equipe);
         }
 
+        public ICollection<tb_usuario> BuscarUsuariosEquipe(int idEquipe)
+        {
+            return _equipeRepositorio.BuscarUsuariosEquipe(idEquipe);
+        }
     }
 }

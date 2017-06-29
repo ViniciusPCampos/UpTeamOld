@@ -36,9 +36,9 @@ namespace UPTEAM.Presentation.Web.Controllers
 
         public ActionResult Detalhe(int id)
         {
-            Session["Projeto"] = projeto;
             var tbProjeto = _projetoService.BuscarPorID(id);
             var projeto = _tbProjetoParser.Parse(tbProjeto);
+            Session["Projeto"] = projeto;
             return View(projeto);
         }
 
