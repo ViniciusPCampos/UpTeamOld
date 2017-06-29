@@ -43,7 +43,6 @@ namespace UPTEAM.Infra.CrossCutting
             kernel.Bind<IMensagemRepository>().To<MensagemRepository>();
             kernel.Bind<ISprintRepository>().To<SprintRepository>();
             kernel.Bind<IDashboardRepository>().To<DashboardRepository>();
-
             kernel.Bind<IConquistaRepository>().To<ConquistaRepository>();
             kernel.Bind<IUsuarioEquipeRepository>().To<UsuarioEquipeRepository>();
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
