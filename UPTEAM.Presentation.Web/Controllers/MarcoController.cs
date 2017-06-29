@@ -24,7 +24,7 @@ namespace UPTEAM.Presentation.Web.Controllers
         public ActionResult Index()
         {
             List<MarcoModel> aux = new List<MarcoModel>();
-            var listMarcosProjeto = MarcoService.BuscarPorProjeto(Projeto.ID);
+            var listMarcosProjeto = MarcoService.BuscarPorProjeto(Projeto.IdProjeto);
             foreach (var tbMarco in listMarcosProjeto)
             {
                 aux.Add(TbMarcoParse.Parse(tbMarco));

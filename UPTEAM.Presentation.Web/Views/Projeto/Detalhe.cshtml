@@ -28,87 +28,176 @@
             </div>
         </div>
         <div class="box-body">
-                <h4>ProjetoModel</h4>
-                <hr />
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.NomeProjeto)
-                    </dt>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomeProjeto)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.NomeProjeto)
-                    </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NomeProjeto)
+                </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.DescricaoProjeto)
-                    </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DescricaoProjeto)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.DescricaoProjeto)
-                    </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DescricaoProjeto)
+                </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.DataInicioProjeto)
-                    </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataInicioProjeto)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.DataInicioProjeto)
-                    </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DataInicioProjeto)
+                </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.DataTerminoProjeto)
-                    </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataTerminoProjeto)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.DataTerminoProjeto)
-                    </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DataTerminoProjeto)
+                </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.EquipeProjeto)
-                    </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EquipeProjeto)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.EquipeProjeto)
-                    </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.EquipeProjeto)
+                </dd>
 
-                </dl>
-            </div>
+            </dl>
+        </div>
         <!-- /.box-body -->
         <div class="box-footer">
             <p>
-                @Html.ActionLink("Edit", "Editar", new { id = Model.ID }) |
+                @Html.ActionLink("Edit", "Editar", new { id = Model.IdProjeto }) |
                 @Html.ActionLink("Back to List", "Index")
             </p>
         </div>
         <!-- /.box-footer-->
     </div>
+    @Html.ActionLink("Nova Sprint", "Criar", "Sprint")
     <!-- /.box -->
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Membros</h3>
+            <h3 class="box-title">Sprints</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Adicionar Membros:</p>
-                    <label>Usuários:</label>
-                    <input type="text" class="form-control" name="name" value="" />
-                    <br />
-                    <input type="submit" name="name" class="btn btn-primary" value="Adicionar" />
-                </div>
-            </div>
+           @if (Model.Sprints != null)
+           {
+               <table id="example2" class="table table-bordered table-hover">
+                   <thead>
+                   <tr>
+                       <th>Sprint</th>
+                       <th>Data Inicio</th>
+                       <th>Data Fim</th>
+                       <th>Quantidade de Tarefa</th>
+                       <th></th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   @foreach (var sprint in Model.Sprints)
+                   {
+
+                       <tr>
+                           <td>
+                               @Html.DisplayFor(modelItem => sprint.ValorIteracao)
+                           </td>
+                           <td>
+                               @Html.DisplayFor(modelItem => sprint.DataInicioFmt)
+                           </td>
+                           <td>
+                               @Html.DisplayFor(modelItem => sprint.DataFimFmt)
+                           </td>
+                           <td>
+                               @Html.DisplayFor(modelItem => sprint.Tarefas.Count)
+                           </td>
+                           <td>
+                               @Html.ActionLink("Editar", "Editar","Sprint", new { id = sprint.IdSprint }, null) |
+                               @Html.ActionLink("Detalhes", "Detalhe","Sprint", new{ id = sprint.IdSprint}, null) |
+                               @Html.ActionLink("Delete", "Delete", "Sprint", new { id= sprint.IdSprint }, null)
+                           </td>
+                       </tr>
+                   }
+                   </tbody>
+                   <tfoot>
+                   <tr>
+                       <th>Sprint</th>
+                       <th>Data Inicio</th>
+                       <th>Data Fim</th>
+                       <th>Quantidade de Tarefa</th>
+                       <th></th>
+                   </tr>
+                   </tfoot>
+               </table>
+           }
+           else
+           {
+            <p>Essa Equipe não possui Sprints</p>
+           }
         </div>
         <!-- /.box-body -->
     </div>
-    @Html.ActionLink("Novo Projeto", "Criar", "Projeto")
+    @Html.ActionLink("Novo Marco", "Criar", "Marco")
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Projetos</h3>
+            <h3 class="box-title">Marcos</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+            @if (Model.Marcos != null)
+            {
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Data Fim</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var marco in Model.Marcos)
+                    {
 
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => marco.NomeMarco)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => marco.Descricao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => marco.DeadlineFmt)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Editar","Sprint", new { id = marco }, null) |
+                                @Html.ActionLink("Detalhes", "Detalhe","Sprint", new{ id = marco}, null) |
+                                @Html.ActionLink("Delete", "Delete", "Sprint", new { id= marco }, null)
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Data Fim</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            }
+            else
+            {
+                <p>Essa Equipe não possui Marcos</p>
+            }
+            
 
         </div>
         <!-- /.box-body -->
