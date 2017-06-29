@@ -9,7 +9,7 @@ namespace UPTEAM.Infra.Data.EntityConfig
         {
             HasKey(x => x.idt_nivel);
 
-            Property(x => x.des_nivel)
+            Property(x => x.nme_nivel)
                 .IsRequired();
 
             Property(x => x.vlr_exp_max)

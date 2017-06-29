@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.RepositoryInterfaces;
 
@@ -28,6 +29,33 @@ namespace UPTEAM.Infra.Data.Repositories
             return Db.Set<ta_usuario_equipe>().Include("tb_projeto").Include("tb_equipe.tb_projeto")
                 .Where(x => x.idt_usuario == usuario.idt_usuario)
                 .SelectMany(x => x.tb_equipe.tb_projeto).ToList();
+        }
+
+        public IEnumerable<tb_projeto> BuscarProjetosTarefasPorUsuario(int idUsuario)
+        {
+
+            //return Db.Set<tb_projeto>()
+            //    .Include(x => x.tb_sprint)
+            //    .Include(x => x.tb_sprint.Select(y => y.tb_tarefa))
+            //    .Include(x => x.tb_sprint.Select(y => y.tb_tarefa.Select(z => z.tt_dificuldade)))
+            //    .Include(x => x.tb_sprint.Select(y => y.tb_tarefa.Select(z => z.tt_estado_tarefa)))
+            //    .Include(x => x.tb_sprint.Select(y => y.tb_tarefa.Select(z => z.tt_prioridade)))
+            //    .Include(x => x.tb_sprint.Select(y => y.tb_tarefa.Select(z => z.tt_tipo_tarefa)))                               
+            //    .ToList();
+            var queryProjeto = $@"select distinct p.* 
+                            from tb_projeto p join tb_sprint s on s.idt_projeto = p.idt_projeto
+                            join tb_tarefa t on t.idt_sprint = s.idt_sprint
+                            where idt_usuario = {idUsuario}";
+
+            var projetos = Db.Database.SqlQuery<tb_projeto>(queryProjeto).ToList();
+
+            projetos.ForEach(x => x.tb_sprint = Db.Database.SqlQuery<tb_sprint>($"select distinct s.* from tb_sprint s join tb_tarefa t on t.idt_sprint = s.idt_sprint where idt_usuario = {idUsuario} and idt_projeto = {x.idt_projeto}")
+            .Select(y => y).ToList());
+
+            projetos.ForEach(x => x.tb_sprint.ToList().ForEach(s => s.tb_tarefa = Db.Database.SqlQuery<tb_tarefa>($"select * from tb_tarefa where idt_usuario = {idUsuario} and idt_sprint = {s.idt_sprint}").Select(t => t).ToList()));
+
+            return projetos;
+
         }
     }
 }

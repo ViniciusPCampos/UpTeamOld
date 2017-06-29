@@ -42,16 +42,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutenticacaoModel.cs" />
+    <Compile Include="DificuldadeModel.cs" />
     <Compile Include="EquipeModel.cs" />
     <Compile Include="ErrosJson.cs" />
+    <Compile Include="EstadoTarefaModel.cs" />
     <Compile Include="JsonResult.cs" />
     <Compile Include="MarcoModel.cs" />
     <Compile Include="MensagemModel.cs" />
+    <Compile Include="PrioridadeModel.cs" />
     <Compile Include="ProjetoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarModel.cs" />
     <Compile Include="SprintModel.cs" />
     <Compile Include="TarefaModel.cs" />
+    <Compile Include="TipoTarefaModel.cs" />
+    <Compile Include="ConquistaModel.cs" />
+    <Compile Include="UsuarioDashboard.cs" />
     <Compile Include="UsuarioModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPTEAM.Domain\UPTEAM.Domain.csproj">
+      <Project>{39FF3486-E8C9-43B7-A8DB-FA9DC3958935}</Project>
+      <Name>UPTEAM.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

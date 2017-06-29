@@ -15,13 +15,32 @@ namespace UPTEAM.Presentation.API.Controllers
     {
 
         private ITarefaService _tarefaService;
+        private IProjetoService _projetoService;
+        private IUsuarioService _usuarioService;
+
         private ITbTarefaToTarefaModelParse _parseTbTarefaToTarefaModel;
         private ITarefaModelToTbTarefaParse _parseTarefaModelToTbTarefa;
-        public TarefaController(ITarefaService tarefaService, ITbTarefaToTarefaModelParse parseTbTarefaToTarefaModel, ITarefaModelToTbTarefaParse parseTarefaModelToTbTarefa)
+        private ITbProjetoToProjetoModelParse _parseTbProjetoToProjetoModel;
+        private IProjetoModelToTbProjetoParse _parseProjetoModelToTbProjeto;
+
+        public TarefaController(
+            ITarefaService tarefaService,
+            ITbTarefaToTarefaModelParse parseTbTarefaToTarefaModel,
+            ITarefaModelToTbTarefaParse parseTarefaModelToTbTarefa,
+            IProjetoService projetoService,
+            IUsuarioService usuarioService,
+            ITbProjetoToProjetoModelParse parseTbProjetoToProjetoModel,
+            IProjetoModelToTbProjetoParse parseProjetoModelToTbProjeto
+            )
         {
             _tarefaService = tarefaService;
             _parseTbTarefaToTarefaModel = parseTbTarefaToTarefaModel;
             _parseTarefaModelToTbTarefa = parseTarefaModelToTbTarefa;
+
+            _projetoService = projetoService;
+            _usuarioService = usuarioService;
+            _parseTbProjetoToProjetoModel = parseTbProjetoToProjetoModel;
+            _parseProjetoModelToTbProjeto = parseProjetoModelToTbProjeto;
         }
         [HttpGet]
         [Authorize]
@@ -94,6 +113,31 @@ namespace UPTEAM.Presentation.API.Controllers
                 return CreateResponse(HttpStatusCode.BadRequest, null, null);
             }
         }
+        [HttpGet]
+        [Authorize]
+        [Route("tarefas")]
+        public Task<HttpResponseMessage> BuscarTarefasPorUsuario()
+        {
+            try
+            {
+                var usuario = _usuarioService.ObterUsuarioPorLogin(ObterUsuarioLogado());
+
+                var projetosTb = _projetoService.BuscarProjetosTarefasPorUsuario(usuario.idt_usuario);
+
+                if (projetosTb != null)
+                {
+                    var projetosVM = _parseTbProjetoToProjetoModel.Parse(projetosTb);
+
+                    return CreateResponse(HttpStatusCode.OK, projetosVM, null);
+                }
+
+                return CreateResponse(HttpStatusCode.NotFound, null, null);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(HttpStatusCode.BadRequest, null, null);
+            }
+        }
         [HttpPost]
         [Route("tarefa")]
         [Authorize]
@@ -109,12 +153,12 @@ namespace UPTEAM.Presentation.API.Controllers
                     Descricao = (string)body.descricao,
                     DataInicio = (DateTime)body.datainicio,
                     DataFim = (DateTime)body.datafim,
-                    Dificuldade = (int)body.dificuldade,
+                    IdDificuldade = (int)body.dificuldade,
                     Sprint = (int)body.sprint,
                     Usuario = (int)body.usuario,
-                    Prioridade = (int)body.prioridade,
-                    EstadoTarefa = (int)body.estadotarefa,
-                    TipoTarefa = (int)body.tipotarefa
+                    IdPrioridade = (int)body.prioridade,
+                    IdEstadoTarefa = (int)body.estadotarefa,
+                    IdTipoTarefa = (int)body.tipotarefa
                 };
 
                 var tarefaTb = _parseTarefaModelToTbTarefa.Parse(tarefaModel);

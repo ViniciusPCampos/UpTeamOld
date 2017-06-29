@@ -1,0 +1,28 @@
+﻿<ion-view view-title="Meu perfil">
+  <ion-content>
+    <div class="row responsive-sm">
+      <div class="margin-b60">
+        <div>
+          <div class="col"><img style="width: 150px;margin-left: 35%;" src="../img/profile.png"></div>
+        </div>
+        <br />
+        <div class="col dashboard-valor" style="font-size:70px">{{perfil.nomeUsuario}}</div><br />
+        <div class="col dashboard-valor" style="font-size:40px">{{perfil.login}}</div>
+      </div>
+      <div class="margin-b60">
+        <div>
+          <div class="col" style="font-size:50px;text-align:center">NIVEL</div>
+        </div>
+        <br />
+        <div class="col dashboard-valor" style="font-size:110px">{{perfil.nivel}}</div>
+      </div>
+      <div class="margin-b60">
+        <div>
+          <div class="col" style="font-size:50px;text-align:center">EXPERIENCIA</div>
+        </div>
+        <br />
+        <div class="col dashboard-valor">{{perfil.experiencia}}</div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

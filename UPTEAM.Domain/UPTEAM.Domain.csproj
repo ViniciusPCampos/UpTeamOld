@@ -30,6 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DTO\DashboardDTO.cs" />
+    <Compile Include="DTO\UsuarioPerfilDTO.cs" />
     <Compile Include="Entities\ta_usuario_conquista.cs" />
     <Compile Include="Entities\ta_usuario_equipe.cs" />
     <Compile Include="Entities\tb_equipe.cs" />
@@ -46,6 +48,7 @@
     <Compile Include="Entities\tt_prioridade.cs" />
     <Compile Include="Entities\tt_tipo_tarefa.cs" />
     <Compile Include="RepositoryInterfaces\IConquistaRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IDashboardRepository.cs" />
     <Compile Include="RepositoryInterfaces\IDificuldadeRepository.cs" />
     <Compile Include="RepositoryInterfaces\IEquipeRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMarcoRepository.cs" />
@@ -60,6 +63,7 @@
     <Compile Include="RepositoryInterfaces\IUsuarioEquipeRepository.cs" />
     <Compile Include="RepositoryInterfaces\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterfaces\IDashboardService.cs" />
     <Compile Include="ServiceInterfaces\IMarcoService.cs" />
     <Compile Include="ServiceInterfaces\IConquistaService.cs" />
     <Compile Include="ServiceInterfaces\IEquipeService.cs" />

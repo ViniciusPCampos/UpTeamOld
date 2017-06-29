@@ -1,5 +1,4 @@
-﻿using System;
-using UPTEAM.Infra.Data.Context;
+﻿using UPTEAM.Infra.Data.Context;
 using System.Collections.Generic;
 using System.Linq;
 using UPTEAM.Domain.RepositoryInterfaces;
@@ -7,7 +6,7 @@ using System.Data.Entity;
 
 namespace UPTEAM.Infra.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         protected UpTeamContext Db = new UpTeamContext();
         public void Add(TEntity obj)

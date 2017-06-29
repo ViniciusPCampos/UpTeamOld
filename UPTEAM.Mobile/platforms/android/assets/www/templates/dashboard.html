@@ -1,7 +1,27 @@
-<ion-view view-title="Dashboard">
+﻿<ion-view view-title="Dashboard">
   <ion-content>
-    <ion-list>
-      logado
-    </ion-list>
+    <div class="row responsive-sm">
+      <div class="margin-b60">
+        <div class="dashboard-titulo">
+          <div class="col" style="font-size:50px;text-align:center">EQUIPES</div>
+        </div>
+        <br />
+        <div class="col dashboard-valor">{{dashboard.equipes}}</div>
+      </div>
+      <div class="margin-b60">
+        <div class="dashboard-titulo">
+          <div class="col" style="font-size:50px;text-align:center">PROJETOS</div>
+        </div>
+        <br />
+        <div class="col dashboard-valor">{{dashboard.projetos}}</div>
+      </div>
+      <div class="margin-b60">
+        <div class="dashboard-titulo">
+          <div class="col" style="font-size:50px;text-align:center">TAREFAS</div>
+        </div>
+        <br />
+        <div class="col dashboard-valor">{{dashboard.tarefas}}</div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

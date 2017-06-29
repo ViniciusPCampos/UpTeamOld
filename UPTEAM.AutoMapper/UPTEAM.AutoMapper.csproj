@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\AutoMapperConfig.cs" />
+    <Compile Include="MappingProfile\TbDificuldadeMappingProfile.cs" />
+    <Compile Include="MappingProfile\TbEstadoTarefaMappingProfile.cs" />
+    <Compile Include="MappingProfile\TbPrioridadeMappingProfile.cs" />
+    <Compile Include="MappingProfile\TbTipoTarefaMappingProfile.cs" />
     <Compile Include="MappingProfile\ProjetoMappingProfile.cs" />
     <Compile Include="MappingProfile\SprintMappingProfile.cs" />
     <Compile Include="MappingProfile\TbEquipeMappingProfile.cs" />
@@ -57,17 +61,24 @@
     <Compile Include="MappingProfile\MensagemMappingProfile.cs" />
     <Compile Include="MappingProfile\TarefaMappingProfile.cs" />
     <Compile Include="MappingProfile\UsuarioMappingProfile.cs" />
+    <Compile Include="Parses\EquipeModelToTbEquipeParse.cs" />
+    <Compile Include="Parses\Interfaces\IEquipeModelToTbEquipeParse.cs" />
     <Compile Include="Parses\Interfaces\IMarcoModelToTbMarcoParse.cs" />
     <Compile Include="Parses\Interfaces\IMensagemModelToTbMensagemParse.cs" />
     <Compile Include="Parses\Interfaces\IParse.cs" />
+    <Compile Include="Parses\Interfaces\IRegistrarModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\Interfaces\IProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\Interfaces\ISprintModelToTbSprintParse.cs" />
     <Compile Include="Parses\Interfaces\ITarefaModelToTbTarefaParse.cs" />
+    <Compile Include="Parses\Interfaces\ITbDificuldadeToDificuldadeModel.cs" />
     <Compile Include="Parses\Interfaces\ITbEquipeToEquipeModelParse.cs" />
+    <Compile Include="Parses\Interfaces\ITbEstadoTarefaToEstadoTarefaModel.cs" />
     <Compile Include="Parses\Interfaces\ITbMarcoToMarcoModelParse.cs" />
     <Compile Include="Parses\Interfaces\ITbMensagemToMensagemModelParse.cs" />
+    <Compile Include="Parses\Interfaces\ITbPrioridadeToPrioridadeModel.cs" />
     <Compile Include="Parses\Interfaces\ITbSprintToSprintModelParse.cs" />
     <Compile Include="Parses\Interfaces\ITbTarefaToTarefaModelParse.cs" />
+    <Compile Include="Parses\Interfaces\ITbTipoTarefaToTipoTarefaModel.cs" />
     <Compile Include="Parses\Interfaces\ITbUsuarioToUsuarioModelParse.cs" />
     <Compile Include="Parses\Interfaces\IUsuarioModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\Interfaces\ITbProjetoToProjetoModelParse.cs" />
@@ -76,13 +87,18 @@
     <Compile Include="Parses\ParseBase.cs" />
     <Compile Include="Parses\ProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\SprintModelToTbSprintParse.cs" />
+    <Compile Include="Parses\RegistrarModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\TarefaModelToTbTarefaParse.cs" />
+    <Compile Include="Parses\TbDificuldadeToDificuldadeModel.cs" />
     <Compile Include="Parses\TbEquipeToEquipeModelParse.cs" />
+    <Compile Include="Parses\TbEstadoTarefaToEstadoTarefaModel.cs" />
     <Compile Include="Parses\TbMarcoToMarcoModelParse.cs" />
     <Compile Include="Parses\TbMensagemToMensagemModelParse.cs" />
+    <Compile Include="Parses\TbPrioridadeToPrioridadeModel.cs" />
     <Compile Include="Parses\TbProjetoToProjetoModelParse.cs" />
     <Compile Include="Parses\TbSprintToSprintModelParse.cs" />
     <Compile Include="Parses\TbTarefaToTarefaModelParse.cs" />
+    <Compile Include="Parses\TbTipoTarefaToTipoTarefaModel.cs" />
     <Compile Include="Parses\UsuarioModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\TbUsuarioToUsuarioModelParse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,7 +117,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

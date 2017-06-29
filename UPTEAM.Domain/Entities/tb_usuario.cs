@@ -21,16 +21,12 @@ namespace UPTEAM.Domain.Entities
 
         public string pwd_usuario { get; set; }
 
-        public long exp_usuario { get; set; }
         public string email_usuario { get; set; }
-
-        public int idt_nivel { get; set; }
 
         public virtual ICollection<ta_usuario_conquista> ta_usuario_conquista { get; set; }
 
         public virtual ICollection<ta_usuario_equipe> ta_usuario_equipe { get; set; }
 
         public virtual ICollection<tb_tarefa> tb_tarefa { get; set; }
-        public virtual tt_nivel tt_nivel { get; set; }
     }
 }

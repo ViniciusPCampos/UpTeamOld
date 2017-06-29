@@ -13,6 +13,7 @@
 
                 .state('app.equipes', {
                     url: '/equipes',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/equipes.html',
@@ -22,6 +23,7 @@
                 })
                 .state('app.equipe', {
                     url: '/equipes/:equipeId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/equipeMenu.html',
@@ -29,8 +31,19 @@
                         }
                     }
                 })
+                .state('app.perfil', {
+                    url: '/perfil',
+                    cache: false,
+                    views: {
+                        'menuContent': {
+                            templateUrl: 'templates/usuario.html',
+                            controller: 'UsuarioCtrl'
+                        }
+                    }
+                })
                 .state('app.participantes', {
                     url: '/participantes/:equipeId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/participantes.html',
@@ -41,6 +54,7 @@
 
                 .state('app.projetosEquipe', {
                     url: '/projetosEquipe/:equipeId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/projetosEquipe.html',
@@ -51,6 +65,7 @@
 
                 .state('app.mensagensEquipe', {
                     url: '/mensagensEquipe/:equipeId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/mensagensEquipe.html',
@@ -61,6 +76,7 @@
 
                 .state('app.projetos', {
                     url: '/projetos',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/projetos.html',
@@ -71,6 +87,7 @@
 
                 .state('app.projetoMenu', {
                     url: '/projetos/:projetoId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/projetoMenu.html',
@@ -81,6 +98,7 @@
 
                 .state('app.marcos', {
                     url: '/marcos/:projetoId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/marcos.html',
@@ -91,6 +109,7 @@
 
                 .state('app.sprints', {
                     url: '/sprints/:projetoId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/sprints.html',
@@ -101,10 +120,21 @@
 
                 .state('app.tarefas', {
                     url: '/tarefas/:sprintId',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/tarefas.html',
                             controller: 'TarefasCtrl'
+                        }
+                    }
+                })
+                .state('app.minhasTarefas', {
+                    url: '/minhasTarefas',
+                    cache: false,
+                    views: {
+                        'menuContent': {
+                            templateUrl: 'templates/minhasTarefas.html',
+                            controller: 'MinhasTarefasCtrl'
                         }
                     }
                 })
@@ -117,6 +147,7 @@
                 )
                 .state('app.dashboard', {
                     url: '/dashboard',
+                    cache: false,
                     views: {
                         'menuContent': {
                             templateUrl: 'templates/dashboard.html',
@@ -124,16 +155,6 @@
                         }
                     }
                 })
-
-                .state('app.single', {
-                    url: '/playlists/:playlistId',
-                    views: {
-                        'menuContent': {
-                            templateUrl: 'templates/playlist.html',
-                            controller: 'PlaylistCtrl'
-                        }
-                    }
-                });
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/login');
 

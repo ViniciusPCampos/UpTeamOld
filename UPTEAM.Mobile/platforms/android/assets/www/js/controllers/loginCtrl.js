@@ -4,8 +4,8 @@
         .controller('LoginCtrl', function ($scope, $location, $state, authService) {
             $scope.loginData = {};
 
+            authService.logOut();
             $scope.doLogin = function () {
-
                 authService.login($scope.loginData).then(function (response) {
                     $state.go('app.dashboard');
                 }, function (error) {

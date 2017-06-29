@@ -9,7 +9,7 @@ namespace UPTEAM.Infra.Data.EntityConfig
         {
             HasKey(x => x.idt_prioridade);
 
-            Property(x => x.des_prioridade)
+            Property(x => x.nme_prioridade)
                 .IsRequired()
                 .HasMaxLength(45);
 

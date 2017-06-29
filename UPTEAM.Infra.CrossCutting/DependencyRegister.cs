@@ -30,6 +30,8 @@ namespace UPTEAM.Infra.CrossCutting
             kernel.Bind<IProjetoService>().To<ProjetoService>();
             kernel.Bind<IMensagemService>().To<MensagemService>();
             kernel.Bind<ISprintService>().To<SprintService>();
+            kernel.Bind<IConquistaService>().To<ConquistaService>();
+            kernel.Bind<IDashboardService>().To<DashboardService>();
         }
         public static void ResolverRepository(IKernel kernel)
         {
@@ -40,7 +42,10 @@ namespace UPTEAM.Infra.CrossCutting
             kernel.Bind<IEquipeRepository>().To<EquipeRepository>();
             kernel.Bind<IMensagemRepository>().To<MensagemRepository>();
             kernel.Bind<ISprintRepository>().To<SprintRepository>();
-
+            kernel.Bind<INivelRepository>().To<NivelRepository>();
+            kernel.Bind<IDashboardRepository>().To<DashboardRepository>();
+            kernel.Bind<IConquistaRepository>().To<ConquistaRepository>();
+            kernel.Bind<IUsuarioEquipeRepository>().To<UsuarioEquipeRepository>();
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
         }
         public static void ResolverOthers(IKernel kernel)

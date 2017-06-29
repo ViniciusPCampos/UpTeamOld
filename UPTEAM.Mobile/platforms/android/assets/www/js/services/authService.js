@@ -44,7 +44,7 @@
             };
 
             authServiceFactory.logOut = function () {
-
+                console.log('sair')
                 localStorageService.remove('authorizationData');
 
                 _authentication.isAuth = false;

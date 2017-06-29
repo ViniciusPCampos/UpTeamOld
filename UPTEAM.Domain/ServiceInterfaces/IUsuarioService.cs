@@ -1,4 +1,5 @@
-﻿using UPTEAM.Domain.Entities;
+﻿using UPTEAM.Domain.DTO;
+using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Domain.ServiceInterfaces
 {
@@ -7,5 +8,7 @@ namespace UPTEAM.Domain.ServiceInterfaces
         tb_usuario Authenticate(string login, string password);
         tb_usuario ObterUsuarioPorLogin(string login);
         tb_usuario Register(tb_usuario usuario);
+        tb_usuario BuscarPorEmail(string email);
+        UsuarioPerfilDTO ObterPerfilUsuario(string login);
     }
 }

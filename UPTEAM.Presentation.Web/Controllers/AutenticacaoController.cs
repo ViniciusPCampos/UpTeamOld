@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using UPTEAM.AutoMapper.Parses.Interfaces;
 using UPTEAM.Domain.ServiceInterfaces;
 using UPTEAM.Models;
 
@@ -12,10 +13,12 @@ namespace UPTEAM.Presentation.Web.Controllers
     public class AutenticacaoController : Controller
     {
         private IUsuarioService _usuarioService;
-        public AutenticacaoController(IUsuarioService usuarioService)
+        public AutenticacaoController(IUsuarioService usuarioService, IRegistrarModelToTbUsuarioParse registrarModelToTbUsuario)
         {
             _usuarioService = usuarioService;
+            _registrarModelToTbUsuario = registrarModelToTbUsuario;
         }
+        private IRegistrarModelToTbUsuarioParse _registrarModelToTbUsuario;
         // GET: Autenticacao
         public ActionResult Autenticar()
         {
@@ -40,6 +43,28 @@ namespace UPTEAM.Presentation.Web.Controllers
 
             return View();
         }
+        //GET: Registrar
+        public ActionResult Registrar()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Registrar(RegistrarModel usuario)
+        {
+            if (usuario.Senha != usuario.ConfirmacaoSenha)
+            {
+                ModelState.AddModelError("Senha", "A Senha e a Confirmação da Senha não combinam.");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            _usuarioService.Register(_registrarModelToTbUsuario.Parse(usuario));
+            return RedirectToAction("autenticar");
+
+
+        }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

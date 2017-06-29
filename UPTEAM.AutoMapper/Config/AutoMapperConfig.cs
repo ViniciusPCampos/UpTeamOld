@@ -21,6 +21,10 @@ namespace UPTEAM.AutoMapper.Config
                 x.AddProfile<TbProjetoMappingProfile>();
                 x.AddProfile<SprintMappingProfile>();
                 x.AddProfile<TbSprintMappingProfile>();
+                x.AddProfile<TbTipoTarefaMappingProfile>();
+                x.AddProfile<TbPrioridadeMappingProfile>();
+                x.AddProfile<TbEstadoTarefaMappingProfile>();
+                x.AddProfile<TbDificuldadeMappingProfile>();
             });
 
         }

@@ -1,0 +1,54 @@
+﻿@model UPTEAM.Models.EquipeModel
+@{
+    ViewBag.Title = "Criar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="content-header">
+    <h1>
+        Nova Equipe
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Layout</a></li>
+        <li class="active">Fixed</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Nome Equipe</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        @using (Html.BeginForm("Criar","Equipe", FormMethod.Post))
+        {
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label labelfor="NomeEquipe">Nome:</label><br />
+                        @Html.TextBoxFor(x => x.NomeEquipe, new { htmlAttributes = new { @class = "form-control", placeholder = "Nome da Equipe"} })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Descrição:</label><br />
+                        @Html.TextAreaFor(x => x.Descricao, new { htmlAttributes = new { @class = "form-control", placeholder = "Descrição" } })
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <button class="btn btn-default">Cancelar</button>
+            </div>
+        }
+        
+    </div>
+</section>
