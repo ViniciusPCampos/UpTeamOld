@@ -61,9 +61,12 @@
     <Compile Include="MappingProfile\MensagemMappingProfile.cs" />
     <Compile Include="MappingProfile\TarefaMappingProfile.cs" />
     <Compile Include="MappingProfile\UsuarioMappingProfile.cs" />
+    <Compile Include="Parses\EquipeModelToTbEquipeParse.cs" />
+    <Compile Include="Parses\Interfaces\IEquipeModelToTbEquipeParse.cs" />
     <Compile Include="Parses\Interfaces\IMarcoModelToTbMarcoParse.cs" />
     <Compile Include="Parses\Interfaces\IMensagemModelToTbMensagemParse.cs" />
     <Compile Include="Parses\Interfaces\IParse.cs" />
+    <Compile Include="Parses\Interfaces\IRegistrarModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\Interfaces\IProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\Interfaces\ISprintModelToTbSprintParse.cs" />
     <Compile Include="Parses\Interfaces\ITarefaModelToTbTarefaParse.cs" />
@@ -84,6 +87,7 @@
     <Compile Include="Parses\ParseBase.cs" />
     <Compile Include="Parses\ProjetoModelToTbProjetoParse.cs" />
     <Compile Include="Parses\SprintModelToTbSprintParse.cs" />
+    <Compile Include="Parses\RegistrarModelToTbUsuarioParse.cs" />
     <Compile Include="Parses\TarefaModelToTbTarefaParse.cs" />
     <Compile Include="Parses\TbDificuldadeToDificuldadeModel.cs" />
     <Compile Include="Parses\TbEquipeToEquipeModelParse.cs" />
@@ -113,7 +117,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

@@ -9,7 +9,7 @@ namespace UPTEAM.AutoMapper.MappingProfile
         public TbProjetoMappingProfile()
         {
             CreateMap<tb_projeto, ProjetoModel>()
-                .ForMember(x => x.IdProjeto, x => x.MapFrom(y => y.idt_projeto))
+                .ForMember(x => x.ID, x => x.MapFrom(y => y.idt_projeto))
                 .ForMember(x => x.NomeProjeto, x => x.MapFrom(y => y.nme_projeto))
                 .ForMember(x => x.DescricaoProjeto, x => x.MapFrom(y => y.dsc_projeto))
                 .ForMember(x => x.DataInicioProjeto, x => x.MapFrom(y => y.dta_inicio))

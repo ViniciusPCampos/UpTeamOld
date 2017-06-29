@@ -48,6 +48,8 @@ namespace UPTEAM.ApplicationServices
         {
             var password = _cript.CreateHash(usuario.pwd_usuario);
             usuario.pwd_usuario = password;
+            usuario.idt_nivel = 1;
+            usuario.exp_usuario = 0;
 
             if(_usuarioRepository.Register(usuario))
                 return usuario;
@@ -71,6 +73,10 @@ namespace UPTEAM.ApplicationServices
             perfil.Nivel = _nivelRepository.GetAll().Where(x => x.vlr_exp_max <= perfil.Experiencia).OrderByDescending(x => x.vlr_exp_max).Take(1).FirstOrDefault().nme_nivel;
 
             return perfil;
+        }
+        public tb_usuario BuscarPorEmail(string email)
+        {
+            return _repository.BuscarPorEmail(email);
         }
     }
 }
