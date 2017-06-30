@@ -43,8 +43,8 @@
         <!-- /.box-body -->
         <div class="box-footer">
             <p>
-                @Html.ActionLink("Editar", "Editar", new { id = Model.IdEquipe }) |
-                @Html.ActionLink("Voltar", "Index")
+                @Html.ActionLink("Edit", "Editar", new { id = Model.IdEquipe }) |
+                @Html.ActionLink("Back to List", "Index")
             </p>
         </div>
         <!-- /.box-footer-->
@@ -68,7 +68,7 @@
         </div>
         <!-- /.box-body -->
     </div>
-    @Html.ActionLink("Novo Projeto", "Criar", "Projeto",new { @class="btn btn-primary" })
+    @Html.ActionLink("Novo Projeto", "Criar", "Projeto")
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Projetos</h3>
@@ -106,13 +106,22 @@
                                     @Html.DisplayFor(modelItem => item.DataTerminoProjeto)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Editar", "Editar","Projeto", new { id = item.IdProjeto }) |
-                                    @Html.ActionLink("Detalhes", "Detalhe","Projeto", new{ id = item.IdProjeto}, null) |
+                                    @Html.ActionLink("Editar", "Editar", "Projeto", new { id = item.IdProjeto }) |
+                                    @Html.ActionLink("Detalhes", "Detalhe", "Projeto", new { id = item.IdProjeto }, null) |
                                     @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
                                 </td>
                             </tr>
                         }
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Projeto</th>
+                            <th>Descrição</th>
+                            <th>Data de Início</th>
+                            <th>Data de Fim</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
                 </table>
             }
             else
@@ -122,10 +131,72 @@
 
             }
 
-
         </div>
         <!-- /.box-body -->
     </div>
+
+    @Html.ActionLink("Mensagens", "Criar", "Mensagem")
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Mensagens da Equipe</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+
+            @if (Model.ListaMensagens != null)
+            {
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Texto</th>
+                            <th>Data de Envio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListaMensagens)
+                        {
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TextoMensagem)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataEnvioFmt)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IdUsuario)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            }
+            else
+            {
+                <p>Essa Equipe ainda não possui Mensagens.</p>
+            }
+
+            @using (Html.BeginForm("Criar", "Mensagem", FormMethod.Post))
+            {
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label labelfor="NomeEquipe">Mnesagem:</label><br />
+                            @Html.TextBoxFor(x => x.ListaMensagens.FirstOrDefault().TextoMensagem,
+                    new { htmlAttributes = new { @class = "form-control", placeholder = "Texto" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Enviar" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- /.box-body -->
+        </div>
 
 </section>
 <!-- /.content -->
