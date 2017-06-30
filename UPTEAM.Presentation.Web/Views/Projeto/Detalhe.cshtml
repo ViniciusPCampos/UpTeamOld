@@ -46,7 +46,7 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.DataInicioProjeto)
+                    @Html.DisplayNameFor(model => model.DataInicioProjetoFmtd)
                 </dt>
 
                 <dd>
@@ -58,7 +58,7 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.DataTerminoProjeto)
+                    @Html.DisplayFor(model => model.DataTerminoProjetoFmtd)
                 </dd>
 
                 <dt>
@@ -167,9 +167,9 @@
                                 @Html.DisplayFor(modelItem => marco.DeadlineFmt)
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "Editar","Sprint", new { id = marco }, null) |
-                                @Html.ActionLink("Detalhes", "Detalhe","Sprint", new{ id = marco}, null) |
-                                @Html.ActionLink("Delete", "Delete", "Sprint", new { id= marco }, null)
+                                @Html.ActionLink("Editar", "Editar","Marco", new { id = marco.IdMarco }, null) |
+                                @Html.ActionLink("Detalhes", "Detalhe","Marco", new{ id = marco.IdMarco}, null) |
+                                @Html.ActionLink("Delete", "Delete", "Marco", new { id= marco.IdMarco }, null)
                             </td>
                         </tr>
                     }

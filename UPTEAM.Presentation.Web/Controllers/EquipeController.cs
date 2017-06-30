@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Security;
-using UPTEAM.ApplicationServices;
 using UPTEAM.AutoMapper.Parses;
-using UPTEAM.Domain.Entities;
 using UPTEAM.Domain.ServiceInterfaces;
 using UPTEAM.Models;
 
@@ -62,7 +60,7 @@ namespace UPTEAM.Presentation.Web.Controllers
                 _equipeService.AdicionarUsuario(usuarioLogado.idt_usuario, equipeBanco.idt_equipe);
                 return RedirectToAction("Index","Equipe");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 return RedirectToAction("");
             }
@@ -86,6 +84,13 @@ namespace UPTEAM.Presentation.Web.Controllers
         public ActionResult Editar(int id)
         {
             var equipe = _equipeService.BuscarPorId(id);
+            return View(_equipeParser.Parse(equipe));
+        }
+        [HttpPost]
+        public ActionResult Editar(EquipeModel equipe)
+        {
+            var equipeTb = _equipeParser.Parse(equipe);
+            _equipeService.AtualizarEquipe(equipeTb);
             return View(_equipeParser.Parse(equipe));
         }
     }

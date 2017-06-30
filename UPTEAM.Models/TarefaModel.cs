@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UPTEAM.Models
 {
@@ -8,9 +9,9 @@ namespace UPTEAM.Models
         public string NomeTarefa { get; set; }
         public string Descricao { get; set; }
         public DateTime DataInicio { get; set; }
-        public string DataInicioFmt { get { return DataInicio.ToString("dd/MM/yyyy"); } }
+        public string DataInicioFmt => DataInicio.ToString("dd/MM/yyyy");
         public DateTime DataFim { get; set; }
-        public string DataFimFmt { get { return DataFim.ToString("dd/MM/yyyy"); } }
+        public string DataFimFmt => DataFim.ToString("dd/MM/yyyy");
         public int IdDificuldade { get; set; }
         public DificuldadeModel Dificuldade { get; set; }
         public int Sprint { get; set; }

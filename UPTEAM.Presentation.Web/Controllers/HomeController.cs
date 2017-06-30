@@ -26,17 +26,23 @@ namespace UPTEAM.Presentation.Web.Controllers
         }
         public ActionResult Index()
         {
-            var usuarioDashboard = new UsuarioDashboard()
+            var membershipUser = Membership.GetUser();
+            if (membershipUser != null)
             {
-                Usuario = _usuarioService.ObterUsuarioPorLogin(Membership.GetUser().Email)
-            };
-            Session["usuario"] = usuarioDashboard.Usuario.idt_usuario;
-            usuarioDashboard.ListaEquipes = _equipeService.BuscarPorUsuario(usuarioDashboard.Usuario.idt_usuario);
-            usuarioDashboard.ListaTarefa = _tarefaService.BuscarTarefasPorUsuario(usuarioDashboard.Usuario);
-            List<tb_projeto> aux = usuarioDashboard.ListaEquipes.SelectMany(equipe => _projetoService.BuscarPorEquipe(equipe.idt_equipe)).ToList();
-            usuarioDashboard.ListaProjetos = aux;
-            //usuarioDashboard.ListaConquista = _conquistaService.BuscarConquistas().ToList();
-            return View(usuarioDashboard);
+                var usuarioDashboard = new UsuarioDashboard()
+                {
+                    Usuario = _usuarioService.ObterUsuarioPorLogin(membershipUser.Email)
+                };
+                Session["usuario"] = usuarioDashboard.Usuario.idt_usuario;
+                usuarioDashboard.ListaEquipes = _equipeService.BuscarPorUsuario(usuarioDashboard.Usuario.idt_usuario);
+                usuarioDashboard.ListaTarefa = _tarefaService.BuscarTarefasPorUsuario(usuarioDashboard.Usuario);
+                List<tb_projeto> aux = usuarioDashboard.ListaEquipes
+                    .SelectMany(equipe => _projetoService.BuscarPorEquipe(equipe.idt_equipe)).ToList();
+                usuarioDashboard.ListaProjetos = aux;
+                //usuarioDashboard.ListaConquista = _conquistaService.BuscarConquistas().ToList();
+                return View(usuarioDashboard);
+            }
+            return RedirectToAction("Autenticar", "Autenticacao");
         }
     }
 }

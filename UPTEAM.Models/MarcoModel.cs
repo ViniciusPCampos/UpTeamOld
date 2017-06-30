@@ -4,7 +4,7 @@ namespace UPTEAM.Models
 {
     public class MarcoModel
     {
-        public int? IdMarco { get; set; }
+        public int IdMarco { get; set; }
         public string NomeMarco { get; set; }
         public string Descricao { get; set; }
         public DateTime Deadline { get; set; }
