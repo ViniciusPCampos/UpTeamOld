@@ -9,5 +9,6 @@ namespace UPTEAM.Domain.ServiceInterfaces
         void AtualizarSprint(tb_sprint sprint);
         List<tb_sprint> BuscarPorProjeto(int idProjeto);
         void ExcluirSprint(tb_sprint sprint);
+        tb_sprint BuscarPorId(int id);
     }
 }

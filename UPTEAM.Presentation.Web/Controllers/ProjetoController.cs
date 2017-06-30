@@ -31,14 +31,14 @@ namespace UPTEAM.Presentation.Web.Controllers
             }
             var aux = _projetoModelParser.Parse(projetoModel);
             aux = _projetoService.CriarNovoProjeto(aux);
-            return RedirectToAction("Detalhe", aux);
+            return RedirectToAction("Detalhe", new { id = aux.idt_projeto });
         }
 
         public ActionResult Detalhe(int id)
         {
             var tbProjeto = _projetoService.BuscarPorID(id);
             var projeto = _tbProjetoParser.Parse(tbProjeto);
-            Session["Projeto"] = projeto;
+            Session["Projeto"] = projeto.IdProjeto;
             return View(projeto);
         }
 

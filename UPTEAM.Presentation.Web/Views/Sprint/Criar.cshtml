@@ -1,0 +1,55 @@
+﻿@model UPTEAM.Models.SprintModel
+@{
+    ViewBag.Title = "Criar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Nova Sprint
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Nome Equipe</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        @using (Html.BeginForm("Criar", "Sprint", FormMethod.Post))
+        {
+            <div class="box-body">
+                <div class="">
+                    @Html.HiddenFor(x => x.Projeto)
+                    <div class="col-xs-12">
+                        <label labelfor="NomeEquipe">Valor da iteração:</label><br />
+                        @Html.EditorFor(x => x.ValorIteracao, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Data Início:</label><br />
+                        @Html.EditorFor(x => x.DataInicio, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Data Fim:</label><br />
+                        @Html.EditorFor(x => x.DataFim, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                    </div>
+                    <!-- /.row -->
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <input type="submit" class="btn btn-primary" value="Salvar" />
+                <button class="btn btn-default">Cancelar</button>
+            </div>
+        }
+
+    </div>
+</section>
+
+

@@ -31,6 +31,11 @@ namespace UPTEAM.Infra.Data.Repositories
                 .SelectMany(x => x.tb_equipe.tb_projeto).ToList();
         }
 
+        public tb_projeto BuscarProjetoPorId(int idProjeto)
+        {
+            return Db.Set<tb_projeto>().Include(x => x.tb_sprint).Include(x => x.tb_sprint.Select(y => y.tb_tarefa)).FirstOrDefault(x => x.idt_projeto == idProjeto);
+        }
+
         public IEnumerable<tb_projeto> BuscarProjetosTarefasPorUsuario(int idUsuario)
         {
 
@@ -53,6 +58,17 @@ namespace UPTEAM.Infra.Data.Repositories
             .Select(y => y).ToList());
 
             projetos.ForEach(x => x.tb_sprint.ToList().ForEach(s => s.tb_tarefa = Db.Database.SqlQuery<tb_tarefa>($"select * from tb_tarefa where idt_usuario = {idUsuario} and idt_sprint = {s.idt_sprint}").Select(t => t).ToList()));
+
+            projetos.ForEach(x => x.tb_sprint.ToList().ForEach(s => s.tb_tarefa.ToList()
+            .ForEach(t => t.tt_dificuldade = Db.Database.SqlQuery<tt_dificuldade>($"select * from tt_dificuldade where idt_dificuldade = {t.idt_dificuldade}").FirstOrDefault())));
+            projetos.ForEach(x => x.tb_sprint.ToList().ForEach(s => s.tb_tarefa.ToList()
+            .ForEach(t => t.tt_estado_tarefa = Db.Database.SqlQuery<tt_estado_tarefa>($"select * from tt_estado_tarefa where idt_estado_tarefa = {t.idt_estado_tarefa}").FirstOrDefault())));
+            projetos.ForEach(x => x.tb_sprint.ToList().ForEach(s => s.tb_tarefa.ToList()
+            .ForEach(t => t.tt_estado_tarefa = Db.Database.SqlQuery<tt_estado_tarefa>($"select * from tt_estado_tarefa where idt_estado_tarefa = {t.idt_estado_tarefa}").FirstOrDefault())));
+            projetos.ForEach(x => x.tb_sprint.ToList().ForEach(s => s.tb_tarefa.ToList()
+            .ForEach(t => t.tt_prioridade = Db.Database.SqlQuery<tt_prioridade>($"select * from tt_prioridade where idt_prioridade = {t.idt_prioridade}").FirstOrDefault())));
+            projetos.ForEach(x => x.tb_sprint.ToList().ForEach(s => s.tb_tarefa.ToList()
+            .ForEach(t => t.tt_tipo_tarefa = Db.Database.SqlQuery<tt_tipo_tarefa>($"select * from tt_tipo_tarefa where idt_tipo_tarefa = {t.idt_tipo_tarefa}").FirstOrDefault())));
 
             return projetos;
 

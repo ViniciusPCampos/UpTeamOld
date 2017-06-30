@@ -21,6 +21,11 @@ namespace UPTEAM.ApplicationServices
             _sprintRepositorio.Update(sprint);
         }
 
+        public tb_sprint BuscarPorId(int id)
+        {
+            return _sprintRepositorio.BuscarPorId(id);
+        }
+
         public List<tb_sprint> BuscarPorProjeto(int idProjeto)
         {
             return _sprintRepositorio.BuscarPorProjeto(idProjeto).ToList();

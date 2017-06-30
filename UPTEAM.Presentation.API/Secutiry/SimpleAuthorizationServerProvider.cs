@@ -42,7 +42,7 @@ namespace UPTEAM.Presentation.API.Secutiry
 
                 context.Validated(identity);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 context.SetError("invalid_request", "Requisição invalida.");

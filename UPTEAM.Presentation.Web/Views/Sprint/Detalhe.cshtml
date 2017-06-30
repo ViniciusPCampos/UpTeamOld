@@ -1,0 +1,106 @@
+﻿@model UPTEAM.Models.SprintModel
+@{
+    ViewBag.Title = "Detalhe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content">
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Informações</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ValorIteracao)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ValorIteracao)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataInicio)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DataInicioFmt)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataFim)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DataFimFmt)
+                </dd>
+            </dl>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Sprints</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                @if (Model.Tarefas != null)
+                {
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Dificuldade</th>
+                                <th>Estado da Tarefa</th>
+                                <th>Tipo da Tarefa</th>
+                                <th>Prioridade</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var tarefa in Model.Tarefas)
+                            {
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => tarefa.Descricao)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => tarefa.Dificuldade.NomeDificuldade)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => tarefa.EstadoTarefa.NomeEstadoTarefa)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => tarefa.TipoTarefa.NomeTipoTarefa)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => tarefa.Prioridade.NomePrioridade)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Editar", "Editar", "Sprint", new { id = 0 }, null) |
+                                        @Html.ActionLink("Detalhes", "Detalhe", "Sprint", new { id = 0 }, null) |
+                                        @Html.ActionLink("Delete", "Delete", "Sprint", new { id = 0 }, null)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>Essa Equipe não possui Sprints</p>
+                }
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+</section>
+
