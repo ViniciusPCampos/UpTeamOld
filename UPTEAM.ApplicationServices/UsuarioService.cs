@@ -70,9 +70,9 @@ namespace UPTEAM.ApplicationServices
                 Experiencia = tarefasDoUsuario.Sum(x => (x.tt_dificuldade.mtp_exp_dificuldade * _experienciaBase) +
                                                         (x.tt_prioridade.mtp_exp_prioridade * _experienciaBase))
             };
+            perfil.ExpProximoNivel = _nivelRepository.GetAll().Where(x => x.vlr_exp_max >= perfil.Experiencia).OrderBy(x => x.vlr_exp_max).Take(1).FirstOrDefault().vlr_exp_max;
 
             perfil.Nivel = _nivelRepository.GetAll().Where(x => x.vlr_exp_max <= perfil.Experiencia).OrderByDescending(x => x.vlr_exp_max).Take(1).FirstOrDefault().nme_nivel;
-
             return perfil;
         }
         public tb_usuario BuscarPorEmail(string email)

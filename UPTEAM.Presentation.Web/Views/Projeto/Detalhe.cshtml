@@ -75,12 +75,12 @@
         <div class="box-footer">
             <p>
                 @Html.ActionLink("Editar", "Editar", new { id = Model.IdProjeto }) |
-                @Html.ActionLink("Voltar", "Index")
+                @Html.ActionLink("Voltar", "Detalhe", "Equipe",Model.EquipeProjeto)
             </p>
         </div>
         <!-- /.box-footer-->
     </div>
-    @Html.ActionLink("Nova Sprint", "Criar", "Sprint")
+    @Html.ActionLink("Nova Sprint", "Criar", "Sprint", new { @class="btn btn-primary" })
     <!-- /.box -->
     <div class="box">
         <div class="box-header">
@@ -125,15 +125,6 @@
                        </tr>
                    }
                    </tbody>
-                   <tfoot>
-                   <tr>
-                       <th>Sprint</th>
-                       <th>Data Inicio</th>
-                       <th>Data Fim</th>
-                       <th>Quantidade de Tarefa</th>
-                       <th></th>
-                   </tr>
-                   </tfoot>
                </table>
            }
            else
