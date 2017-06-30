@@ -12,5 +12,7 @@ namespace UPTEAM.Models
         public string Descricao { get; set; }
 
         public List<ProjetoModel> ListaProjetos { get; set; }
+
+        public List<MensagemModel> ListaMensagens { get; set; }
     }
 }
