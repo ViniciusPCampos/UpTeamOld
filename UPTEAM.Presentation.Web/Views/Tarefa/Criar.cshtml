@@ -1,0 +1,66 @@
+﻿@model UPTEAM.Models.TarefaModel
+@{
+    ViewBag.Title = "Criar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="content-header">
+    <h1>
+        Nova Tarefa
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-default">
+        <!-- /.box-header -->
+        @using (Html.BeginForm("Criar", "Tarefa", FormMethod.Post))
+        {
+        <div class="box-body">
+            <div class="">
+                @Html.HiddenFor(x => x.Sprint)
+                <div class="col-xs-12">
+                    <label labelfor="NomeEquipe">Nome:</label><br />
+                    @Html.EditorFor(x => x.NomeTarefa, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+                <div class="col-xs-12">
+                    <label>Descrição:</label><br />
+                    @Html.TextAreaFor(x => x.Descricao, new { @class = "form-control" })
+                </div>
+
+                <div class="col-xs-6">
+                    <label>Data Início:</label><br />
+                    @Html.EditorFor(x => x.DataInicio, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                </div>
+                <div class="col-xs-6">
+                    <label>Data Fim:</label><br />
+                    @Html.EditorFor(x => x.DataFim, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                </div>
+                <div class="col-xs-3">
+                    <label>Dificuldade:</label><br />
+                    @Html.DropDownListFor(x => x.IdDificuldade, (SelectList)ViewBag.Dificuldades, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="col-xs-3">
+                    <label>Prioridade:</label><br />
+                    @Html.DropDownListFor(x => x.IdPrioridade, (SelectList)ViewBag.Prioridade, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                </div>
+                <div class="col-xs-3">
+                    <label>Tipo:</label><br />
+                    @Html.DropDownListFor(x => x.IdTipoTarefa, (SelectList)ViewBag.TipoTarefa, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                </div>
+                <div class="col-xs-3">
+                    <label>Estado:</label><br />
+                    @Html.DropDownListFor(x => x.IdEstadoTarefa, (SelectList)ViewBag.EstadoTarefa, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <input type="submit" class="btn btn-primary" value="Salvar" />
+            <button class="btn btn-default">Cancelar</button>
+        </div>
+        }
+
+    </div>
+</section>

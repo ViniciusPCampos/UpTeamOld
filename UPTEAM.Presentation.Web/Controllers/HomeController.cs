@@ -42,7 +42,7 @@ namespace UPTEAM.Presentation.Web.Controllers
                 //usuarioDashboard.ListaConquista = _conquistaService.BuscarConquistas().ToList();
                 return View(usuarioDashboard);
             }
-            return RedirectToAction("Autenticar", "Autenticacao");
+            return RedirectToAction("Logout", "Autenticacao");
         }
     }
 }

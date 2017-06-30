@@ -32,15 +32,19 @@
   <ItemGroup>
     <Compile Include="DashboardService.cs" />
     <Compile Include="ConquistaService.cs" />
+    <Compile Include="DificuldadeService.cs" />
     <Compile Include="EquipeService.cs" />
+    <Compile Include="EstadoTarefaService.cs" />
     <Compile Include="Helpers\Criptography\CryptographyHelper.cs" />
     <Compile Include="Helpers\Criptography\ICryptographyHelper.cs" />
     <Compile Include="MarcoService.cs" />
     <Compile Include="MensagemService.cs" />
+    <Compile Include="PrioridadeService.cs" />
     <Compile Include="ProjetoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SprintService.cs" />
     <Compile Include="TarefaService.cs" />
+    <Compile Include="TipoTarefaService.cs" />
     <Compile Include="UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>

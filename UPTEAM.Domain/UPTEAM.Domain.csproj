@@ -66,6 +66,7 @@
     <Compile Include="RepositoryInterfaces\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceInterfaces\IDashboardService.cs" />
+    <Compile Include="ServiceInterfaces\IDificuldadeService.cs" />
     <Compile Include="ServiceInterfaces\IEstadoTarefaService.cs" />
     <Compile Include="ServiceInterfaces\IMarcoService.cs" />
     <Compile Include="ServiceInterfaces\IConquistaService.cs" />
