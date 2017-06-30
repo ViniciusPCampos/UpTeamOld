@@ -3,8 +3,8 @@ using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Domain.ServiceInterfaces
 {
-    public interface IPrioridadeService
+    public interface IDificuldadeService
     {
-        ICollection<tt_prioridade> BuscarTudo();
+        ICollection<tt_dificuldade> BuscarTudo();
     }
 }

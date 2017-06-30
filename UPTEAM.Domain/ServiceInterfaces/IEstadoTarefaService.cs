@@ -1,9 +1,10 @@
-﻿using UPTEAM.Domain.Entities;
+﻿using System.Collections.Generic;
+using UPTEAM.Domain.Entities;
 
 namespace UPTEAM.Domain.ServiceInterfaces
 {
-    interface IEstadoTarefaService
+    public interface IEstadoTarefaService
     {
-        tt_estado_tarefa BuscarPorId(int idtEstadoTarefa);
+        ICollection<tt_estado_tarefa> BuscarTudo();
     }
 }
