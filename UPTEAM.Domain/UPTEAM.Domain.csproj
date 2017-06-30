@@ -51,6 +51,7 @@
     <Compile Include="RepositoryInterfaces\IDashboardRepository.cs" />
     <Compile Include="RepositoryInterfaces\IDificuldadeRepository.cs" />
     <Compile Include="RepositoryInterfaces\IEquipeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IEstadoTarefaRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMarcoRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMensagemRepository.cs" />
     <Compile Include="RepositoryInterfaces\INivelRepository.cs" />
@@ -59,18 +60,22 @@
     <Compile Include="RepositoryInterfaces\IRepositoryBase.cs" />
     <Compile Include="RepositoryInterfaces\ISprintRepository.cs" />
     <Compile Include="RepositoryInterfaces\ITarefaRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITipoTarefaRepository.cs" />
     <Compile Include="RepositoryInterfaces\IUsuarioConquistaRepository.cs" />
     <Compile Include="RepositoryInterfaces\IUsuarioEquipeRepository.cs" />
     <Compile Include="RepositoryInterfaces\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceInterfaces\IDashboardService.cs" />
+    <Compile Include="ServiceInterfaces\IEstadoTarefaService.cs" />
     <Compile Include="ServiceInterfaces\IMarcoService.cs" />
     <Compile Include="ServiceInterfaces\IConquistaService.cs" />
     <Compile Include="ServiceInterfaces\IEquipeService.cs" />
     <Compile Include="ServiceInterfaces\IMensagemService.cs" />
+    <Compile Include="ServiceInterfaces\IPrioridadeService.cs" />
     <Compile Include="ServiceInterfaces\IProjetoService.cs" />
     <Compile Include="ServiceInterfaces\ISprintService.cs" />
     <Compile Include="ServiceInterfaces\ITarefaService.cs" />
+    <Compile Include="ServiceInterfaces\ITipoTarefaService.cs" />
     <Compile Include="ServiceInterfaces\IUsuarioService.cs" />
   </ItemGroup>
   <ItemGroup />
