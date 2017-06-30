@@ -10,6 +10,8 @@ namespace UPTEAM.Models
         public string DescricaoProjeto { get; set; }
         public DateTime DataInicioProjeto { get; set; }
         public DateTime DataTerminoProjeto { get; set; }
+        public string DataInicioProjetoFmtd => DataInicioProjeto.ToString("dd/MM/yyyy");
+        public string DataTerminoProjetoFmtd => DataInicioProjeto.ToString("dd/MM/yyyy");
         public int EquipeProjeto { get; set; }
         public ICollection<SprintModel> Sprints { get; set; }
         public ICollection<MarcoModel> Marcos { get; set; }

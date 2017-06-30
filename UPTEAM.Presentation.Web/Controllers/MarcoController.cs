@@ -13,29 +13,18 @@ namespace UPTEAM.Presentation.Web.Controllers
             MarcoService = marcoService;
             MarcoModelParse = marcoModelParse;
             TbMarcoParse = tbMarcoParse;
-            Projeto = (ProjetoModel) Session["Projeto"];
         }
         private IMarcoService MarcoService { get; }
         private IMarcoModelToTbMarcoParse MarcoModelParse { get; }
         private ITbMarcoToMarcoModelParse TbMarcoParse { get; }
 
-        private ProjetoModel Projeto { get;}
-        // GET: Marco
-        public ActionResult Index()
-        {
-            List<MarcoModel> aux = new List<MarcoModel>();
-            var listMarcosProjeto = MarcoService.BuscarPorProjeto(Projeto.IdProjeto);
-            foreach (var tbMarco in listMarcosProjeto)
-            {
-                aux.Add(TbMarcoParse.Parse(tbMarco));
-            }
-            
-            return View(aux);
-        }
+        private int Projeto { get; set; }
 
         public ActionResult Criar()
         {
-            return View();
+            var marco = new MarcoModel();
+            marco.Projeto = (int)Session["Projeto"];
+            return View(marco);
         }
 
         [HttpPost]
@@ -44,7 +33,7 @@ namespace UPTEAM.Presentation.Web.Controllers
             if (!ModelState.IsValid) return View();
             var tbMarco = MarcoModelParse.Parse(marco);
             tbMarco = MarcoService.CriarNovaMarco(tbMarco);
-            return RedirectToAction("Detalhe", tbMarco);
+            return RedirectToAction("Detalhe", "Projeto", new{id= tbMarco.idt_projeto });
         }
 
         public ActionResult Editar(int id)
@@ -61,7 +50,7 @@ namespace UPTEAM.Presentation.Web.Controllers
 
             var tbMarco = MarcoModelParse.Parse(marco);
             MarcoService.AlterarMarco(tbMarco);
-            return RedirectToAction("Detalhe", tbMarco.idt_projeto);
+            return RedirectToAction("Detalhe", "Projeto", new { id = tbMarco.idt_projeto });
         }
 
         public ActionResult Detalhe(int id)
@@ -71,12 +60,11 @@ namespace UPTEAM.Presentation.Web.Controllers
             return View(marcoModel);
         }
 
-        [HttpPost]
         public ActionResult Delete(int id)
         {
             var marco = MarcoService.BuscarMarco(id);
             MarcoService.DeletarMarco(marco);
-            return View();
+            return RedirectToAction("Detalhe", "Projeto", new { id });
         }
     }
 }

@@ -31,7 +31,7 @@ namespace UPTEAM.Presentation.Web.Controllers
             }
             var aux = _sprintModelParse.Parse(sprintModel);
             aux = _sprintService.CriarSprint(aux);
-            return RedirectToAction("Detalhe", new { sprint = aux });
+            return RedirectToAction("Detalhe", "Projeto", new { id = aux.idt_projeto });
         }
         public ActionResult Delete(int id)
         {
