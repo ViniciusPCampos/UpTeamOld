@@ -14,6 +14,7 @@ namespace UPTEAM.AutoMapper.MappingProfile
         public TbTarefaMappingProfile()
         {
             CreateMap<tb_tarefa, TarefaModel>()
+              .ForMember(x => x.IdTarefa, x => x.MapFrom(y => y.idt_tarefa))
               .ForMember(x => x.NomeTarefa, x => x.MapFrom(y => y.nme_tarefa))
               .ForMember(x => x.Descricao, x => x.MapFrom(y => y.dsc_tarefa))
               .ForMember(x => x.DataInicio, x => x.MapFrom(y => y.dta_inicio))

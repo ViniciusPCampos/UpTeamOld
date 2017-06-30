@@ -10,6 +10,7 @@ namespace UPTEAM.AutoMapper.MappingProfile
         {
 
             CreateMap<SprintModel, tb_sprint>()
+                .ForMember(x => x.idt_sprint, x => x.MapFrom(y => y.IdSprint))
                 .ForMember(x => x.vlr_iteracao_sprint, x => x.MapFrom(y => y.ValorIteracao))
                 .ForMember(x => x.dta_inicio, x => x.MapFrom(y => y.DataInicio))
                 .ForMember(x => x.dta_termino, x => x.MapFrom(y => y.DataFim))

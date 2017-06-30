@@ -58,7 +58,7 @@ namespace UPTEAM.Presentation.API.Controllers
             try
             {
                 var usuario = _usuarioService.ObterUsuarioPorLogin(ObterUsuarioLogado());
-                var equipeTb = _equipeService.BuscarEquipesPorUsuario(usuario);
+                var equipeTb = _equipeService.BuscarPorUsuario(usuario.idt_usuario);
                 if (equipeTb != null)
                 {
 

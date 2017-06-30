@@ -283,6 +283,9 @@
     <Content Include="Views\Marco\Detalhe.cshtml" />
     <Content Include="Views\Marco\Delete.cshtml" />
     <Content Include="Views\Sprint\View.cshtml" />
+    <Content Include="Views\Sprint\Criar.cshtml" />
+    <Content Include="Views\Sprint\Detalhe.cshtml" />
+    <Content Include="Views\Sprint\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

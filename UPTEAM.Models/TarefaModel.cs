@@ -4,6 +4,7 @@ namespace UPTEAM.Models
 {
     public class TarefaModel
     {
+        public int IdTarefa { get; set; }
         public string NomeTarefa { get; set; }
         public string Descricao { get; set; }
         public DateTime DataInicio { get; set; }

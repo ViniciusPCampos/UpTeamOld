@@ -62,7 +62,7 @@ namespace UPTEAM.ApplicationServices
 
         public tb_projeto BuscarPorID(int id)
         {
-            return _projetoRepositorio.GetById(id);
+            return _projetoRepositorio.BuscarProjetoPorId(id);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace UPTEAM.Domain.RepositoryInterfaces
         IEnumerable<tb_projeto> BuscarPorNome(string nomeProjeto);
         List<tb_projeto> BuscarPorUsuario(tb_usuario usuario);
         IEnumerable<tb_projeto> BuscarProjetosTarefasPorUsuario(int idUsuario);
+        tb_projeto BuscarProjetoPorId(int idProjeto);
         //IEnumerable<tb_projeto> BuscarPorEstado(int idEstado);
     }
 }
