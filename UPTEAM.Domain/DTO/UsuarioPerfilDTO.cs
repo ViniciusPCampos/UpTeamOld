@@ -17,5 +17,7 @@ namespace UPTEAM.Domain.DTO
         public string Login { get; set; }
         public string Nivel { get; set; }
         public double Experiencia { get; set; }
+        public double ExpProximoNivel { get; set; }
+        public string ProximoNivelPorcento { get { return ExpProximoNivel > 0 ? (Experiencia / ExpProximoNivel).ToString("P").Replace(',','.') : "0"; } }
     }
 }

@@ -16,7 +16,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="../" class="logo">
+            <a href="~/" class="logo">
                 <span class="logo-mini"><b>UPT</b></span>
                 <span class="logo-lg"><b>Up</b>Team</span>
             </a>
@@ -62,44 +62,24 @@
                         <p>@Membership.GetUser().UserName</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         <br /><br />
-                        <p>Nível: 1</p>
-                        <p>Experiência:</p>
+                        <p>Nível: <span id="valor-nivel"></span></p>
+                        <p>Experiência: <span id="valor-experiencia"></span></p>
                         <div class="progress sm">
-                            <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                            <div id="nivel-porcento" class="progress-bar progress-bar-aqua"></div>
                         </div>
                     </div>
                 </div>
                 <!-- search form -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
                 <ul class="sidebar-menu">
                     <li class="header">MENU</li>
                     <li>
-                        <a href="../">
+                        <a href="~/">
                             <i class="fa fa-home"></i> <span>Página Inicial</span>
                         </a>
                     </li>
                     <li>
                         <a href="/Equipe/Index">
                             <i class="fa fa-group"></i><span>Minhas Equipes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-trophy"></i><span>Conquistas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-diamond"></i><span>Ranking</span>
                         </a>
                     </li>
                 </ul>
@@ -115,6 +95,12 @@
     <script>
         $(document).ready(function () {
             $('.nomeUsuarioLayout').text(usuarioLogadoNome);
+            $.get(urlbase + "Autenticacao/ObterPerfilUsuario?login=" + usuarioLogado, function (data) {
+                console.log(data);
+                $('#valor-experiencia').html(data.Src.Experiencia);
+                $('#valor-nivel').html(data.Src.Nivel);
+                $('#nivel-porcento').css('width', data.Src.ProximoNivelPorcento);
+            });
         });
         $(document).on('click', "[data-dismiss=modal]", function () {
             $(this).closest('.modal').modal('hide')

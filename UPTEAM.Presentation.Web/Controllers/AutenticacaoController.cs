@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using UPTEAM.AutoMapper.Parses.Interfaces;
+using UPTEAM.Domain.DTO;
 using UPTEAM.Domain.ServiceInterfaces;
 using UPTEAM.Models;
 
@@ -63,6 +64,15 @@ namespace UPTEAM.Presentation.Web.Controllers
             return RedirectToAction("autenticar");
 
 
+        }
+        [HttpGet]
+        public ActionResult ObterPerfilUsuario(string login)
+        {
+            var jsonResult = new JsonResult<UsuarioPerfilDTO>();
+            var usuario = _usuarioService.ObterPerfilUsuario(login);
+            jsonResult.Src = usuario;
+
+            return Json(jsonResult,JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Logout()
